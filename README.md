@@ -159,3 +159,35 @@ python -m super6.backtest --as-of 2026-11-23T00:00:00Z --exclude-revised
 | Always 1–1 | 3.95 | 9.2% | 19.2% | 3.4% | 1/20 |
 
 Excluding the three revised previews leaves 17 rounds. The venue strategies average 6.76 points and fixed Poisson averages 7.65 in that subset. Across 19 chronological Dixon–Coles holdouts, mean exact-score log loss changes from 3.120 to 3.114, and mean scored points stay at 6.68. No production parameter changes follow from these results. The sample has zero complete historical rounds for the xG-and-market model.
+
+## Stage 7 model performance investigation
+
+```bash
+python -m super6.performance --as-of 2026-11-23T00:00:00Z > /tmp/super6-performance.json
+```
+
+The audit emits all six actual scores and all three picks with fixture points for every round. It includes each model's goal rates and home/draw/away probabilities, the age and points per game of each side's venue history, and summaries for the full archive and the sensitivity sample excluding the three revised previews. It reuses the Stage 6 chronological forecasts without fitting any adjustment to these rounds. The optimized strategies chose identical scores in all 120 fixtures. The venue picks differed from fixed-rate Poisson on 68 of 120 fixtures and 56 of 102 in the sensitivity sample.
+
+| Rounds | Entry | Actual points | Model-expected points | Exact | Correct result incl. exact | Predicted 13+ | Observed 13+ | 13+ Brier |
+| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 20 | Either optimized strategy | 6.80 | 8.20 | 8.3% | 44.2% | 14.5% | 10.0% | 0.0916 |
+| 20 | Fixed-rate Poisson | 7.10 | 7.58 | 10.0% | 44.2% | 11.3% | 10.0% | 0.0902 |
+| 17 | Either optimized strategy | 6.76 | 8.21 | 8.8% | 43.1% | 14.6% | 11.8% | 0.1043 |
+| 17 | Fixed-rate Poisson | 7.65 | 7.58 | 11.8% | 46.1% | 11.3% | 11.8% | 0.1038 |
+
+The optimized strategies finished ahead, tied and behind on 7, 3 and 10 rounds in the full sample and 4, 3 and 10 in the sensitivity sample. Paired differences below are optimized minus fixed. The 95% percentile intervals use 10,000 seeded resamples of entire rounds, keeping the strategies and all six matches paired. They describe sampling variability under exchangeable rounds and do not account for the archive's selection or potential dependence across slates involving the same teams.
+
+| Metric | 20 rounds | 17 rounds |
+| --- | ---: | ---: |
+| Actual points per round | −0.30 [−1.70, +1.15] | −0.88 [−2.29, +0.71] |
+| Exact-score accuracy, percentage points | −1.7 [−6.7, +3.3] | −2.9 [−7.8, +2.0] |
+| Correct-result accuracy, percentage points | 0.0 [−7.5, +7.5] | −2.9 [−10.8, +4.9] |
+| 13+ Brier score | +0.0014 [−0.0113, +0.0103] | +0.0005 [−0.0144, +0.0109] |
+
+Both models cleared 13 on the same two Sky rounds (3 November 2018 and 4 May 2019). Resampling those slates gives a zero-width interval for the hit-rate difference because there are no discordant hits to resample. There is too little information to establish comparative hit rates in future rounds. The venue model forecast roughly three percentage points more 13+ risk in both samples.
+
+- **Home and away wins.** The venue model gained 32 points on away wins and lost 38 on home wins, with corresponding gains of 21 and losses of 36 in the sensitivity sample. It nailed West Ham 0–1 Tottenham, gaining five points on the fixed 1–0 pick. Its 0–1 picks for Birmingham–Leeds and Crystal Palace–Southampton and its 1–2 pick for Tottenham–Man United each cost five points when the home team won 1–0. Everton 0–1 Fulham added five points to the venue side in the revised-preview group. The five-match away points-per-game bands offered no consistent net advantage over the fixed model, and they do not adjust for strength of opposition.
+- **Goals and draws.** In 20 rounds the observed home and away means were 1.46 and 1.39 goals. The venue model forecast 1.54 and 1.21, and the fixed model used 1.50 and 1.10. In the 17-round sample the corresponding pairs were 1.44 and 1.35 observed, 1.55 and 1.20 venue, and 1.50 and 1.10 fixed. Average total goals were 2.85 and 2.79 in the two samples. The venue model forecast about 2.75 in both, and the fixed model forecast 2.60. Both forecast too few away goals and more draws than observed. The full-sample draw probabilities averaged 24.3% venue and 25.8% fixed, with 19.2% observed. In the sensitivity sample those figures were 24.3%, 25.8% and 19.6%. Neither entry strategy picked a draw, so draws contributed zero to the scoring difference.
+- **Availability and recency.** All eligible fixtures had five pre-deadline venue results per side. There is no scored cohort for missing form. At least one side's newest venue result was over 45 days old in 42 of 120 fixtures and 24 of 102 sensitivity fixtures. The venue strategy's point difference on those fixtures flipped from +7 to −2 after excluding the revised previews. This provides no basis for a new recency cutoff.
+
+Keep the fixed-rate benchmark and current forecasts. The points and Brier intervals span zero. Any candidate change to rates, opponent adjustment or form weighting needs rules set before evaluation and a separate, later chronological test cohort.

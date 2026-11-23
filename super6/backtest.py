@@ -18,6 +18,7 @@ LABELS = {
 }
 RHO_GRID = [i / 1000 for i in range(-120, 121)]
 MIN_TRAINING_MATCHES = 6
+FIXED_RATES = (1.5, 1.1)
 
 
 def choice_metrics(scores, outcomes, picks):
@@ -153,7 +154,7 @@ def study(rounds, as_of):
         rates = [venue_rates(f) for f in fixtures]
         base = [distribution(*pair) for pair in rates]
         entries = strategies(base)
-        fixed = [distribution(1.5, 1.1)] * 6
+        fixed = [distribution(*FIXED_RATES)] * 6
         entries['fixed_poisson'] = strategies(fixed)['expected_points']
         draw = [(1, 1)] * 6
         entries['fixed_draw'] = (draw, choice_metrics(base, list(map(result_probabilities, base)), draw))
