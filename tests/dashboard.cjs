@@ -22,7 +22,7 @@ async function checkDashboard(browser, device, report) {
     });
     await page.goto('https://super6-test.invalid/');
     await page.getByText('Provisional forecast · limited pre-match evidence').waitFor();
-    await page.getByText('Chance of all six exact scores').waitFor();
+    await page.getByText('Chance of all six exact scores', { exact: true }).waitFor();
     await page.getByText('Form and opposition evidence').first().click();
     await page.getByText(/Recent games · 4 matches/).first().waitFor();
     await page.getByRole('button', { name: 'Load selected round' }).click();
