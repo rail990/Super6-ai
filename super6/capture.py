@@ -13,7 +13,7 @@ def prematch(item):
         'id': item['id'], 'deadline': item['deadline'], 'official': item['official'],
         **({'deadline_basis': item['deadline_basis']} if 'deadline_basis' in item else {}),
         'fixtures': [
-            {key: fixture[key] for key in ('home', 'away', 'kickoff', 'research') if key in fixture}
+            {key: fixture[key] for key in ('id', 'home', 'away', 'kickoff', 'kickoff_source', 'research', 'stats') if key in fixture}
             for fixture in item['fixtures']
         ],
     }

@@ -846,5 +846,438 @@
         }
       }
     ]
+  },
+  {
+    "id": "2026–27 Round 18",
+    "deadline": "2026-11-24T20:00:00Z",
+    "deadline_basis": "Sky Super 6 home page advertised 24 November at 20:00 UK time.",
+    "official": {
+      "url": "https://super6.skysports.com/",
+      "available_at": "2026-11-23T19:56:06+00:00",
+      "confirmed_at": "2026-11-23T19:56:06+00:00",
+      "note": "Manually checked the six pairings and entry deadline on the public Super 6 round card. UEFA confirmed the home/away order and kickoff times."
+    },
+    "fixtures": [
+      {
+        "id": "sky-2026-27-r18-1",
+        "home": "Manchester City",
+        "away": "Napoli",
+        "kickoff": "2026-11-24T20:00:00Z",
+        "kickoff_source": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/",
+        "stats": {
+          "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/UEFA_1_champions-league/results_2627.csv",
+          "available_at": "2026-11-23T19:56:07Z",
+          "note": "UEFA Champions League league phase only. Open-matchday results through matchday 4, cross-checked against the UEFA league phase results and fixtures page.",
+          "provider": "open-matchday",
+          "sha256": "a0de17c728c38d4b827a8d3dc0546f3b7160d931126a3c722dd07dfc60b4ed4c",
+          "home": {
+            "recent": {
+              "matches": 4,
+              "won": 3,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 12,
+              "goals_against": 7,
+              "clean_sheets": 1
+            },
+            "venue": {
+              "matches": 2,
+              "won": 1,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 7,
+              "goals_against": 5,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.3125,
+            "match_ids": [
+              "2026-11-04:Leipzig:Man City",
+              "2026-10-20:Man City:AEK Athens",
+              "2026-10-14:Man City:Paris",
+              "2026-09-08:Porto:Man City"
+            ],
+            "latest_available_at": "2026-11-05T00:00:00+01:00"
+          },
+          "away": {
+            "recent": {
+              "matches": 4,
+              "won": 1,
+              "drawn": 0,
+              "lost": 3,
+              "goals_for": 6,
+              "goals_against": 11,
+              "clean_sheets": 0
+            },
+            "venue": {
+              "matches": 2,
+              "won": 0,
+              "drawn": 0,
+              "lost": 2,
+              "goals_for": 2,
+              "goals_against": 7,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.25,
+            "match_ids": [
+              "2026-11-04:Porto:Napoli",
+              "2026-10-20:Napoli:Bodø/Glimt",
+              "2026-10-13:Villarreal:Napoli",
+              "2026-09-09:Napoli:Arsenal"
+            ],
+            "latest_available_at": "2026-11-05T00:00:00+01:00"
+          }
+        }
+      },
+      {
+        "id": "sky-2026-27-r18-2",
+        "home": "Arsenal",
+        "away": "Borussia Dortmund",
+        "kickoff": "2026-11-24T20:00:00Z",
+        "kickoff_source": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/",
+        "stats": {
+          "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/UEFA_1_champions-league/results_2627.csv",
+          "available_at": "2026-11-23T19:56:07Z",
+          "note": "UEFA Champions League league phase only. Open-matchday results through matchday 4, cross-checked against the UEFA league phase results and fixtures page.",
+          "provider": "open-matchday",
+          "sha256": "a0de17c728c38d4b827a8d3dc0546f3b7160d931126a3c722dd07dfc60b4ed4c",
+          "home": {
+            "recent": {
+              "matches": 4,
+              "won": 3,
+              "drawn": 1,
+              "lost": 0,
+              "goals_for": 8,
+              "goals_against": 3,
+              "clean_sheets": 2
+            },
+            "venue": {
+              "matches": 1,
+              "won": 1,
+              "drawn": 0,
+              "lost": 0,
+              "goals_for": 3,
+              "goals_against": 0,
+              "clean_sheets": 1
+            },
+            "opposition_ppg": 0.8125,
+            "match_ids": [
+              "2026-11-04:Slavia Praha:Arsenal",
+              "2026-10-21:Bayern München:Arsenal",
+              "2026-10-13:Arsenal:Lille",
+              "2026-09-09:Napoli:Arsenal"
+            ],
+            "latest_available_at": "2026-11-05T00:00:00+01:00"
+          },
+          "away": {
+            "recent": {
+              "matches": 4,
+              "won": 3,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 7,
+              "goals_against": 5,
+              "clean_sheets": 0
+            },
+            "venue": {
+              "matches": 2,
+              "won": 1,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 2,
+              "goals_against": 2,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.1875,
+            "match_ids": [
+              "2026-11-04:B. Dortmund:Real Betis",
+              "2026-10-20:Sabah:B. Dortmund",
+              "2026-10-14:Bodø/Glimt:B. Dortmund",
+              "2026-09-08:B. Dortmund:Villarreal"
+            ],
+            "latest_available_at": "2026-11-05T00:00:00+01:00"
+          }
+        }
+      },
+      {
+        "id": "sky-2026-27-r18-3",
+        "home": "Real Madrid",
+        "away": "PSV Eindhoven",
+        "kickoff": "2026-11-24T20:00:00Z",
+        "kickoff_source": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/",
+        "stats": {
+          "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/UEFA_1_champions-league/results_2627.csv",
+          "available_at": "2026-11-23T19:56:07Z",
+          "note": "UEFA Champions League league phase only. Open-matchday results through matchday 4, cross-checked against the UEFA league phase results and fixtures page.",
+          "provider": "open-matchday",
+          "sha256": "a0de17c728c38d4b827a8d3dc0546f3b7160d931126a3c722dd07dfc60b4ed4c",
+          "home": {
+            "recent": {
+              "matches": 4,
+              "won": 4,
+              "drawn": 0,
+              "lost": 0,
+              "goals_for": 13,
+              "goals_against": 7,
+              "clean_sheets": 0
+            },
+            "venue": {
+              "matches": 2,
+              "won": 2,
+              "drawn": 0,
+              "lost": 0,
+              "goals_for": 6,
+              "goals_against": 2,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.0,
+            "match_ids": [
+              "2026-11-04:AEK Athens:Real Madrid",
+              "2026-10-21:Real Madrid:Leipzig",
+              "2026-10-14:Roma:Real Madrid",
+              "2026-09-08:Real Madrid:Inter"
+            ],
+            "latest_available_at": "2026-11-05T00:00:00+01:00"
+          },
+          "away": {
+            "recent": {
+              "matches": 4,
+              "won": 1,
+              "drawn": 1,
+              "lost": 2,
+              "goals_for": 3,
+              "goals_against": 4,
+              "clean_sheets": 1
+            },
+            "venue": {
+              "matches": 2,
+              "won": 1,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 1,
+              "goals_against": 1,
+              "clean_sheets": 1
+            },
+            "opposition_ppg": 1.1875,
+            "match_ids": [
+              "2026-11-04:PSV:Club Brugge",
+              "2026-10-20:Porto:PSV",
+              "2026-10-13:Leipzig:PSV",
+              "2026-09-10:PSV:Shakhtar"
+            ],
+            "latest_available_at": "2026-11-05T00:00:00+01:00"
+          }
+        }
+      },
+      {
+        "id": "sky-2026-27-r18-4",
+        "home": "Sporting CP",
+        "away": "Manchester United",
+        "kickoff": "2026-11-25T20:00:00Z",
+        "kickoff_source": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/",
+        "stats": {
+          "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/UEFA_1_champions-league/results_2627.csv",
+          "available_at": "2026-11-23T19:56:07Z",
+          "note": "UEFA Champions League league phase only. Open-matchday results through matchday 4, cross-checked against the UEFA league phase results and fixtures page.",
+          "provider": "open-matchday",
+          "sha256": "a0de17c728c38d4b827a8d3dc0546f3b7160d931126a3c722dd07dfc60b4ed4c",
+          "home": {
+            "recent": {
+              "matches": 4,
+              "won": 3,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 8,
+              "goals_against": 4,
+              "clean_sheets": 2
+            },
+            "venue": {
+              "matches": 2,
+              "won": 1,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 5,
+              "goals_against": 4,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.1875,
+            "match_ids": [
+              "2026-11-03:Shakhtar:Sporting CP",
+              "2026-10-21:Sporting CP:LASK",
+              "2026-10-13:Lens:Sporting CP",
+              "2026-09-09:Sporting CP:Galatasaray"
+            ],
+            "latest_available_at": "2026-11-04T00:00:00+01:00"
+          },
+          "away": {
+            "recent": {
+              "matches": 4,
+              "won": 2,
+              "drawn": 0,
+              "lost": 2,
+              "goals_for": 8,
+              "goals_against": 8,
+              "clean_sheets": 1
+            },
+            "venue": {
+              "matches": 2,
+              "won": 0,
+              "drawn": 0,
+              "lost": 2,
+              "goals_for": 1,
+              "goals_against": 6,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.25,
+            "match_ids": [
+              "2026-11-03:Man Utd:Roma",
+              "2026-10-21:Como:Man Utd",
+              "2026-10-13:Atleti:Man Utd",
+              "2026-09-10:Man Utd:Sabah"
+            ],
+            "latest_available_at": "2026-11-04T00:00:00+01:00"
+          }
+        }
+      },
+      {
+        "id": "sky-2026-27-r18-5",
+        "home": "Club Brugge",
+        "away": "Liverpool",
+        "kickoff": "2026-11-25T20:00:00Z",
+        "kickoff_source": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/",
+        "stats": {
+          "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/UEFA_1_champions-league/results_2627.csv",
+          "available_at": "2026-11-23T19:56:07Z",
+          "note": "UEFA Champions League league phase only. Open-matchday results through matchday 4, cross-checked against the UEFA league phase results and fixtures page.",
+          "provider": "open-matchday",
+          "sha256": "a0de17c728c38d4b827a8d3dc0546f3b7160d931126a3c722dd07dfc60b4ed4c",
+          "home": {
+            "recent": {
+              "matches": 4,
+              "won": 3,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 11,
+              "goals_against": 7,
+              "clean_sheets": 1
+            },
+            "venue": {
+              "matches": 2,
+              "won": 1,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 5,
+              "goals_against": 3,
+              "clean_sheets": 1
+            },
+            "opposition_ppg": 1.375,
+            "match_ids": [
+              "2026-11-04:PSV:Club Brugge",
+              "2026-10-21:Club Brugge:Lens",
+              "2026-10-13:Inter:Club Brugge",
+              "2026-09-08:Club Brugge:Aston Villa"
+            ],
+            "latest_available_at": "2026-11-05T00:00:00+01:00"
+          },
+          "away": {
+            "recent": {
+              "matches": 4,
+              "won": 3,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 14,
+              "goals_against": 10,
+              "clean_sheets": 0
+            },
+            "venue": {
+              "matches": 2,
+              "won": 1,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 8,
+              "goals_against": 6,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.125,
+            "match_ids": [
+              "2026-11-04:Fenerbahçe:Liverpool",
+              "2026-10-20:Liverpool:Villarreal",
+              "2026-10-14:LASK:Liverpool",
+              "2026-09-09:Liverpool:Atleti"
+            ],
+            "latest_available_at": "2026-11-05T00:00:00+01:00"
+          }
+        }
+      },
+      {
+        "id": "sky-2026-27-r18-6",
+        "home": "Paris Saint-Germain",
+        "away": "Roma",
+        "kickoff": "2026-11-25T20:00:00Z",
+        "kickoff_source": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/",
+        "stats": {
+          "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/UEFA_1_champions-league/results_2627.csv",
+          "available_at": "2026-11-23T19:56:07Z",
+          "note": "UEFA Champions League league phase only. Open-matchday results through matchday 4, cross-checked against the UEFA league phase results and fixtures page.",
+          "provider": "open-matchday",
+          "sha256": "a0de17c728c38d4b827a8d3dc0546f3b7160d931126a3c722dd07dfc60b4ed4c",
+          "home": {
+            "recent": {
+              "matches": 4,
+              "won": 4,
+              "drawn": 0,
+              "lost": 0,
+              "goals_for": 20,
+              "goals_against": 5,
+              "clean_sheets": 1
+            },
+            "venue": {
+              "matches": 2,
+              "won": 2,
+              "drawn": 0,
+              "lost": 0,
+              "goals_for": 10,
+              "goals_against": 3,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.3125,
+            "match_ids": [
+              "2026-11-03:Villarreal:Paris",
+              "2026-10-20:Paris:Barcelona",
+              "2026-10-14:Man City:Paris",
+              "2026-09-09:Paris:S. Bratislava"
+            ],
+            "latest_available_at": "2026-11-04T00:00:00+01:00"
+          },
+          "away": {
+            "recent": {
+              "matches": 4,
+              "won": 1,
+              "drawn": 1,
+              "lost": 2,
+              "goals_for": 10,
+              "goals_against": 8,
+              "clean_sheets": 1
+            },
+            "venue": {
+              "matches": 2,
+              "won": 0,
+              "drawn": 1,
+              "lost": 1,
+              "goals_for": 3,
+              "goals_against": 4,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.4375,
+            "match_ids": [
+              "2026-11-03:Man Utd:Roma",
+              "2026-10-20:Roma:S. Bratislava",
+              "2026-10-14:Roma:Real Madrid",
+              "2026-09-10:Fenerbahçe:Roma"
+            ],
+            "latest_available_at": "2026-11-04T00:00:00+01:00"
+          }
+        }
+      }
+    ]
   }
 ]

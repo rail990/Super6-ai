@@ -26,3 +26,15 @@ li { margin-bottom: .65rem; overflow-wrap: anywhere; }
 :focus-visible { outline: 2px solid #8df0ac; outline-offset: 3px; }
 label, select { max-width: 100%; }
 label { flex-wrap: wrap; margin-bottom: .5rem; }
+nav { flex-wrap: wrap; }
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: .75rem; margin: .75rem 0; }
+fieldset { min-width: 0; border: 1px solid #35494e; border-radius: .5rem; }
+form label:not(.confirm) { display: grid; align-items: start; }
+form input:not([type=checkbox]), form select { width: 100%; min-width: 0; font: inherit; color: inherit; background: #17292e; border: 1px solid #61777d; border-radius: .4rem; padding: .55rem; min-height: 44px; }
+form [hidden] { display: none !important; }
+button { min-height: 44px; font: inherit; font-weight: 650; color: inherit; background: #21393e; border: 1px solid #61777d; border-radius: .4rem; padding: .45rem .7rem; }
+button:disabled { opacity: .55; }
+.form-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+.confirm { margin: 1rem 0; }
+.status { color: #f8d595; }
+footer { color: #bbcad0; }

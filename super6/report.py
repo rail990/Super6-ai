@@ -6,11 +6,13 @@ from pathlib import Path
 
 from .capture import frozen, missing, prematch
 from .evidence import ready, timestamp, validate
-from .model import forecast, points, predict, venue_rates
+from .model import forecast, form_rates, points, predict, venue_rates
+from .research import MIN_MATCHES
 
 MODEL = 'xg_market'
 FIXED = 'fixed_poisson'
 VENUE = 'venue_goals'
+FORM = 'recent_form'
 SNAPSHOTS = Path('data/snapshots')
 
 
@@ -72,9 +74,32 @@ def summarize(scored):
     }
 
 
+def stale(key, record, cutoff):
+    days = 2 if key == 'odds' else 7 if key in ('injuries', 'lineups', 'team_news', 'suspensions') else 45
+    return (cutoff - timestamp(record['available_at'])).days >= days
+
+
+def quality(item):
+    cutoff = timestamp(item['deadline'])
+    flags = []
+    for fixture in item['fixtures']:
+        stats = fixture.get('stats')
+        for side in ('home', 'away'):
+            profile = stats[side] if stats else None
+            if not profile or profile['recent']['matches'] < MIN_MATCHES:
+                flags.append(f"{fixture[side]} has fewer than {MIN_MATCHES} recent results.")
+            elif (cutoff - timestamp(profile['latest_available_at'])).days >= 45:
+                flags.append(f"{fixture[side]} has no result in the last 45 days.")
+        for key, record in fixture.get('research', {}).items():
+            if stale(key, record, cutoff):
+                flags.append(f"{fixture['home']} vs {fixture['away']} has stale {key} evidence.")
+    return flags
+
+
 def report(rounds, baseline, snapshots=SNAPSHOTS):
     rows = []
-    scored = {name: [] for name in (MODEL, FIXED, VENUE)}
+    scored = {name: [] for name in (MODEL, FIXED, VENUE, FORM)}
+    comparison_models = (MODEL, FIXED, VENUE)
     paired = {name: [] for name in scored}
     seen = set()
     for item in sorted(rounds, key=lambda row: timestamp(row['deadline'])):
@@ -83,14 +108,36 @@ def report(rounds, baseline, snapshots=SNAPSHOTS):
             raise ValueError(f"Duplicate round: {item['id']}")
         seen.add(item['id'])
         fixtures = item['fixtures']
-        archived = all(map(ready, fixtures)) and frozen(item, snapshots)
-        predictions = {FIXED: forecast([((1.5, 1.1), None)] * 6)}
+        cutoff = timestamp(item['deadline'])
+        has_snapshot = frozen(item, snapshots)
+        archived = has_snapshot and all(
+            ready(f) and not any(stale(key, record, cutoff) for key, record in f['research'].items())
+            for f in fixtures
+        )
+        kickoffs = [f['kickoff'] for f in fixtures]
+        predictions = {FIXED: forecast([((1.5, 1.1), None)] * 6, kickoffs=kickoffs)}
         if all('venue_history' in fixture for fixture in fixtures):
-            predictions[VENUE] = forecast([(venue_rates(fixture), None) for fixture in fixtures])
+            predictions[VENUE] = forecast([(venue_rates(fixture), None) for fixture in fixtures],
+                                          kickoffs=kickoffs)
+        flags = quality(item)
+        can_use_form = 'confirmed_at' in item['official'] and all(
+            f.get('id') and 'stats' in f and all(
+                f['stats'][side]['recent']['matches'] >= MIN_MATCHES
+                and (timestamp(item['deadline']) - timestamp(f['stats'][side]['latest_available_at'])).days < 45
+                for side in ('home', 'away'))
+            for f in fixtures
+        )
+        if can_use_form:
+            inputs = [form_rates({
+                'stats': f['stats'],
+                'research': {key: record for key, record in f.get('research', {}).items()
+                             if has_snapshot and not stale(key, record, cutoff)},
+            }) for f in fixtures]
+            predictions[FORM] = forecast(inputs, kickoffs=kickoffs)
         if archived:
             predictions[MODEL] = predict(prematch(item))
         evaluations = {name: evaluate(item, pred) for name, pred in predictions.items()}
-        comparison_round = all(evaluations.get(name) is not None for name in scored)
+        comparison_round = all(evaluations.get(name) is not None for name in comparison_models)
         for name, evaluation in evaluations.items():
             if evaluation is not None:
                 scored[name].append((predictions[name], evaluation))
@@ -99,8 +146,9 @@ def report(rounds, baseline, snapshots=SNAPSHOTS):
         rows.append({
             'round': item, 'prediction': predictions.get(MODEL), 'evaluation': evaluations.get(MODEL),
             'benchmarks': {name: {'prediction': predictions[name], 'evaluation': evaluations[name]}
-                           for name in (FIXED, VENUE) if name in predictions},
-            'missing_research': missing(item), 'snapshot_frozen': archived,
+                           for name in (FORM, FIXED, VENUE) if name in predictions},
+            'recommended_model': MODEL if archived else FORM if can_use_form else None,
+            'quality_flags': flags, 'missing_research': missing(item), 'snapshot_frozen': has_snapshot,
             'derived_goal': first_goal(item)[0] if 'golden_goal' not in item else None,
         })
     return {'baseline': baseline, 'rounds': rows, 'backtest': summarize(scored[MODEL]),

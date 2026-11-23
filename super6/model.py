@@ -1,9 +1,10 @@
 """Independent goal Poisson model and Super 6 scoring."""
+from datetime import timedelta
 from itertools import product
-from math import exp
+from math import ceil, exp, log, prod
 from random import Random
 
-from .evidence import ready, validate
+from .evidence import ready, timestamp, validate
 
 TRIALS = 100_000
 
@@ -80,16 +81,43 @@ def golden_goal(rates):
     return {'minute': median, 'minute_probabilities': probabilities, 'no_goal': survival[-1]}
 
 
+def chronological_goal(rates, kickoffs):
+    first = min(kickoffs)
+    offsets = [(value - first).total_seconds() / 60 for value in kickoffs]
+    intensity = [sum(pair) / 90 for pair in rates]
+    boundaries = sorted({point for offset in offsets for point in (offset, offset + 90)})
+    remaining = 1.0
+    median = None
+    active_start = None
+    halfway = (1 + exp(-sum(sum(r) for r in rates))) / 2
+    windows = []
+    for start, end in zip(boundaries, boundaries[1:]):
+        rate = sum(rate for rate, offset in zip(intensity, offsets) if offset <= start < offset + 90)
+        after = remaining * exp(-rate * (end - start))
+        if rate:
+            windows.append({'start': start, 'end': end, 'probability': remaining - after})
+            if median is None and after <= halfway:
+                median = start + log(remaining / halfway) / rate
+                active_start = min(offset for offset in offsets if offset <= start < offset + 90)
+        remaining = after
+    opening_group = [pair for pair, offset in zip(rates, offsets) if offset == 0]
+    return {'first_kickoff': first.isoformat(), 'elapsed_minute': ceil(median),
+            'kickoff_for_recommendation': (first + timedelta(minutes=active_start)).isoformat(),
+            'recommended_minute': ceil(median - active_start),
+            'first_window_goal_probability': 1 - exp(-sum(sum(pair) for pair in opening_group)),
+            'windows': windows}
+
+
 def predict(round_data, seed=6):
     validate(round_data)
     fixtures = round_data['fixtures']
     if not all(map(ready, fixtures)):
         raise ValueError('Every fixture needs pre-deadline research')
-    return forecast([fit(fixture) for fixture in fixtures], seed)
+    return forecast([fit(fixture) for fixture in fixtures], seed, [f['kickoff'] for f in fixtures])
 
 
-def forecast(inputs, seed=6):
-    rates, predictions, weights = [], [], []
+def forecast(inputs, seed=6, kickoffs=None):
+    rates, predictions, weights, modal_weights = [], [], [], []
     for pair, market in inputs:
         rates.append(pair)
         scores = distribution(*pair)
@@ -98,7 +126,9 @@ def forecast(inputs, seed=6):
         exact = scores[pick]
         correct = outcomes[outcome(pick)]
         weights.append((exact, correct))
-        predictions.append({'score': pick, 'rates': pair, 'exact_probability': exact,
+        modal = max(scores, key=scores.get)
+        modal_weights.append((scores[modal], outcomes[outcome(modal)]))
+        predictions.append({'score': pick, 'modal_score': modal, 'rates': pair, 'exact_probability': exact,
                             'result_probabilities': outcomes, 'market_probabilities': market,
                             'expected_points': 2 * correct + 3 * exact,
                             'top_scores': sorted(scores.items(), key=lambda item: -item[1])[:5]})
@@ -111,11 +141,23 @@ def forecast(inputs, seed=6):
             total += 5 if draw < exact else 2 if draw < correct else 0
         counts[total] += 1
     pmf = exact_points(weights)
+    modal_pmf = exact_points(modal_weights)
+    goal = golden_goal(rates)
+    if kickoffs:
+        goal['schedule'] = chronological_goal(rates, list(map(timestamp, kickoffs)))
     return {'fixtures': predictions, 'trials': TRIALS, 'seed': seed, 'points_counts': counts,
             'expected_points': sum(i * n for i, n in enumerate(counts)) / TRIALS,
             'probability_13_plus': sum(pmf[13:]),
             'simulated_probability_13_plus': sum(counts[13:]) / TRIALS,
-            'golden_goal': golden_goal(rates)}
+            'probability_all_exact': prod(exact for exact, _ in weights),
+            'simulated_probability_all_exact': counts[30] / TRIALS,
+            'modal_combination': {
+                'scores': [p['modal_score'] for p in predictions],
+                'expected_points': sum(i * value for i, value in enumerate(modal_pmf)),
+                'probability_13_plus': sum(modal_pmf[13:]),
+                'probability_all_exact': prod(exact for exact, _ in modal_weights),
+            },
+            'golden_goal': goal}
 
 
 def exact_points(weights):
@@ -139,3 +181,23 @@ def venue_rates(fixture):
         / (len(own) + len(opponent) + 2)
         for own, opponent, prior in ((home, away, 1.5), (away, home, 1.1))
     )
+
+
+
+def form_rates(fixture):
+    home, away = (fixture['stats'][side] for side in ('home', 'away'))
+
+    def rate(own, other, prior, attack='goals_for', defence='goals_against'):
+        own_all, other_all = own['recent'], other['recent']
+        own_venue, other_venue = own['venue'], other['venue']
+        # Recent games each have weight 1, venue matches receive one extra weight.
+        goals = own_all[attack] + other_all[defence] + own_venue[attack] + other_venue[defence]
+        sample = sum(group['matches'] for group in (own_all, other_all, own_venue, other_venue))
+        return (goals + 6 * prior) / (sample + 6)
+
+    research = fixture.get('research', {})
+    if 'xg' in research and 'xga' in research:
+        xg, xga = research['xg'], research['xga']
+        return ((max(0.05, (xg['home'] + xga['away']) / 2),
+                 max(0.05, (xg['away'] + xga['home']) / 2)), None)
+    return ((rate(home, away, 1.5), rate(away, home, 1.1)), None)

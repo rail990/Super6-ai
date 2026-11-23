@@ -1,5 +1,6 @@
 const byId = id => document.getElementById(id);
 const percent = value => (100 * value).toFixed(1) + '%';
+const rarePercent = value => (100 * value).toPrecision(3) + '%';
 const score = value => value.join('–');
 const date = value => new Date(value).toISOString().slice(0, 16).replace('T', ' ') + ' UTC';
 
@@ -29,9 +30,9 @@ function source(parent, label, record) {
 }
 
 const modelNames = {xg_market: 'xG and market model', venue_goals: 'Venue-goals benchmark',
-  fixed_poisson: 'Fixed Poisson benchmark'};
+  fixed_poisson: 'Fixed Poisson benchmark', recent_form: 'Recent results model'};
 
-function showRound(row, model = 'xg_market') {
+function showRound(row, model = row?.recommended_model ?? 'xg_market') {
   const container = byId('round-content');
   container.replaceChildren();
   if (!row) {
@@ -39,9 +40,11 @@ function showRound(row, model = 'xg_market') {
     return;
   }
   const { round } = row;
+  captureSelection(round);
   const { prediction, evaluation } = model === 'xg_market' ? row : row.benchmarks[model];
   add(container, 'p', 'Entry deadline · ' + date(round.deadline));
   source(container, 'Official fixture evidence', round.official);
+  if (round.official.confirmed_at) add(container, 'p', 'Sky slate confirmed · ' + date(round.official.confirmed_at));
   const modelLabel = add(container, 'label', 'Forecast ');
   const select = add(modelLabel, 'select', '');
   for (const name of ['xg_market', ...Object.keys(row.benchmarks)]) {
@@ -54,16 +57,44 @@ function showRound(row, model = 'xg_market') {
     byId('round-content').querySelector('select').focus();
   });
   if (prediction) {
+    add(container, 'p', model === 'xg_market' && row.recommended_model === 'xg_market' ?
+      'Forecast based on verified pre-deadline evidence' : model === 'recent_form' ?
+      'Provisional forecast · limited pre-match evidence' : 'Benchmark forecast', 'status');
     const metrics = add(container, 'div', '', 'metrics');
     metric(metrics, 'Expected points', prediction.expected_points.toFixed(2));
     metric(metrics, 'Chance of 13+ points', percent(prediction.probability_13_plus));
-    metric(metrics, 'Golden Goal estimate', 'Minute ' + prediction.golden_goal.minute);
+    metric(metrics, 'Chance of all six exact scores', rarePercent(prediction.probability_all_exact));
+    const schedule = prediction.golden_goal.schedule;
+    metric(metrics, 'Golden Goal · chronological estimate', 'Minute ' +
+      (schedule?.recommended_minute ?? prediction.golden_goal.minute));
+    if (schedule && schedule.kickoff_for_recommendation !== schedule.first_kickoff) {
+      add(container, 'p', 'Chronological recommendation refers to the kickoff at ' +
+        date(schedule.kickoff_for_recommendation) + '.');
+    }
+    if (schedule && schedule.recommended_minute !== prediction.golden_goal.minute) {
+      add(container, 'p', 'If Sky uses the lowest match-clock minute across both days, the estimate is minute ' +
+        prediction.golden_goal.minute + '.');
+    }
+    const alternative = add(container, 'details', '');
+    add(alternative, 'summary', 'Compare the most likely exact-score combination');
+    const modal = prediction.modal_combination;
+    add(alternative, 'p', modal.scores.map(score).join(' · '));
+    add(alternative, 'p', modal.expected_points.toFixed(2) + ' expected points · ' +
+      percent(modal.probability_13_plus) + ' chance of 13+ · ' +
+      rarePercent(modal.probability_all_exact) + ' chance of all six exact scores');
     if (evaluation) metric(metrics, 'Actual points', evaluation.points);
     add(container, 'p', prediction.trials.toLocaleString() + ' simulations · No-goal probability ' +
         percent(prediction.golden_goal.no_goal));
   } else {
+    add(container, 'p', 'Insufficient data for this forecast.', 'status');
     add(container, 'p', row.missing_research.length ?
       'Model prediction pending complete pre-deadline evidence.' : 'Model prediction pending a frozen evidence snapshot.');
+  }
+  if (row.quality_flags.length && round.official.confirmed_at) {
+    const flags = add(container, 'details', '');
+    add(flags, 'summary', 'Research coverage and freshness');
+    const list = add(flags, 'ul', '');
+    row.quality_flags.forEach(flag => add(list, 'li', flag));
   }
   if (round.golden_goal) {
     const goal = round.golden_goal;
@@ -75,6 +106,9 @@ function showRound(row, model = 'xg_market') {
     const card = add(container, 'article', '');
     add(card, 'h3', fixture.home + ' vs ' + fixture.away);
     add(card, 'p', 'Kickoff · ' + date(fixture.kickoff));
+    if (fixture.kickoff_source) source(card, 'Kickoff source', {
+      url: fixture.kickoff_source, available_at: round.official.available_at, note: 'Schedule cross-check'
+    });
     const pick = prediction?.fixtures[index];
     if (pick) {
       add(card, 'p', 'Prediction ' + score(pick.score) + ' · Exact chance ' + percent(pick.exact_probability));
@@ -94,7 +128,7 @@ function showRound(row, model = 'xg_market') {
       }
     }
     const missing = row.missing_research.find(entry => entry.fixture === fixture.home + ' vs ' + fixture.away);
-    if (model === 'xg_market' && missing) add(card, 'p', 'Missing evidence · ' + missing.missing.join(', '));
+    if (missing) add(card, 'p', 'Missing evidence · ' + missing.missing.join(', '));
     if (model === 'venue_goals' && fixture.venue_history) {
       const details = add(card, 'details', '');
       add(details, 'summary', 'Five previous results per venue');
@@ -104,12 +138,35 @@ function showRound(row, model = 'xg_market') {
         for (const match of matches) source(add(list, 'li', ''), score(match.score) + ' vs ' + match.opponent, match);
       }
     }
+    if (fixture.stats) {
+      const details = add(card, 'details', '');
+      add(details, 'summary', 'Form and opposition evidence');
+      for (const record of fixture.stats.sources ?? [fixture.stats]) {
+        source(details, record.provider, record);
+      }
+      for (const side of ['home', 'away']) {
+        const team = fixture.stats[side];
+        add(details, 'h4', fixture[side]);
+        for (const [label, form] of [['Recent games', team.recent], ['Relevant venue', team.venue]]) {
+          add(details, 'p', form.matches ? label + ' · ' + form.matches + ' matches · ' +
+            [form.won, form.drawn, form.lost].join('/') + ' W/D/L · ' + form.goals_for + ' scored · ' +
+            form.goals_against + ' conceded · ' + form.clean_sheets + ' clean sheets' : label + ' · Unavailable');
+        }
+        if (team.opposition_ppg !== null) add(details, 'p', 'Opponents averaged ' +
+          team.opposition_ppg.toFixed(2) + ' points per game in the source competition.');
+      }
+    }
     if (fixture.research) {
       const details = add(card, 'details', '');
       add(details, 'summary', 'Research evidence');
       const list = add(details, 'ul', '');
       for (const [category, record] of Object.entries(fixture.research)) {
-        source(add(list, 'li', ''), category.replaceAll('_', ' '), record);
+        const entry = add(list, 'li', '');
+        source(entry, category.replaceAll('_', ' '), record);
+        if (category === 'xg' || category === 'xga') {
+          add(entry, 'p', 'Per match · Home ' + record.home + ' · Away ' + record.away);
+        }
+        if (category === 'odds') add(entry, 'p', 'Home / draw / away · ' + record.decimal.join(' / '));
       }
     }
   });
@@ -146,6 +203,7 @@ async function load() {
     add(panel, 'h4', modelNames[name]);
     const stats = add(panel, 'div', '', 'metrics');
     metric(stats, 'Historical rounds', summary.rounds);
+    metric(stats, 'Average points', summary.mean_points.toFixed(2));
     metric(stats, 'Exact-score accuracy', percent(summary.exact_score_accuracy));
     metric(stats, 'Mean forecast for 13+', percent(summary.mean_probability_13_plus));
     metric(stats, 'Observed 13+ hit rate', percent(summary.hit_rate_13_plus));
@@ -162,6 +220,8 @@ async function load() {
   for (const row of data.rounds) add(select, 'option', row.round.id);
   select.disabled = !data.rounds.length;
   select.addEventListener('change', () => showRound(data.rounds[select.selectedIndex]));
-  showRound(data.rounds[0]);
+  const active = data.rounds.findIndex(row => new Date(row.round.deadline) > new Date());
+  select.selectedIndex = active >= 0 ? active : data.rounds.length - 1;
+  showRound(data.rounds[select.selectedIndex]);
 }
 load().catch(() => { byId('round-content').textContent = 'Could not load the dashboard report.'; });
