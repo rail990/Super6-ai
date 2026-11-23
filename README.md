@@ -61,7 +61,7 @@ python -m super6.import_round /tmp/round-with-venue-history.json --replace
 - The main model fits independent Poisson goal rates to venue xG/xGA and normalizes the bookmaker margin out of 1X2 odds. The other research categories provide review context. A round needs a matching frozen snapshot and all ten categories for all six fixtures.
 - The fixed Poisson benchmark uses rates 1.5 at home and 1.1 away. The venue-goals benchmark pools goals scored and opponent goals conceded, shrinking toward those fixed rates by two prior matches. It does not adjust for changes in division, opponent strength or squad turnover.
 - All methods select scores for expected Super 6 points using the 5/2/0 scoring rule. The report uses exact convolution for the model's 13+ probability and retains the 100,000-trial estimate as a check. These probabilities assume independent fixtures. Golden Goal uses the conditional median of the minimum of six constant-rate match clocks.
-- The historical report includes exact-score accuracy, observed 13+ rates, mean forecast probabilities, Brier scores, calibration buckets, and Golden Goal error. The like-for-like comparison uses only rounds with all three methods and confirmed results. The 2020–21 sample has one completed benchmark round and zero completed main-model rounds.
+- The historical report includes exact-score accuracy, observed 13+ rates, mean forecast probabilities, Brier scores, calibration buckets, and Golden Goal error. The like-for-like comparison uses only rounds with all three methods and confirmed results. The archive has two completed benchmark rounds and zero completed main-model rounds.
 - No documented public official Super 6 API was verified. Round and deadline collection still needs a human reviewer. [Hudl StatsBomb Open Data](https://github.com/hudl/open-data) covers selected competitions and seasons. Complete point-in-time xG for every Super 6 fixture remains unverified. [The Odds API](https://the-odds-api.com/liveapi/guides/v4/#historical-odds) requires a paid plan for timestamped historical snapshots. A bookmaker snapshot captured before entry closes can be used for an upcoming round where terms permit. Historical closing odds cannot substitute for deadline odds on staggered slates.
 
 ## Free-data workflow and Round 18
@@ -93,4 +93,33 @@ python -m super6.report
 
 Pass extra capture paths from the same provider for a mixed slate. The research window uses up to six matches per team and reports W/D/L, goals, clean sheets, matching-venue splits, and opponent points per game in the captured competition. Empty samples are flagged and cross-competition PPG is descriptive. Forecasts use a recent-goals Poisson model when each side has at least three recent results and its latest result is under 45 days old at the cutoff. Matching-venue observations get an extra weight and six prior observations shrink the estimated rates toward 1.5 and 1.1. Validated xG/xGA can be used on this path when both are fresh and part of a frozen evidence snapshot. The goals-only estimate is **provisional**, including Round 18's four Champions League games per team. Outcomes and probability calibration are unverified for this model.
 
-The dashboard compares the expected-points six-pick combination with the most likely exact-score combination and displays the independent probability of all six exact scores. The schedule-aware Golden Goal calculation uses only matches active at each elapsed time. The dashboard also shows the lowest-match-clock estimate across all six when it differs. The historical Golden Goal metric compares match-clock minutes. The archive preserves the Round 17 baseline and the one earlier verified historical slate. Round 18 will only enter backtesting once all six results have been recorded with final evidence.
+The dashboard compares the expected-points six-pick combination with the most likely exact-score combination and displays the independent probability of all six exact scores. The schedule-aware Golden Goal calculation uses only matches active at each elapsed time. The dashboard also shows the lowest-match-clock estimate across all six when it differs. The historical Golden Goal metric compares match-clock minutes. The archive preserves the Round 17 baseline and the two verified historical slates. Round 18 can enter a compatible historical cohort when its final results and the evidence required by that protocol are available.
+
+## Stage 5 historical strategy backtest
+
+Run the reproducible historical study independently or build the performance dashboard at the same cutoff.
+
+```sh
+python -m super6.backtest --as-of 2026-11-23T00:00:00Z
+python -m super6.report --backtest-as-of 2026-11-23T00:00:00Z
+```
+
+The archive contains two complete **real historical reconstructions** for the venue-results model. Both have a dated official Sky slate and entry deadline, six final Sky results, and five earlier same-venue league scores per side. Those scores are reconstructed from match dates and assigned the next local midnight as a conservative availability bound. The archive records the source URL and file digest for each input. This establishes which match facts could be known by the cutoff. It does not recreate an archived provider response or prove that anyone submitted the model's picks at the time. Later odds, xG and team news are excluded. The benchmark forecasts are also retrospective. The full xG-and-market model has zero complete historical rounds. Round 17 stays outside the study because its official slate and season are unconfirmed. The live Round 18 record remains unchanged.
+
+- [2020–21 Round 1 preview and deadline](https://www.skysports.com/football/news/12040/12068960/super-6-lb1m-preview-one-day-to-go)
+- [2021–22 Round 1 slate and deadline](https://www.skysports.com/football/news/12371699/super-6-championship-opening-day-lb1m-up-for-grabs-on-saturday) · [Final results](https://www.skysports.com/football/news/12375402/championship-highlights-and-round-up-hull-blackburn-luton-win)
+- [Football-Data 2020–21 Championship](https://www.football-data.co.uk/mmz4281/2021/E1.csv) · [League One](https://www.football-data.co.uk/mmz4281/2021/E2.csv). These free files provide the new round's earlier matches, including the promoted sides. Recreate the venue-history rows with `super6.venue`, the linked files and the checked-in aliases. The importer reads score columns only. General schedules and tip sites cannot establish the Sky slate. Historical odds without a proven pre-deadline time are outside the study.
+
+The study sorts by entry deadline and excludes rounds without six published final results, dated Sky deadline evidence or sufficient prior venue history. Correct-result accuracy includes exact scores. It convolves the six independent score distributions under 5/2/0 scoring. For the 13+ objective, the strongest exact score within each result category dominates all other scores of that category. Searching the 729 combinations gives an exact optimum under the model. The two benchmarks are a fixed-rate Poisson forecast and an always-1–1 policy. The draw policy's probability is evaluated with the same venue model as the three strategies. Calibration bands show sample sizes, mean probability and observed frequency. No production recalibration is fitted.
+
+The Dixon–Coles experiment fits only the low-score dependence parameter by likelihood on prior eligible rounds whose six results were published strictly before the held-out round's deadline. Rates stay fixed. It searches a predeclared grid from −0.120 to +0.120 and compares out-of-sample exact-score log loss, points and 13+ Brier score with the original distribution on the same held-out rounds. A fit at the grid cap and just one held-out round make this exploratory. The live forecast does not use the fitted adjustment.
+
+| Policy | Average points | Exact-score accuracy | Correct-result accuracy | Mean 13+ forecast | Observed 13+ |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Most likely exact scores | 2.5 | 8.3% | 8.3% | 7.2% | 0/2 |
+| Max expected points | 6.5 | 8.3% | 41.7% | 12.0% | 0/2 |
+| Max chance of 13+ | 6.5 | 8.3% | 41.7% | 12.0% | 0/2 |
+| Fixed-rate Poisson | 6.5 | 8.3% | 41.7% | 11.3% | 0/2 |
+| Always 1–1 | 7.5 | 25.0% | 25.0% | 3.6% | 1/2 |
+
+These small-sample measurements do not establish a superior strategy. The checked-in historical rounds are real. Simulated probabilities, fabricated unit-test cases and the synthetic browser fixture do not add rounds to the performance sample.

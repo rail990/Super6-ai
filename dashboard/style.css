@@ -38,3 +38,8 @@ button:disabled { opacity: .55; }
 .confirm { margin: 1rem 0; }
 .status { color: #f8d595; }
 footer { color: #bbcad0; }
+
+.historical-card { border: 1px solid #35494e; border-radius: .5rem; padding: .75rem; margin-bottom: .6rem; }
+.historical-card summary { min-height: 44px; align-content: center; overflow-wrap: anywhere; }
+.historical-card[open] > summary { margin-bottom: .6rem; }
+.historical-card h4 { margin-bottom: .5rem; }

@@ -172,6 +172,60 @@ function showRound(row, model = row?.recommended_model ?? 'xg_market') {
   });
 }
 
+function showHistoricalStudy(study) {
+  const root = byId('strategy-history');
+  add(root, 'h3', 'Historical strategy backtest');
+  add(root, 'p', study.rounds.length + ' complete historical rounds · Reconstructed from pre-deadline venue results');
+  if (study.rounds.length < 20) {
+    add(root, 'p', 'Small sample. These results are insufficient to establish calibration or a winning strategy.', 'status');
+  }
+  for (const [key, summary] of Object.entries(study.summary)) {
+    if (!summary.rounds) continue;
+    const panel = add(root, 'details', '', 'historical-card');
+    add(panel, 'summary', study.labels[key] + ' · ' + summary.average_points.toFixed(2) + ' average points');
+    const metrics = add(panel, 'div', '', 'metrics');
+    metric(metrics, 'Exact-score accuracy', percent(summary.exact_score_accuracy));
+    metric(metrics, 'Correct-result accuracy', percent(summary.correct_result_accuracy));
+    metric(metrics, '13+ forecast vs observed', percent(summary.predicted_13_plus) + ' / ' +
+      percent(summary.observed_13_plus));
+    metric(metrics, '13+ Brier score', summary.brier_13_plus.toFixed(3));
+    const bins = add(panel, 'ul', '');
+    for (const bin of summary.calibration) {
+      add(bins, 'li', percent(bin.lower) + '–' + percent(bin.upper) + ' forecast band · ' +
+        bin.rounds + ' rounds · ' + percent(bin.predicted) + ' forecast · ' + percent(bin.observed) + ' observed');
+    }
+  }
+  for (const { round, strategies } of study.rounds) {
+    const panel = add(root, 'details', '', 'historical-card');
+    add(panel, 'summary', round.id + ' · Historical results');
+    source(panel, 'Official Sky entry deadline · ' + date(round.deadline), round.deadline_evidence);
+    for (const [key, entry] of Object.entries(strategies)) {
+      add(panel, 'h4', study.labels[key] + ' · ' + entry.points + ' actual points');
+      const list = add(panel, 'ul', '');
+      round.fixtures.forEach((fixture, index) => {
+        add(list, 'li', fixture.home + ' vs ' + fixture.away + ' · Pick ' +
+          score(entry.picks[index]) + ' · Actual ' + score(fixture.result.score));
+      });
+    }
+  }
+  if (study.excluded.length) {
+    const excluded = add(root, 'details', '', 'historical-card');
+    add(excluded, 'summary', 'Excluded rounds');
+    const list = add(excluded, 'ul', '');
+    study.excluded.forEach(entry => add(list, 'li', entry.round + ' · ' + entry.reason));
+  }
+  if (study.dixon_coles.length) {
+    const panel = add(root, 'details', '', 'historical-card');
+    add(panel, 'summary', 'Dixon–Coles experiment · ' + study.dixon_coles.length + (study.dixon_coles.length === 1 ? ' held-out round' : ' held-out rounds'));
+    for (const fold of study.dixon_coles) {
+      add(panel, 'p', fold.round + ' · Fit on ' + fold.training_matches + ' earlier matches · ' +
+        'ρ ' + fold.rho.toFixed(3) + (fold.grid_boundary ? ' (grid boundary)' : ''));
+      add(panel, 'p', 'Exact-score log loss · Poisson ' + fold.original_log_loss.toFixed(3) +
+        ' · Dixon–Coles ' + fold.adjusted_log_loss.toFixed(3));
+    }
+  }
+}
+
 async function load() {
   const response = await fetch('report.json');
   if (!response.ok) throw new Error('Could not load report');
@@ -194,6 +248,7 @@ async function load() {
   }
   byId('evaluation-status').textContent = base.source + (backtest.rounds ? '.' :
     ' · A backtest needs complete pre-deadline research and all six verified results.');
+  showHistoricalStudy(data.strategy_backtest);
   const matched = data.matched_backtest.xg_market.rounds > 0;
   const comparison = byId('comparison');
   add(comparison, 'h3', matched ? 'Like-for-like backtest' : 'Historical benchmark runs');

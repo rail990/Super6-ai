@@ -58,6 +58,14 @@ async function checkDashboard(browser, device, report) {
     await page.getByText('Chance of 13+ points').waitFor();
     await page.getByText('100,000 simulations', { exact: false }).waitFor();
     await page.getByText('Research evidence').first().click();
+    const history = page.locator('#strategy-history');
+    await history.getByText(/2 complete historical rounds/).waitFor();
+    await history.getByText('Maximum chance of 13+ · 6.50 average points', { exact: true }).click();
+    await history.getByText('13+ forecast vs observed').waitFor();
+    await history.getByText('2021–22 Round 1 · Historical results', { exact: true }).click();
+    await history.getByText('Always 1–1 · 15 actual points', { exact: true }).waitFor();
+    await history.getByText('Dixon–Coles experiment · 1 held-out round', { exact: true }).click();
+    await history.getByText(/Dixon–Coles 2.928/).waitFor();
     const round = page.locator('#round-content');
     assert.equal(await round.locator('article').count(), 6);
     assert.equal(await round.locator('a').filter({ hasText: /^form$/ }).count(), 5);

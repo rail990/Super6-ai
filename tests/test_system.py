@@ -214,7 +214,7 @@ class ModelTests(unittest.TestCase):
         self.assertEqual(baseline['exact_scores'] * 5 + baseline['additional_correct_results'] * 2, 7)
         result = report(rounds, baseline)
         self.assertEqual(result['rounds'][0]['derived_goal'], 13)
-        self.assertEqual(result['historical']['venue_goals']['rounds'], 1)
+        self.assertEqual(result['historical']['venue_goals']['rounds'], 2)
         self.assertEqual(result['historical']['venue_goals']['golden_goal_minute_rounds'], 1)
         self.assertEqual(result['matched_backtest']['xg_market']['rounds'], 0)
 

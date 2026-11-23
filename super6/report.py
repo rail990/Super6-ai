@@ -3,7 +3,9 @@ import argparse
 import json
 import shutil
 from pathlib import Path
+from datetime import datetime, timezone
 
+from .backtest import study
 from .capture import frozen, missing, prematch
 from .evidence import ready, timestamp, validate
 from .model import forecast, form_rates, points, predict, venue_rates
@@ -96,7 +98,7 @@ def quality(item):
     return flags
 
 
-def report(rounds, baseline, snapshots=SNAPSHOTS):
+def report(rounds, baseline, snapshots=SNAPSHOTS, as_of=None):
     rows = []
     scored = {name: [] for name in (MODEL, FIXED, VENUE, FORM)}
     comparison_models = (MODEL, FIXED, VENUE)
@@ -152,6 +154,7 @@ def report(rounds, baseline, snapshots=SNAPSHOTS):
             'derived_goal': first_goal(item)[0] if 'golden_goal' not in item else None,
         })
     return {'baseline': baseline, 'rounds': rows, 'backtest': summarize(scored[MODEL]),
+            'strategy_backtest': study(rounds, as_of or datetime.now(timezone.utc)),
             'historical': {name: summarize(entries) for name, entries in scored.items()},
             'matched_backtest': {name: summarize(entries) for name, entries in paired.items()}}
 
@@ -161,9 +164,10 @@ def main():
     parser.add_argument('--rounds', type=Path, default=Path('data/rounds.json'))
     parser.add_argument('--output', type=Path, default=Path('dist'))
     parser.add_argument('--snapshots', type=Path, default=SNAPSHOTS)
+    parser.add_argument('--backtest-as-of', type=timestamp, help='Optional ISO 8601 evaluation cutoff')
     args = parser.parse_args()
     data = report(json.loads(args.rounds.read_text()), json.loads(Path('data/baseline.json').read_text()),
-                  args.snapshots)
+                  args.snapshots, args.backtest_as_of)
     args.output.mkdir(parents=True, exist_ok=True)
     for path in Path('dashboard').iterdir():
         shutil.copy2(path, args.output)
