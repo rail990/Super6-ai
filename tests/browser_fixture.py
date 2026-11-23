@@ -5,6 +5,7 @@ from pathlib import Path
 
 from test_system import example
 
+from super6.archive import candidate_index, load_rounds
 from super6.capture import freeze
 from super6.report import report
 
@@ -19,7 +20,8 @@ for fixture in item['fixtures']:
     }
     fixture['result']['first_goal'] = dict(fixture['result'], minute=8, url=item['official']['url'])
 freeze(item, output / 'snapshots')
-archive = json.loads(Path('data/rounds.json').read_text())
+archive = load_rounds()
 baseline = json.loads(Path('data/baseline.json').read_text())
 report_data = report(archive + [item], baseline, output / 'snapshots')
+report_data['archive_candidates'] = candidate_index()
 (output / 'report.json').write_text(json.dumps(report_data))

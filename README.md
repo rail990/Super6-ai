@@ -123,3 +123,39 @@ The Dixon–Coles experiment fits only the low-score dependence parameter by lik
 | Always 1–1 | 7.5 | 25.0% | 25.0% | 3.6% | 1/2 |
 
 These small-sample measurements do not establish a superior strategy. The checked-in historical rounds are real. Simulated probabilities, fabricated unit-test cases and the synthetic browser fixture do not add rounds to the performance sample.
+
+## Stage 6 historical archive expansion
+
+The goals-only study now includes **20 complete historical rounds**, with **18 additions**. The new rows cover 2018–19, 2019–20, 2020–21, 2022–23, 2023–24 and 2024–25. The two earlier records also contribute 2021–22. The main archive and frozen Round 18 record remain intact.
+
+- [Reviewed Sky slates and source metadata](data/archive-review.json) contains links, publisher timestamps and hashes of the retrieved evidence. Match times come from Football-Data where available and from separately sourced kickoff records otherwise.
+- [Compiled archive](data/archive-rounds.json) contains the six selected fixtures, verified cutoff, final scores, and five earlier same-venue league results per side. Football-Data CSVs have retrieval times and checksums in the review manifest. Their result availability is bounded by the next UK midnight. The goals-only model reads score data and never reads the odds or xG columns.
+- [Incomplete leads](data/archive-candidates.json) records 82 listings from the [independent results index](https://super6predictor.co.uk/scores-archive) and 13 partial primary-source leads. These entries cannot enter the backtest. The official [Super 6 results route](https://super6.skysports.com/schedule) redirected to sign-in during review.
+
+### Source quality
+
+| Class | Rounds | Evidence |
+| --- | ---: | --- |
+| Sky advertised deadline | 9 | Sky named the slate and gave the round deadline in dated evidence. |
+| Sky first-kickoff rule | 8 | Dated Sky slate, [Sky’s published first-kickoff rule](https://www.skysports.com/football/news/11095/11158298/250k-jackpot-landed-in-super-6), and verified match kickoff times. |
+| Sky revised preview | 3 | Sky’s original publisher timestamp precedes the cutoff. The captured preview explicitly states the historical slate and deadline, and its publisher modification time is later. The exact text available before the deadline cannot be reproduced. Form uses independently sourced earlier scores. |
+| Incomplete archive lead | 95 | One or more required facts remain unverified. |
+
+To regenerate the compiled archive, place the published [Football-Data score files](https://www.football-data.co.uk/englandm/index.php) under a local directory using the season and division keys in the review manifest, for example `1819/E0.csv`. Regeneration checks the recorded hashes and fails when an upstream file has changed. The public article captures and bulk football CSVs are kept out of the repository. The build itself needs no network access.
+
+```sh
+python -m super6.archive /path/to/football-data-files > /tmp/archive-rounds.json
+cmp data/archive-rounds.json /tmp/archive-rounds.json
+python -m super6.backtest --as-of 2026-11-23T00:00:00Z
+python -m super6.backtest --as-of 2026-11-23T00:00:00Z --exclude-revised
+```
+
+| Strategy | Average points | Exact-score accuracy | Correct-result accuracy | Mean 13+ forecast | Observed 13+ |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Most likely exact scores | 5.80 | 10.0% | 33.3% | 9.1% | 1/20 |
+| Max expected points | 6.80 | 8.3% | 44.2% | 14.5% | 2/20 |
+| Max chance of 13+ | 6.80 | 8.3% | 44.2% | 14.5% | 2/20 |
+| Fixed-rate Poisson | 7.10 | 10.0% | 44.2% | 11.3% | 2/20 |
+| Always 1–1 | 3.95 | 9.2% | 19.2% | 3.4% | 1/20 |
+
+Excluding the three revised previews leaves 17 rounds. The venue strategies average 6.76 points and fixed Poisson averages 7.65 in that subset. Across 19 chronological Dixon–Coles holdouts, mean exact-score log loss changes from 3.120 to 3.114, and mean scored points stay at 6.68. No production parameter changes follow from these results. The sample has zero complete historical rounds for the xG-and-market model.

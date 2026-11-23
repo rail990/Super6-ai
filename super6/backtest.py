@@ -5,6 +5,7 @@ from itertools import product
 from math import log, prod
 from pathlib import Path
 
+from .archive import QUALITY_LABELS, load_rounds, verified_result
 from .evidence import evidence, timestamp, validate
 from .model import distribution, exact_points, outcome, points, result_probabilities, venue_rates
 
@@ -125,7 +126,7 @@ def eligible(item, as_of):
         raise ValueError('Deadline source must predate the official deadline')
     for fixture in item['fixtures']:
         result = fixture.get('result')
-        if not result or evidence(result, official=True) > as_of:
+        if not result or verified_result(result) > as_of:
             return 'All six dated final results are required'
         if 'venue_history' not in fixture:
             return 'Pre-deadline venue results missing for one or more fixtures'
@@ -184,8 +185,10 @@ def study(rounds, as_of):
                 })
         prior.append((max(timestamp(f['result']['available_at']) for f in fixtures),
                       list(zip(rates, actual, strict=True))))
-        rows.append({'round': item, 'strategies': results})
+        rows.append({'round': item, 'strategies': results,
+                     'source_quality': item.get('source_quality', 'sky_advertised')})
     return {
+        'quality_labels': QUALITY_LABELS,
         'protocol': 'venue-results-reconstruction-v1', 'as_of': as_of.isoformat(),
         'rounds': rows, 'excluded': excluded, 'labels': LABELS,
         'summary': {name: summarize(entries) for name, entries in cohorts.items()},
@@ -197,8 +200,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--rounds', type=Path, default=Path('data/rounds.json'))
     parser.add_argument('--as-of', required=True, help='ISO 8601 evaluation cutoff with offset')
+    parser.add_argument('--exclude-revised', action='store_true', help='Exclude Sky previews revised after cutoff')
     args = parser.parse_args()
-    print(json.dumps(study(json.loads(args.rounds.read_text()), timestamp(args.as_of)),
+    rounds = load_rounds(args.rounds)
+    if args.exclude_revised:
+        rounds = [r for r in rounds if r.get('source_quality') != 'sky_revised_preview']
+    print(json.dumps(study(rounds, timestamp(args.as_of)),
                      indent=2, ensure_ascii=False, allow_nan=False))
 
 

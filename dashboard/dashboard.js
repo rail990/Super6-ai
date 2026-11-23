@@ -172,11 +172,22 @@ function showRound(row, model = row?.recommended_model ?? 'xg_market') {
   });
 }
 
-function showHistoricalStudy(study) {
+function showHistoricalStudy(study, candidates = []) {
   const root = byId('strategy-history');
   add(root, 'h3', 'Historical strategy backtest');
   add(root, 'p', study.rounds.length + ' complete historical rounds · Reconstructed from pre-deadline venue results');
-  if (study.rounds.length < 20) {
+  const qualityCounts = new Map();
+  for (const entry of study.rounds) {
+    qualityCounts.set(entry.source_quality, (qualityCounts.get(entry.source_quality) || 0) + 1);
+  }
+  if (qualityCounts.size) {
+    const quality = add(root, 'p', '');
+    quality.textContent = [...qualityCounts].map(([key, count]) => study.quality_labels[key] + ' · ' + count).join(' / ');
+  }
+  if (candidates.length) {
+    add(root, 'p', candidates.length + ' incomplete archive entries are excluded from performance.');
+  }
+  if (study.rounds.length < 50) {
     add(root, 'p', 'Small sample. These results are insufficient to establish calibration or a winning strategy.', 'status');
   }
   for (const [key, summary] of Object.entries(study.summary)) {
@@ -195,10 +206,10 @@ function showHistoricalStudy(study) {
         bin.rounds + ' rounds · ' + percent(bin.predicted) + ' forecast · ' + percent(bin.observed) + ' observed');
     }
   }
-  for (const { round, strategies } of study.rounds) {
+  for (const { round, strategies, source_quality } of study.rounds) {
     const panel = add(root, 'details', '', 'historical-card');
     add(panel, 'summary', round.id + ' · Historical results');
-    source(panel, 'Official Sky entry deadline · ' + date(round.deadline), round.deadline_evidence);
+    source(panel, study.quality_labels[source_quality] + ' · ' + date(round.deadline), round.deadline_evidence);
     for (const [key, entry] of Object.entries(strategies)) {
       add(panel, 'h4', study.labels[key] + ' · ' + entry.points + ' actual points');
       const list = add(panel, 'ul', '');
@@ -248,7 +259,7 @@ async function load() {
   }
   byId('evaluation-status').textContent = base.source + (backtest.rounds ? '.' :
     ' · A backtest needs complete pre-deadline research and all six verified results.');
-  showHistoricalStudy(data.strategy_backtest);
+  showHistoricalStudy(data.strategy_backtest, data.archive_candidates);
   const matched = data.matched_backtest.xg_market.rounds > 0;
   const comparison = byId('comparison');
   add(comparison, 'h3', matched ? 'Like-for-like backtest' : 'Historical benchmark runs');

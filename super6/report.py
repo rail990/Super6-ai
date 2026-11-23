@@ -5,6 +5,7 @@ import shutil
 from pathlib import Path
 from datetime import datetime, timezone
 
+from .archive import ROUNDS, candidate_index, load_rounds
 from .backtest import study
 from .capture import frozen, missing, prematch
 from .evidence import ready, timestamp, validate
@@ -166,13 +167,17 @@ def main():
     parser.add_argument('--snapshots', type=Path, default=SNAPSHOTS)
     parser.add_argument('--backtest-as-of', type=timestamp, help='Optional ISO 8601 evaluation cutoff')
     args = parser.parse_args()
-    data = report(json.loads(args.rounds.read_text()), json.loads(Path('data/baseline.json').read_text()),
+    data = report(load_rounds(args.rounds), json.loads(Path('data/baseline.json').read_text()),
                   args.snapshots, args.backtest_as_of)
+    if args.rounds.resolve() == ROUNDS.resolve():
+        data['archive_candidates'] = candidate_index()
     args.output.mkdir(parents=True, exist_ok=True)
     for path in Path('dashboard').iterdir():
         shutil.copy2(path, args.output)
     (args.output / 'report.json').write_text(json.dumps(data, indent=2, allow_nan=False) + '\n')
-    print(f"Built {len(data['rounds'])} rounds with {data['backtest']['rounds']} scored model backtests")
+    print(f"Built {len(data['rounds'])} rounds, including "
+          f"{len(data['strategy_backtest']['rounds'])} goals-only historical reconstructions. "
+          f"Scored xG-and-market rounds: {data['backtest']['rounds']}.")
 
 
 if __name__ == '__main__':
