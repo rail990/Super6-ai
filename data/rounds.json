@@ -1,0 +1,112 @@
+[
+  {
+    "id": "2020–21 Round 1",
+    "deadline": "2020-09-12T15:00:00+01:00",
+    "deadline_basis": "Earliest scheduled kickoff, cross-checked against match records.",
+    "official": {
+      "url": "https://www.skysports.com/football/news/18871/12061082/super-6-the-gbp1m-jackpot-returns-can-you-imagine",
+      "available_at": "2020-09-01T16:59:00+01:00",
+      "note": "Sky Sports names these six pairings for its September 12 Super 6 round. Individual match reports give the actual scheduled kickoffs."
+    },
+    "fixtures": [
+      {
+        "home": "West Ham United",
+        "away": "Newcastle United",
+        "kickoff": "2020-09-12T20:00:00+01:00",
+        "result": {
+          "score": [
+            0,
+            2
+          ],
+          "url": "https://www.skysports.com/football/news/12070029/west-ham-0-2-newcastle-callum-wilson-and-jeff-hendrick-seal-opening-day-win",
+          "available_at": "2020-09-12T22:16:00+01:00",
+          "note": "Sky Sports match report confirms the full-time score."
+        },
+        "research": {
+          "injuries": {
+            "url": "https://www.skysports.com/football/news/12309/12068676/west-ham-vs-newcastle-preview-team-news-kick-off-channel",
+            "available_at": "2020-09-11T15:37:00+01:00",
+            "note": "Sky Sports reported that David Moyes had no new injury concerns ahead of the opener."
+          }
+        }
+      },
+      {
+        "home": "Crystal Palace",
+        "away": "Southampton",
+        "kickoff": "2020-09-12T15:00:00+01:00",
+        "result": {
+          "score": [
+            1,
+            0
+          ],
+          "url": "https://www.skysports.com/football/news/12069802/crystal-palace-1-0-southampton-wilfried-zaha-gets-hosts-off-to-flying-start",
+          "available_at": "2020-09-12T20:48:00+01:00",
+          "note": "Sky Sports match report confirms the full-time score."
+        },
+        "research": {
+          "injuries": {
+            "url": "https://www.skysports.com/football/news/12309/12068211/crystal-palace-vs-southampton-preview-team-news-kick-off-channel",
+            "available_at": "2020-09-11T13:22:00+01:00",
+            "note": "Eberechi Eze had returned to training after a groin injury and was expected to be included in the Palace squad."
+          }
+        }
+      },
+      {
+        "home": "Bournemouth",
+        "away": "Blackburn Rovers",
+        "kickoff": "2020-09-12T15:00:00+01:00",
+        "result": {
+          "score": [
+            3,
+            2
+          ],
+          "url": "https://www.skysports.com/football/news/12065905/bournemouth-3-2-blackburn-cherries-hold-on-to-edge-five-goal-thriller",
+          "available_at": "2020-09-12T18:34:00+01:00",
+          "note": "Sky Sports match report confirms the full-time score."
+        }
+      },
+      {
+        "home": "Huddersfield Town",
+        "away": "Norwich City",
+        "kickoff": "2020-09-12T15:00:00+01:00",
+        "result": {
+          "score": [
+            0,
+            1
+          ],
+          "url": "https://www.skysports.com/football/huddsfld-vs-norwich/429711",
+          "available_at": "2020-09-12T19:03:00+01:00",
+          "note": "Sky Sports match report confirms the full-time score."
+        }
+      },
+      {
+        "home": "Queens Park Rangers",
+        "away": "Nottingham Forest",
+        "kickoff": "2020-09-12T15:00:00+01:00",
+        "result": {
+          "score": [
+            2,
+            0
+          ],
+          "url": "https://www.skysports.com/football/qpr-vs-n-forest/429714",
+          "available_at": "2020-09-12T19:30:00+01:00",
+          "note": "Sky Sports match report confirms the full-time score."
+        }
+      },
+      {
+        "home": "Derby County",
+        "away": "Reading",
+        "kickoff": "2020-09-12T15:00:00+01:00",
+        "result": {
+          "score": [
+            0,
+            2
+          ],
+          "url": "https://www.skysports.com/football/derby-vs-reading/429710",
+          "available_at": "2020-09-12T18:33:00+01:00",
+          "note": "Sky Sports match report confirms the full-time score."
+        }
+      }
+    ]
+  }
+]
