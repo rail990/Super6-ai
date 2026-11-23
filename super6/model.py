@@ -85,9 +85,12 @@ def predict(round_data, seed=6):
     fixtures = round_data['fixtures']
     if not all(map(ready, fixtures)):
         raise ValueError('Every fixture needs pre-deadline research')
+    return forecast([fit(fixture) for fixture in fixtures], seed)
+
+
+def forecast(inputs, seed=6):
     rates, predictions, weights = [], [], []
-    for fixture in fixtures:
-        pair, market = fit(fixture)
+    for pair, market in inputs:
         rates.append(pair)
         scores = distribution(*pair)
         outcomes = result_probabilities(scores)
@@ -107,6 +110,32 @@ def predict(round_data, seed=6):
             draw = rng.random()
             total += 5 if draw < exact else 2 if draw < correct else 0
         counts[total] += 1
+    pmf = exact_points(weights)
     return {'fixtures': predictions, 'trials': TRIALS, 'seed': seed, 'points_counts': counts,
             'expected_points': sum(i * n for i, n in enumerate(counts)) / TRIALS,
-            'probability_13_plus': sum(counts[13:]) / TRIALS, 'golden_goal': golden_goal(rates)}
+            'probability_13_plus': sum(pmf[13:]),
+            'simulated_probability_13_plus': sum(counts[13:]) / TRIALS,
+            'golden_goal': golden_goal(rates)}
+
+
+def exact_points(weights):
+    pmf = [1.0]
+    for exact, correct in weights:
+        updated = [0.0] * (len(pmf) + 5)
+        for score, mass in enumerate(pmf):
+            updated[score] += mass * (1 - correct)
+            updated[score + 2] += mass * (correct - exact)
+            updated[score + 5] += mass * exact
+        pmf = updated
+    return pmf
+
+
+def venue_rates(fixture):
+    home, away = (fixture['venue_history'][side] for side in ('home', 'away'))
+    # Pool goals for with the opponent's goals against. Two prior match equivalents shrink small samples.
+    return tuple(
+        (sum(match['score'][0] for match in own)
+         + sum(match['score'][1] for match in opponent) + 2 * prior)
+        / (len(own) + len(opponent) + 2)
+        for own, opponent, prior in ((home, away, 1.5), (away, home, 1.1))
+    )

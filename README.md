@@ -1,10 +1,10 @@
 # Super6-ai
 
-Research and evaluation for Sky Sports Super 6. Round 17 is the user-provided baseline of **7 points** from one exact score and one additional correct result. The baseline has no confirmed season or fixture list.
+Research and evaluation for Sky Sports Super 6. Round 17 is the user-provided baseline of **7 points**, with one exact score and one additional correct result. Its season and fixtures remain unconfirmed.
 
 ## Run locally
 
-Python 3.11 or later is required. There are no third-party Python dependencies.
+Python 3.11 or later. The research and report commands use the standard library.
 
 ```sh
 python -m unittest discover -s tests -v
@@ -12,47 +12,54 @@ python -m super6.report
 python -m http.server 8000 --bind 127.0.0.1 --directory dist
 ```
 
-Open http://127.0.0.1:8000. The static dashboard loads its data from `dist/report.json`. Rebuild whenever the archive changes. Use `python -m super6.report --help` for alternative input and output paths.
+Open http://127.0.0.1:8000. Rebuild after changing the archive. Report output and the snapshot directory can be overridden with `--output` and `--snapshots`. For the 360 px browser regression test, install Playwright with `npm install --no-save --ignore-scripts playwright@1.62.1`, then run `npx playwright install chromium` and `node tests/dashboard.cjs`. The browser test uses an isolated synthetic round beside the sourced historical round.
 
-## Add a round
+## Capture an upcoming round
 
-1. Find an official Super 6 round page or a Sky Sports article explicitly naming all six selections. Cross-check team order, kickoff times, and the round entry deadline. Record the deadline's basis if it is inferred from the earliest scheduled kickoff.
-2. Review the evidence for each fixture. Store source URLs, publication or snapshot timestamps with offsets, and concise notes. Use archived or dated sources for historical work. Live odds, dynamic form tables, and retrospective reports can change or include later information.
-3. Add full-time results after the matches. Record an official Golden Goal when available.
-4. Save the reviewed JSON and import it with `python -m super6.import_round /path/to/reviewed-round.json`. Use `--replace` when adding evidence to an existing round. Keep IDs unique across seasons.
+1. Open the official Super 6 round page or Sky Sports announcement before entries close. Copy the season and round identity, six official pairings and advertised entry deadline. Cross-check kickoff times and preserve the source. Record the deadline and its source in `deadline_basis`.
+2. Use the [round archive](data/rounds.json) as the field reference. Prepare a single round object with `id`, `deadline`, `deadline_basis`, `official`, and six `fixtures` with `home`, `away`, `kickoff` and optional `research`. Use ISO 8601 timestamps with UTC offsets.
+3. For each evidence item record `url`, `available_at`, `note`, `captured_at` and `source_sha256`. Retain the original source bytes privately under `evidence-local/<sha256>`. Use a timestamped provider export, dated article or readable round capture. Mark the capture time when it is saved. An historical reconstruction captured after the deadline also needs a separate `archive_url` and `archived_at` proving the exact source state existed before the deadline. If a value is derived, record the covered matches, provider, calculation window and cutoff.
+4. Check coverage, freeze the inputs and import. The freeze command compares each retained source file against its hash. The report requires the matching frozen pre-match record before using the xG-and-market model. Keep snapshots in version control where permitted. Keep raw sources in a private evidence store if provider terms restrict redistribution.
 
-The import checks structure, official source domains and timing. Reviewing the linked source and confirming that it supports each value is a manual step. The checked-in [round archive](data/rounds.json) shows actual input records. The 2020–21 Round 1 slate and all six results are sourced to Sky Sports. The research entered for that round is partial.
+```sh
+python -m super6.capture /path/to/round.json
+python -m super6.capture /path/to/round.json --freeze --evidence-directory evidence-local
+python -m super6.import_round /path/to/round.json
+python -m super6.report
+```
 
-### Round record
+Reviewers are responsible for confirming that each captured source actually supports the value, publication time and official slate. Hashes protect snapshot integrity after capture. A hash alone cannot establish what a publisher made public at a particular time. A freeze contains only pre-match inputs. Adding results leaves the existing pre-match snapshot valid.
 
-| Field | Format |
+### Evidence checklist
+
+| Research key | Capture and suggested source |
 | --- | --- |
-| `id` | Unique season and round label |
-| `deadline` | ISO 8601 timestamp with UTC offset |
-| `official` | Evidence that identifies the official six fixtures |
-| `fixtures` | Exactly six objects, each with `home`, `away`, `kickoff` and optional `research` and `result` |
-| `golden_goal` | Optional official evidence with `minute` (1–90, or null if Sky records no goal) |
+| `form`, `venue_form` | Recent completed matches and home/away splits from league results or a dated data export. Document the competition and window. |
+| `xg`, `xga` | Venue-specific per-match expected goals for and against. Add numeric `home` and `away` fields to each. Use one provider and consistent windows for the fixture. |
+| `injuries`, `suspensions`, `team_news` | Club press conferences, club previews, competition disciplinary notices or dated Sky Sports team news. Distinguish confirmed absences from doubtful players. Leave unsupported entries absent. |
+| `opposition`, `rest` | Opposition strength from a pre-deadline rating or table and rest calculated from time since the previous competitive match. |
+| `odds` | Timestamped pre-deadline 1X2 prices. Record bookmaker and `decimal` in home/draw/away order. |
 
-An evidence object has `url` (HTTPS), `available_at` (timezone-aware) and `note`. A result adds `score`, a two-item array in home/away order. For historic research, use the proven point at which the stated values were available. If a value is derived, document its input matches, window, and cutoff in the note and cite a snapshot or timestamped data that establishes those inputs.
+A result has final status, full-time `score` in home/away order, and a dated source. Add it with `--replace`. An optional `first_goal` per result has the first goal minute and Sky match-report evidence. Prefer an official round-level `golden_goal` when available. If all six results include enough goal timing evidence, the report can use the minimum elapsed match minute from the match reports as a labeled proxy. Stoppage time beyond minute 90 is outside this model. Keep results without reliable timing eligible for score evaluation and out of the Golden Goal evaluation.
 
-| Research key | Capture |
-| --- | --- |
-| `form` | Recent results, competition and window |
-| `venue_form` | Home record for the home side and away record for the away side |
-| `xg`, `xga` | Home and away teams' venue-specific per-match expected goals for and against, respectively. Each record adds numeric `home` and `away` fields. Record the provider and window. |
-| `injuries`, `suspensions` | Sourced availability and uncertainty for each side |
-| `opposition` | Strength of the teams faced over the form window, measured using a rating or standings snapshot available at the cutoff |
-| `rest` | Time since each team's previous competitive match, with source and calculation |
-| `odds` | A timestamped bookmaker 1X2 snapshot. Add `decimal` in home/draw/away order and record the bookmaker. |
+## Benchmark with genuine match results
 
-Evidence after the round deadline or at/after kickoff cannot be used. Incomplete evidence can be stored incrementally. All nine categories must be present for every fixture before the report generates predictions. Leave unverified fields absent. The baseline stays outside model performance.
+The venue benchmark takes the last five finished home or away league matches per team before the round deadline. For dated CSV rows it conservatively treats the result as available at the next midnight in London time. It reads the full-time score fields and ignores every odds column. It records the CSV URL and file hash alongside the selected rows. Review team aliases and competition coverage before reuse.
 
-## Model and backtest
+Download the relevant [Football-Data season files](https://www.football-data.co.uk/englandm/index.php) and run the command below against a single round record. The checked-in archive already contains the resulting records for 2020–21 Round 1.
 
-- The model uses independent Poisson goal counts. It averages each team's venue-specific xG with the opposition's xGA, then adjusts both rates using margin-normalized 1X2 probabilities and a fixed penalty for moving away from the xG prior. The calibration penalty is a modeling choice that has yet to be validated. The other research categories provide review context.
-- Each score pick maximizes expected Super 6 points, giving five points for an exact score and two for an additional correct result. This objective can differ from maximizing the chance of reaching 13 points.
-- The seeded Monte Carlo simulation draws each fixture's 0, 2 or 5-point outcome from its modeled probabilities across 100,000 independent rounds. It returns mean points, the full points distribution and the share at 13 points or above. Match dependencies and parameter uncertainty are outside this model.
-- Golden Goal uses the minimum elapsed match minute among six independent constant-rate goal processes over 90 minutes. The prediction is the conditional median when a goal occurs. The report includes the chance of a goalless round. Stoppage time is outside this approximation.
-- The backtest uses the same fixed model on each round's pre-deadline evidence and scores picks against confirmed full-time results. It reports mean points, the 13+ hit rate and Brier score, and Golden Goal mean absolute error when verified outcomes are present. The included archive currently yields zero scored backtests. Automated tests exercise prediction, simulation and evaluation on isolated synthetic inputs.
+```sh
+python -m super6.venue /path/to/round.json \
+  --source /path/to/E0.csv https://www.football-data.co.uk/mmz4281/1920/E0.csv \
+  --source /path/to/E1.csv https://www.football-data.co.uk/mmz4281/1920/E1.csv \
+  --aliases data/football-data-aliases.json > /tmp/round-with-venue-history.json
+python -m super6.import_round /tmp/round-with-venue-history.json --replace
+```
 
-[Sky Sports round announcement and Golden Goal description](https://www.skysports.com/football/news/18871/12061082/super-6-the-gbp1m-jackpot-returns-can-you-imagine)
+## Backtest and data availability
+
+- The main model fits independent Poisson goal rates to venue xG/xGA and normalizes the bookmaker margin out of 1X2 odds. The other research categories provide review context. A round needs a matching frozen snapshot and all ten categories for all six fixtures.
+- The fixed Poisson benchmark uses rates 1.5 at home and 1.1 away. The venue-goals benchmark pools goals scored and opponent goals conceded, shrinking toward those fixed rates by two prior matches. It does not adjust for changes in division, opponent strength or squad turnover.
+- All methods select scores for expected Super 6 points using the 5/2/0 scoring rule. The report uses exact convolution for the model's 13+ probability and retains the 100,000-trial estimate as a check. These probabilities assume independent fixtures. Golden Goal uses the conditional median of the minimum of six constant-rate match clocks.
+- The historical report includes exact-score accuracy, observed 13+ rates, mean forecast probabilities, Brier scores, calibration buckets, and Golden Goal error. The like-for-like comparison uses only rounds with all three methods and confirmed results. The 2020–21 sample has one completed benchmark round and zero completed main-model rounds.
+- No documented public official Super 6 API was verified. Round and deadline collection still needs a human reviewer. [Hudl StatsBomb Open Data](https://github.com/hudl/open-data) covers selected competitions and seasons. Complete point-in-time xG for every Super 6 fixture remains unverified. [The Odds API](https://the-odds-api.com/liveapi/guides/v4/#historical-odds) requires a paid plan for timestamped historical snapshots. A bookmaker snapshot captured before entry closes can be used for an upcoming round where terms permit. Historical closing odds cannot substitute for deadline odds on staggered slates.

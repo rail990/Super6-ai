@@ -4,61 +4,123 @@ import json
 import shutil
 from pathlib import Path
 
-from .evidence import ready, validate
-from .model import points, predict
+from .capture import frozen, missing, prematch
+from .evidence import ready, timestamp, validate
+from .model import forecast, points, predict, venue_rates
+
+MODEL = 'xg_market'
+FIXED = 'fixed_poisson'
+VENUE = 'venue_goals'
+SNAPSHOTS = Path('data/snapshots')
 
 
-def report(rounds, baseline):
+def first_goal(item):
+    if 'golden_goal' in item:
+        return item['golden_goal']['minute'], True
+    results = [fixture.get('result') for fixture in item['fixtures']]
+    if any(not result or (sum(result['score']) and 'first_goal' not in result) for result in results):
+        return None, False
+    minutes = [result['first_goal']['minute'] for result in results if sum(result['score'])]
+    return min(minutes, default=None), True
+
+
+def evaluate(item, prediction):
+    if not all('result' in fixture for fixture in item['fixtures']):
+        return None
+    values = [points(pick['score'], fixture['result']['score'])
+              for pick, fixture in zip(prediction['fixtures'], item['fixtures'])]
+    actual, observed = first_goal(item)
+    return {
+        'points': sum(values), 'exact': values.count(5), 'result_only': values.count(2),
+        'hit_13_plus': sum(values) >= 13,
+        'golden_goal_error': abs(prediction['golden_goal']['minute'] - actual)
+        if actual is not None else None,
+        'no_goal_actual': actual is None if observed else None,
+    }
+
+
+def mean(values):
+    return sum(values) / len(values)
+
+
+def summarize(scored):
+    if not scored:
+        return {'rounds': 0}
+    errors = [e['golden_goal_error'] for _, e in scored if e['golden_goal_error'] is not None]
+    goal_cases = [(p, e) for p, e in scored if e['no_goal_actual'] is not None]
+    forecast_13 = [p['probability_13_plus'] for p, _ in scored]
+    bins = [[] for _ in range(5)]
+    for probability, (_, evaluation) in zip(forecast_13, scored):
+        bins[min(4, int(probability * 5))].append((probability, evaluation['hit_13_plus']))
+    return {
+        'rounds': len(scored),
+        'mean_points': mean([e['points'] for _, e in scored]),
+        'exact_score_accuracy': mean([e['exact'] / 6 for _, e in scored]),
+        'mean_expected_points': mean([p['expected_points'] for p, _ in scored]),
+        'mean_probability_13_plus': mean(forecast_13),
+        'hit_rate_13_plus': mean([e['hit_13_plus'] for _, e in scored]),
+        'brier_13_plus': mean([(p - e['hit_13_plus'])**2 for p, (_, e) in zip(forecast_13, scored)]),
+        'calibration_13_plus': [
+            {'lower': index / 5, 'upper': (index + 1) / 5, 'rounds': len(entries),
+             'forecast': mean([p for p, _ in entries]), 'observed': mean([hit for _, hit in entries])}
+            for index, entries in enumerate(bins) if entries
+        ],
+        'golden_goal_mae': mean(errors) if errors else None,
+        'golden_goal_minute_rounds': len(errors),
+        'no_goal_brier': mean([(p['golden_goal']['no_goal'] - e['no_goal_actual'])**2
+                               for p, e in goal_cases]) if goal_cases else None,
+    }
+
+
+def report(rounds, baseline, snapshots=SNAPSHOTS):
     rows = []
-    scored = []
+    scored = {name: [] for name in (MODEL, FIXED, VENUE)}
+    paired = {name: [] for name in scored}
     seen = set()
-    for item in rounds:
+    for item in sorted(rounds, key=lambda row: timestamp(row['deadline'])):
         validate(item)
         if item['id'] in seen:
             raise ValueError(f"Duplicate round: {item['id']}")
         seen.add(item['id'])
         fixtures = item['fixtures']
-        prediction = predict(item) if all(map(ready, fixtures)) else None
-        evaluation = None
-        if prediction and all('result' in f for f in fixtures):
-            values = [points(p['score'], f['result']['score'])
-                      for p, f in zip(prediction['fixtures'], fixtures)]
-            actual = item.get('golden_goal', {}).get('minute')
-            evaluation = {
-                'points': sum(values), 'exact': values.count(5), 'result_only': values.count(2),
-                'hit_13_plus': sum(values) >= 13,
-                'golden_goal_error': abs(prediction['golden_goal']['minute'] - actual)
-                if actual is not None else None,
-            }
-            scored.append((prediction, evaluation))
-        rows.append({'round': item, 'prediction': prediction, 'evaluation': evaluation})
-
-    count = len(scored)
-    errors = [e['golden_goal_error'] for _, e in scored if e['golden_goal_error'] is not None]
-    summary = {'rounds': count}
-    if count:
-        summary.update({
-            'mean_points': sum(e['points'] for _, e in scored) / count,
-            'mean_expected_points': sum(p['expected_points'] for p, _ in scored) / count,
-            'hit_rate_13_plus': sum(e['hit_13_plus'] for _, e in scored) / count,
-            'brier_13_plus': sum((p['probability_13_plus'] - e['hit_13_plus'])**2
-                                for p, e in scored) / count,
-            'golden_goal_mae': sum(errors) / len(errors) if errors else None,
+        archived = all(map(ready, fixtures)) and frozen(item, snapshots)
+        predictions = {FIXED: forecast([((1.5, 1.1), None)] * 6)}
+        if all('venue_history' in fixture for fixture in fixtures):
+            predictions[VENUE] = forecast([(venue_rates(fixture), None) for fixture in fixtures])
+        if archived:
+            predictions[MODEL] = predict(prematch(item))
+        evaluations = {name: evaluate(item, pred) for name, pred in predictions.items()}
+        comparison_round = all(evaluations.get(name) is not None for name in scored)
+        for name, evaluation in evaluations.items():
+            if evaluation is not None:
+                scored[name].append((predictions[name], evaluation))
+                if comparison_round:
+                    paired[name].append((predictions[name], evaluation))
+        rows.append({
+            'round': item, 'prediction': predictions.get(MODEL), 'evaluation': evaluations.get(MODEL),
+            'benchmarks': {name: {'prediction': predictions[name], 'evaluation': evaluations[name]}
+                           for name in (FIXED, VENUE) if name in predictions},
+            'missing_research': missing(item), 'snapshot_frozen': archived,
+            'derived_goal': first_goal(item)[0] if 'golden_goal' not in item else None,
         })
-    return {'baseline': baseline, 'rounds': rows, 'backtest': summary}
+    return {'baseline': baseline, 'rounds': rows, 'backtest': summarize(scored[MODEL]),
+            'historical': {name: summarize(entries) for name, entries in scored.items()},
+            'matched_backtest': {name: summarize(entries) for name, entries in paired.items()}}
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--rounds', type=Path, default=Path('data/rounds.json'))
     parser.add_argument('--output', type=Path, default=Path('dist'))
+    parser.add_argument('--snapshots', type=Path, default=SNAPSHOTS)
     args = parser.parse_args()
-    data = report(json.loads(args.rounds.read_text()), json.loads(Path('data/baseline.json').read_text()))
+    data = report(json.loads(args.rounds.read_text()), json.loads(Path('data/baseline.json').read_text()),
+                  args.snapshots)
     args.output.mkdir(parents=True, exist_ok=True)
     for path in Path('dashboard').iterdir():
         shutil.copy2(path, args.output)
     (args.output / 'report.json').write_text(json.dumps(data, indent=2, allow_nan=False) + '\n')
-    print(f"Built {len(data['rounds'])} rounds with {data['backtest']['rounds']} scored backtests")
+    print(f"Built {len(data['rounds'])} rounds with {data['backtest']['rounds']} scored model backtests")
 
 
 if __name__ == '__main__':
