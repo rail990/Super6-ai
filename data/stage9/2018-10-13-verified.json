@@ -1,0 +1,88 @@
+{
+  "deadline": "2018-10-13T14:00Z",
+  "fixtures": [
+    {
+      "away": "Bradford City",
+      "home": "Accrington Stanley",
+      "kickoff": "2018-10-13T14:00Z",
+      "score": [
+        3,
+        1
+      ]
+    },
+    {
+      "away": "Portsmouth",
+      "home": "AFC Wimbledon",
+      "kickoff": "2018-10-13T14:00Z",
+      "score": [
+        1,
+        2
+      ]
+    },
+    {
+      "away": "Wycombe Wanderers",
+      "home": "Coventry City",
+      "kickoff": "2018-10-13T14:00Z",
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "away": "Shrewsbury Town",
+      "home": "Fleetwood Town",
+      "kickoff": "2018-10-13T14:00Z",
+      "score": [
+        2,
+        1
+      ]
+    },
+    {
+      "away": "Bristol Rovers",
+      "home": "Burton Albion",
+      "kickoff": "2018-10-13T14:00Z",
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "away": "Southend United",
+      "home": "Gillingham",
+      "kickoff": "2018-10-13T14:00Z",
+      "score": [
+        0,
+        2
+      ]
+    }
+  ],
+  "id": "2018–19 Sky Super 6 · 13 October",
+  "note": "Sky names all six fixtures. ESPN verifies their kickoff times and final scores, and Football-Data independently confirms the results. The cutoff follows the published Sky first-kickoff rule. Golden Goal unverified. Archive only.",
+  "publisher_time": {
+    "rule": "2017-12-05T22:20:00Z",
+    "slate": "2018-10-11T17:30:00Z"
+  },
+  "source_quality": "sky_first_kickoff_rule",
+  "sources": {
+    "espn": {
+      "captured_at": "2026-11-24T10:23:40.308229+00:00",
+      "source_sha256": "fd95b5181a5cc64ec5458f3be89c97e2847ff61e7eb7bd91ba1d4b29f0ba2fcd",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.3/scoreboard?dates=20181013"
+    },
+    "feed": {
+      "captured_at": "2026-11-24T10:22:00.267213+00:00",
+      "source_sha256": "a60bc928d4aaf8a52fc00fc6f1efecb99e84756c9627b84856db7c7a6b53e64e",
+      "url": "https://football-data.co.uk/mmz4281/1819/E2.csv"
+    },
+    "rule": {
+      "captured_at": "2026-11-24T10:22:00.336557+00:00",
+      "source_sha256": "69452b60cbe69379ff6d8ca0de62ac0cacbb2107fca021533225ffb6f405ab25",
+      "url": "https://www.skysports.com/football/news/11158298/250k-jackpot-landed-in-super-6"
+    },
+    "sky": {
+      "captured_at": "2026-11-24T10:22:00.328718+00:00",
+      "source_sha256": "a1ee7d96d14d5d415b2a8cfb7cc463bb5ea2fdce911c0fb88bed97b312916053",
+      "url": "https://www.skysports.com/football/news/11523607/soccer-saturday-super-6-stat-pack-chance-to-win-250k-with-six-correct-scores"
+    }
+  }
+}
