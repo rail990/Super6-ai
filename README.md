@@ -217,3 +217,12 @@ python -m super6.experiments --as-of 2026-11-24T12:00:00Z
 For future evaluation, pass the verified archive feeds and review manifest with `--feeds` and `--review`. The `--competitions` JSON maps each round ID to its home-team names and each name to the reviewed result-feed URL for that fixture's competition and season. Earlier matches in those feeds establish competition goal rates and opponents’ points per game. Results whose availability is at or after the deadline are excluded before computing either feature. A round without full context stays outside the paired cohort. These candidates use reconstructable venue scores. Evaluating them against the market-blended model requires a separate protocol and comparable evidence.
 
 The dashboard build reads the forecast ledger from `data/prospective` by default. Use `--prospective` to preview a separate ledger and `--experiments` to include the generated registered experiment report. Historical trends use reconstructed rounds. Prospective trends start with the first settled Stage 8 forecast and use only the original saved probabilities and picks. Browser fixtures are synthetic and run only in the test suite.
+
+The Sky website’s public read-only round feed can verify the six challenge IDs, fixtures, kickoffs and entry deadline directly. Preview an announced round or use `active` when entries are open. To freeze a feed-backed round, capture the open card and attach available pre-match research to the resulting JSON. The freeze command compares the slate against the stored Sky response bytes. Settlement compares the six frozen fixtures and kickoffs with Sky’s completed round and saves its official Golden Goal. A void or amended fixture requires review.
+
+```sh
+python -m super6.live preview 19 --sources evidence-local > reviewed-round.json
+python -m super6.live preview active --sources evidence-local > open-round.json
+python -m super6.live freeze open-round.json --sources evidence-local
+python -m super6.live settle-sky 'Sky 2026-27 Round 19' --sources evidence-local
+```

@@ -326,7 +326,7 @@ function prospectiveRow(record) {
   const { predictions, settlement } = record;
   const evaluations = settlement?.evaluations ?? {};
   const round = {
-    ...record.round,
+    ...record.round, golden_goal: settlement?.golden_goal,
     fixtures: record.round.fixtures.map(fixture => settlement ?
       { ...fixture, result: settlement.results[fixture.id] } : fixture)
   };

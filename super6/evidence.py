@@ -7,7 +7,7 @@ from urllib.parse import urlparse
 RESEARCH = ('form', 'venue_form', 'xg', 'xga', 'injuries', 'suspensions',
             'team_news', 'opposition', 'rest', 'odds')
 OPTIONAL = {'lineups'}
-OFFICIAL = {'super6.skysports.com', 'www.skysports.com', 'skysports.com'}
+OFFICIAL = {'super6.skysports.com', 'www.skysports.com', 'skysports.com', 'api.s6.sbgservices.com'}
 
 
 def timestamp(value):
@@ -29,7 +29,9 @@ def evidence(record, official=False):
     if (source.scheme != 'https' or not source.hostname or source.username is not None
             or source.port not in (None, 443) or '\\' in url
             or any(character.isspace() for character in url)
-            or (official and source.hostname not in OFFICIAL)):
+            or (official and source.hostname not in OFFICIAL)
+            or (official and source.hostname == 'api.s6.sbgservices.com'
+                and not re.fullmatch(r'/v2/round(?:/(?:active|[1-9][0-9]{0,2}))?', source.path))):
         raise ValueError('Evidence requires a valid HTTPS source on the appropriate domain')
     if not record['note'].strip():
         raise ValueError('Evidence requires a source excerpt or review note')
