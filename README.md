@@ -253,3 +253,7 @@ The branch’s push checks fail if a push edits or deletes committed prospective
 Sky's completed [Round 17 scorecard](https://api.s6.sbgservices.com/v2/round/17) credited minute 10 to a Sunday match, despite goals in Saturday's fixtures. This supports recommending the match-clock estimate for Stage 8. The dashboard also shows the estimate based on actual scheduled kickoff order. The precise rules for stoppage time and amended fixtures remain open.
 
 Round 19’s dashboard preview includes 24 November captures of FotMob form and provisional availability plus Oddschecker’s best 1X2 prices. The [Round 19 source plan](data/round-19-research-plan.json) can refresh those pages and retries Sky match stats after entries open. Refresh prices close to the deadline and confirm availability against dated team news before using those inputs.
+
+## Stage 9
+
+Round 18’s existing recent-form forecast and fixed-rate benchmark are pinned in `data/stage9/round18-expectations.json` for settlement. Once Sky publishes all six final scores, run `python -m super6.legacy_settlement --sources evidence-local`. It verifies the archived forecast digest, round identity and all six fixtures, then saves a separate result with actual points and actual minus expected for each forecast.

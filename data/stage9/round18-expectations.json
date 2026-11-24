@@ -1,0 +1,131 @@
+{
+  "archive_sha256": "8c95c0da7a68e4c6e64ccb39db27db70b7655ced1b883b1189cbc049c194f40f",
+  "deadline": "2026-11-24T20:00:00Z",
+  "fixtures": [
+    {
+      "away": "Napoli",
+      "home": "Manchester City",
+      "kickoff": "2026-11-24T20:00:00Z"
+    },
+    {
+      "away": "Borussia Dortmund",
+      "home": "Arsenal",
+      "kickoff": "2026-11-24T20:00:00Z"
+    },
+    {
+      "away": "PSV Eindhoven",
+      "home": "Real Madrid",
+      "kickoff": "2026-11-24T20:00:00Z"
+    },
+    {
+      "away": "Manchester United",
+      "home": "Sporting CP",
+      "kickoff": "2026-11-25T20:00:00Z"
+    },
+    {
+      "away": "Liverpool",
+      "home": "Club Brugge",
+      "kickoff": "2026-11-25T20:00:00Z"
+    },
+    {
+      "away": "Roma",
+      "home": "Paris Saint-Germain",
+      "kickoff": "2026-11-25T20:00:00Z"
+    }
+  ],
+  "models": {
+    "fixed_poisson": {
+      "expected_points": 7.55516,
+      "fixtures": [
+        {
+          "score": [
+            1,
+            0
+          ]
+        },
+        {
+          "score": [
+            1,
+            0
+          ]
+        },
+        {
+          "score": [
+            1,
+            0
+          ]
+        },
+        {
+          "score": [
+            1,
+            0
+          ]
+        },
+        {
+          "score": [
+            1,
+            0
+          ]
+        },
+        {
+          "score": [
+            1,
+            0
+          ]
+        }
+      ],
+      "golden_goal": {
+        "minute": 4
+      },
+      "probability_13_plus": 0.1130596862502576,
+      "probability_all_exact": 1.912289483394313e-06
+    },
+    "recent_form": {
+      "expected_points": 8.07921,
+      "fixtures": [
+        {
+          "score": [
+            2,
+            1
+          ]
+        },
+        {
+          "score": [
+            1,
+            0
+          ]
+        },
+        {
+          "score": [
+            1,
+            0
+          ]
+        },
+        {
+          "score": [
+            2,
+            1
+          ]
+        },
+        {
+          "score": [
+            2,
+            1
+          ]
+        },
+        {
+          "score": [
+            2,
+            1
+          ]
+        }
+      ],
+      "golden_goal": {
+        "minute": 3
+      },
+      "probability_13_plus": 0.12794305272845938,
+      "probability_all_exact": 4.5733167545165996e-07
+    }
+  },
+  "round_id": "2026–27 Round 18"
+}
