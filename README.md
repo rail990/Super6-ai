@@ -191,3 +191,17 @@ Both models cleared 13 on the same two Sky rounds (3 November 2018 and 4 May 201
 - **Availability and recency.** All eligible fixtures had five pre-deadline venue results per side. There is no scored cohort for missing form. At least one side's newest venue result was over 45 days old in 42 of 120 fixtures and 24 of 102 sensitivity fixtures. The venue strategy's point difference on those fixtures flipped from +7 to −2 after excluding the revised previews. This provides no basis for a new recency cutoff.
 
 Keep the fixed-rate benchmark and current forecasts. The points and Brier intervals span zero. Any candidate change to rates, opponent adjustment or form weighting needs rules set before evaluation and a separate, later chronological test cohort.
+
+## Stage 8 prospective workflow
+
+Use the official Sky Super 6 round card or a dated Sky preview that explicitly identifies all six selected fixtures and the entry deadline. Review the captured page and enter its excerpt, availability time and confirmation time in the round manifest. Use the dashboard capture form as a starting point. Add a kickoff source for each fixture. This review is required for league and Champions League rounds alike.
+
+```sh
+python -m super6.live collect 'https://super6.skysports.com/' --sources evidence-local
+python -m super6.live freeze reviewed-round.json --sources evidence-local
+python -m super6.live settle reviewed-results.json --round-id ROUND_ID --sources evidence-local
+```
+
+Collect each available free research source with the same command. Record the returned capture time and digest alongside the verified publication time, notes and any structured input. For form feeds, use the existing `super6.research` normalizer to derive profiles from the saved bytes using the returned capture time. Leave unavailable or unverified categories absent. If the market model lacks its required fresh research, the recommendation uses recent form when available or the fixed-rate benchmark. The ledger records which model was used. Collection has a bounded timeout and one retry per source. Captured pages require review because a successful download alone does not establish the slate, published odds, availability, or a final score.
+
+Freeze writes one complete forecast per round identifier and checks the cutoff again at publication. Commit the ledger promptly to retain an independent record of when it was published. Settlement requires six final Sky score records keyed by the frozen fixture IDs, each with a captured source digest. It scores the stored picks and links the settlement to the exact forecast bytes. Use the same stable round ID throughout. The workflow has no entry submission step.
