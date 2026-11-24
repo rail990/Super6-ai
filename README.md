@@ -226,3 +226,13 @@ python -m super6.live preview active --sources evidence-local > open-round.json
 python -m super6.live freeze open-round.json --sources evidence-local
 python -m super6.live settle-sky 'Sky 2026-27 Round 19' --sources evidence-local
 ```
+
+### Official scorecard archive
+
+[Sky’s completed-round scorecards](https://api.s6.sbgservices.com/v2/round) add 17 verified 2026–27 slates, deadlines and six final scores apiece. That brings the verified collection to 37 distinct rounds, including the 20 existing goals-only reconstructions. The new scorecards were collected after settlement, so they remain outside the venue-model performance cohort. The Round 17 scorecard records official outcomes separately from the preserved user baseline.
+
+```sh
+python -m super6.sky_history 1 2 3 --season 2026-27 --sources evidence-local
+```
+
+Round numbers may be reused across seasons. The collector checks the requested season and records actual retrieval time and a SHA-256 of each source. The archived timestamps and digests describe the specific reviewed responses.

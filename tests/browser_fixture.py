@@ -12,6 +12,7 @@ from super6.capture import freeze
 from super6.experiments import study as experiment_study
 from super6.prospective import cumulative
 from super6.report import report
+from super6.sky_history import ARCHIVE, UPCOMING, unresolved_candidates
 
 output = Path(sys.argv[1])
 item = example()
@@ -27,7 +28,9 @@ freeze(item, output / 'snapshots')
 archive = load_rounds()
 baseline = json.loads(Path('data/baseline.json').read_text())
 report_data = report(archive + [item], baseline, output / 'snapshots')
-report_data['archive_candidates'] = candidate_index()
+report_data['sky_history'] = json.loads(ARCHIVE.read_text())
+report_data['archive_candidates'] = unresolved_candidates(candidate_index(), report_data['sky_history'])
+report_data['sky_upcoming'] = json.loads(UPCOMING.read_text())
 # Exercise the prospective rendering path with synthetic data only.
 
 synthetic = next(row for row in report_data['rounds'] if row['round']['id'] == 'Synthetic test only')

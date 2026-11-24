@@ -169,6 +169,7 @@ def main():
     from .experiments import study as experiment_study
     from .live import DIRECTORY
     from .prospective import cumulative, report as prospective_report
+    from .sky_history import ARCHIVE as SKY_HISTORY, UPCOMING as SKY_UPCOMING, unresolved_candidates
 
     parser.add_argument('--prospective', type=Path, default=DIRECTORY)
     parser.add_argument('--experiments', type=Path, help='Generated registered experiment report')
@@ -186,7 +187,9 @@ def main():
         for name in ('expected_points', FIXED)
     }
     if args.rounds.resolve() == ROUNDS.resolve():
-        data['archive_candidates'] = candidate_index()
+        data['sky_history'] = json.loads(SKY_HISTORY.read_text())
+        data['archive_candidates'] = unresolved_candidates(candidate_index(), data['sky_history'])
+        data['sky_upcoming'] = json.loads(SKY_UPCOMING.read_text())
     args.output.mkdir(parents=True, exist_ok=True)
     for path in Path('dashboard').iterdir():
         shutil.copy2(path, args.output)

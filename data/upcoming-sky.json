@@ -1,0 +1,66 @@
+{
+  "id": "Sky 2026-27 Round 19",
+  "deadline": "2026-11-29T12:00:00Z",
+  "opens": "2026-11-25T22:15:00Z",
+  "sky_season": "2026-27",
+  "sky_round": 19,
+  "deadline_basis": "Sky Super 6 round feed endDateTime",
+  "official": {
+    "url": "https://api.s6.sbgservices.com/v2/round/19",
+    "captured_at": "2026-11-24T10:05:00.339451+00:00",
+    "source_sha256": "f17d2fdd06759675e66febec0a30e21ec47be4ebae2ef52e8082fb2b3b0e40c5",
+    "note": "Six score challenges and entry deadline from Sky Super 6.",
+    "available_at": "2026-11-24T10:05:00.339451+00:00",
+    "confirmed_at": "2026-11-24T10:05:00.339451+00:00"
+  },
+  "fixtures": [
+    {
+      "id": "297",
+      "home": "Everton",
+      "away": "Liverpool",
+      "kickoff": "2026-11-29T12:00:00.000Z",
+      "kickoff_source": "https://api.s6.sbgservices.com/v2/round/19",
+      "competition": "Premier League"
+    },
+    {
+      "id": "298",
+      "home": "Brighton",
+      "away": "Newcastle",
+      "kickoff": "2026-11-29T14:05:00.000Z",
+      "kickoff_source": "https://api.s6.sbgservices.com/v2/round/19",
+      "competition": "Premier League"
+    },
+    {
+      "id": "299",
+      "home": "Sunderland",
+      "away": "Spurs",
+      "kickoff": "2026-11-29T14:05:00.000Z",
+      "kickoff_source": "https://api.s6.sbgservices.com/v2/round/19",
+      "competition": "Premier League"
+    },
+    {
+      "id": "300",
+      "home": "Crystal Palace",
+      "away": "Hull",
+      "kickoff": "2026-11-29T14:05:00.000Z",
+      "kickoff_source": "https://api.s6.sbgservices.com/v2/round/19",
+      "competition": "Premier League"
+    },
+    {
+      "id": "301",
+      "home": "Fulham",
+      "away": "Bournemouth",
+      "kickoff": "2026-11-29T14:05:00.000Z",
+      "kickoff_source": "https://api.s6.sbgservices.com/v2/round/19",
+      "competition": "Premier League"
+    },
+    {
+      "id": "302",
+      "home": "Arsenal",
+      "away": "Man City",
+      "kickoff": "2026-11-29T16:30:00.000Z",
+      "kickoff_source": "https://api.s6.sbgservices.com/v2/round/19",
+      "competition": "Premier League"
+    }
+  ]
+}

@@ -247,6 +247,23 @@ function showHistoricalStudy(study, candidates = []) {
   }
 }
 
+function showSkyArchive(rounds) {
+  const root = byId('strategy-history');
+  add(root, 'h3', 'Official Sky scorecard archive');
+  add(root, 'p', rounds.length + ' additional verified rounds with deadlines and final scores. ' +
+    'These scorecards are outside the venue-model backtest.');
+  for (const round of rounds) {
+    const panel = add(root, 'details', '', 'historical-card');
+    add(panel, 'summary', round.id + ' · Sky final results');
+    source(panel, 'Entry deadline ' + date(round.deadline), round.source);
+    const fixtures = add(panel, 'ul', '');
+    for (const fixture of round.fixtures) {
+      add(fixtures, 'li', fixture.home + ' ' + score(fixture.score) + ' ' + fixture.away);
+    }
+    add(panel, 'p', 'Official Golden Goal · ' + (round.golden_goal ?? 'No goal'));
+  }
+}
+
 function showTrend(root, label, trend) {
   if (!trend.length) return;
   const panel = add(root, 'details', '', 'historical-card');
@@ -391,8 +408,22 @@ async function load() {
   for (const row of rows) add(select, 'option', row.round.id);
   select.disabled = !rows.length;
   select.addEventListener('change', () => showRound(rows[select.selectedIndex]));
+  const upcoming = data.sky_upcoming;
+  if (upcoming && new Date(upcoming.deadline) > new Date() &&
+      !rows.some(row => row.round.id === upcoming.id)) {
+    const preview = add(byId('upcoming-status'), 'details', '', 'historical-card');
+    add(preview, 'summary', upcoming.id + ' · Entry deadline ' + date(upcoming.deadline));
+    preview.open = true;
+    add(preview, 'p', 'Entries open ' + date(upcoming.opens) + ' · Forecast pending');
+    source(preview, 'Verified Sky round card', upcoming.official);
+    const fixtures = add(preview, 'ul', '');
+    for (const fixture of upcoming.fixtures) {
+      add(fixtures, 'li', fixture.home + ' vs ' + fixture.away + ' · ' + date(fixture.kickoff));
+    }
+  }
+  if (data.sky_history?.length) showSkyArchive(data.sky_history);
   const active = rows.findIndex(row => new Date(row.round.deadline) > new Date());
-  if (active < 0) add(byId('upcoming-status'), 'p', 'No verified upcoming round is published.');
+  if (active < 0 && !byId('upcoming-status').children.length) add(byId('upcoming-status'), 'p', 'No verified upcoming round is published.');
   select.selectedIndex = active >= 0 ? active : rows.length - 1;
   showRound(rows[select.selectedIndex]);
 }

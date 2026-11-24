@@ -6,7 +6,8 @@ from pathlib import Path
 
 from super6.archive import candidate_index, load_rounds, score_feed, verified_result
 from super6.backtest import study
-from super6.evidence import timestamp
+from super6.evidence import evidence, score_pair, timestamp
+from super6.sky_history import ARCHIVE, unresolved_candidates
 
 
 class ArchiveExpansionTests(unittest.TestCase):
@@ -36,6 +37,17 @@ class ArchiveExpansionTests(unittest.TestCase):
         })
         self.assertTrue(all(item['status'] == 'incomplete' for item in entries))
         self.assertFalse(set(r['id'] for r in load_rounds()) & {c['id'] for c in entries})
+
+    def test_official_scorecards_add_verified_rounds_without_entering_backtest(self):
+        records = json.loads(ARCHIVE.read_text())
+        self.assertEqual(len({row['id'] for row in records}), 17)
+        self.assertEqual(len(unresolved_candidates(candidate_index(), records)), 79)
+        self.assertFalse({row['id'] for row in records} & {row['id'] for row in load_rounds()})
+        for record in records:
+            self.assertGreater(evidence(record['source'], official=True), timestamp(record['deadline']))
+            self.assertEqual(len({fixture['id'] for fixture in record['fixtures']}), 6)
+            for fixture in record['fixtures']:
+                score_pair(fixture['score'])
 
     def test_score_feed_uses_uk_availability_and_ignores_odds(self):
         with tempfile.TemporaryDirectory() as temp:

@@ -67,7 +67,10 @@ async function checkDashboard(browser, device, report) {
     await history.getByText('Always 1–1 · 15 actual points', { exact: true }).waitFor();
     await history.getByText('Dixon–Coles experiment · 19 held-out rounds', { exact: true }).click();
     await history.getByText(/Exact-score log loss · Poisson/).first().waitFor();
-    await history.getByText('95 incomplete archive entries are excluded from performance.').waitFor();
+    await history.getByText('79 incomplete archive entries are excluded from performance.').waitFor();
+    await history.getByText(/17 additional verified rounds/).waitFor();
+    await page.getByText(/Sky 2026-27 Round 19 · Entry deadline/).waitFor();
+    await page.getByText(/Everton vs Liverpool · 2026-11-29 12:00 UTC/).waitFor();
     const round = page.locator('#round-content');
     assert.equal(await round.locator('article').count(), 6);
     assert.equal(await round.locator('a').filter({ hasText: /^form$/ }).count(), 5);
