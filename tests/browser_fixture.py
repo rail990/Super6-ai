@@ -41,9 +41,11 @@ for i, fixture in enumerate(live_round['fixtures']):
     fixture['id'] = str(i)
     fixture['kickoff'] = live_round['deadline']
     fixture.pop('result')
+fixed = deepcopy(synthetic['benchmarks']['fixed_poisson']['prediction'])
+fixed['golden_goal']['recommended_minute'] = fixed['golden_goal']['minute']
 report_data['prospective'] = {
     'rounds': [{'round': live_round, 'frozen_at': '2026-11-23T20:00:00Z',
-                'predictions': {'fixed_poisson': synthetic['benchmarks']['fixed_poisson']['prediction']},
+                'predictions': {'fixed_poisson': fixed},
                 'recommended_model': 'fixed_poisson', 'quality_flags': [],
                 'missing_research': [], 'golden_goal_rule': 'Confirm staggered kickoff treatment with Sky.'}],
     'summary': {},

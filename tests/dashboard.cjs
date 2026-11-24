@@ -71,6 +71,8 @@ async function checkDashboard(browser, device, report) {
     await history.getByText(/17 additional verified rounds/).waitFor();
     await page.getByText(/Sky 2026-27 Round 19 · Entry deadline/).waitFor();
     await page.getByText(/Everton vs Liverpool · 2026-11-29 12:00 UTC/).waitFor();
+    await page.getByText('Early form, availability and market odds').first().click();
+    await page.getByText('Oddschecker 1X2 snapshot').first().waitFor();
     const round = page.locator('#round-content');
     assert.equal(await round.locator('article').count(), 6);
     assert.equal(await round.locator('a').filter({ hasText: /^form$/ }).count(), 5);
@@ -78,6 +80,8 @@ async function checkDashboard(browser, device, report) {
     await round.getByText(/Prospective forecast frozen/).waitFor();
     await round.getByText('Recommendation · Fixed Poisson benchmark').waitFor();
     await round.getByText('Confirm staggered kickoff treatment with Sky.').waitFor();
+    await round.getByText('Golden Goal recommendation · match clock').waitFor();
+    await round.getByText('Golden Goal · chronological estimate').waitFor();
     await page.getByText('No settled prospective rounds.').waitFor();
     await page.getByText('Fitted Dixon–Coles', { exact: true }).waitFor();
     await history.getByText(/Fixed-rate Poisson · .* cumulative points/).waitFor();

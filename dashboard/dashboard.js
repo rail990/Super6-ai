@@ -48,6 +48,11 @@ function showRound(row, model = row?.recommended_model ?? 'xg_market') {
     add(container, 'p', 'Recommendation · ' + modelNames[row.recommended_model]);
     if (!row.prediction) add(container, 'p', 'Market model pending complete, fresh verified evidence.');
     add(container, 'p', row.golden_goal_rule);
+    if (row.golden_goal_rule_source) {
+      const link = add(container, 'a', 'Sky Round 17 Golden Goal scorecard');
+      const url = new URL(row.golden_goal_rule_source);
+      if (url.origin === 'https://api.s6.sbgservices.com') link.href = url.href;
+    }
     if (row.collection_gaps?.length) {
       const details = add(container, 'details', '');
       add(details, 'summary', 'Unavailable and unreviewed sources');
@@ -84,13 +89,17 @@ function showRound(row, model = row?.recommended_model ?? 'xg_market') {
     metric(metrics, 'Chance of 13+ points', percent(prediction.probability_13_plus));
     metric(metrics, 'Chance of all six exact scores', rarePercent(prediction.probability_all_exact));
     const schedule = prediction.golden_goal.schedule;
+    if (prediction.golden_goal.recommended_minute != null) {
+      metric(metrics, 'Golden Goal recommendation · match clock', 'Minute ' +
+        prediction.golden_goal.recommended_minute);
+    }
     metric(metrics, 'Golden Goal · chronological estimate', 'Minute ' +
       (schedule?.recommended_minute ?? prediction.golden_goal.minute));
     if (schedule && schedule.kickoff_for_recommendation !== schedule.first_kickoff) {
       add(container, 'p', 'Chronological recommendation refers to the kickoff at ' +
         date(schedule.kickoff_for_recommendation) + '.');
     }
-    if (schedule && schedule.recommended_minute !== prediction.golden_goal.minute) {
+    if (!row.frozen_at && schedule && schedule.recommended_minute !== prediction.golden_goal.minute) {
       add(container, 'p', 'If Sky uses the lowest match-clock minute across both days, the estimate is minute ' +
         prediction.golden_goal.minute + '.');
     }
@@ -429,9 +438,24 @@ async function load() {
     preview.open = true;
     add(preview, 'p', 'Entries open ' + date(upcoming.opens) + ' · Forecast pending');
     source(preview, 'Verified Sky round card', upcoming.official);
+    if (upcoming.research_preview_note) add(preview, 'p', upcoming.research_preview_note);
     const fixtures = add(preview, 'ul', '');
     for (const fixture of upcoming.fixtures) {
-      add(fixtures, 'li', fixture.home + ' vs ' + fixture.away + ' · ' + date(fixture.kickoff));
+      const entry = add(fixtures, 'li', fixture.home + ' vs ' + fixture.away + ' · ' + date(fixture.kickoff));
+      const research = fixture.research_preview;
+      if (!research) continue;
+      const details = add(entry, 'details', '');
+      add(details, 'summary', 'Early form, availability and market odds');
+      const form = research.form_and_availability;
+      source(details, 'FotMob match research', form);
+      for (const team of form.teams) {
+        const reported = team.listed_unavailable_by_type;
+        const availability = reported && Object.keys(reported).length ? Object.entries(reported)
+          .map(([name, count]) => count + ' ' + name).join(', ') : 'No availability list';
+        add(details, 'p', team.team + ' · ' + team.wdl.join('/') + ' W/D/L · ' + availability);
+      }
+      source(details, 'Oddschecker 1X2 snapshot', research.market);
+      add(details, 'p', 'Home / draw / away · ' + research.market.decimal.map(price => price.toFixed(2)).join(' / '));
     }
   }
   if (data.sky_history?.length) showSkyArchive(data.sky_history);

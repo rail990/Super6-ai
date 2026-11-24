@@ -20,8 +20,10 @@ from .research import MIN_MATCHES
 from .sky import ROOT as SKY_ROOT, final_scores, match_stats, official_goal, slate, url_for
 
 DIRECTORY = Path('data/prospective')
-GOAL_RULE = ('Estimate uses first goal in elapsed time across scheduled kickoffs. '
-             'Confirm Sky’s treatment of staggered kickoffs, stoppage time and amended fixtures.')
+GOAL_RULE = ('Sky awarded Round 17’s Golden Goal to a match that kicked off a day after earlier '
+             'fixtures had already produced goals. The match-clock estimate reflects that observation. '
+             'The elapsed-time estimate uses the scheduled kickoffs. Stoppage-time and amended-fixture rules need confirmation.')
+GOAL_RULE_SOURCE = f'{SKY_ROOT}/17'
 
 
 def now():
@@ -109,28 +111,36 @@ def prepare_round(payload, capture, sources, plan=()):
             raise ValueError('Research plan needs a current fixture ID and a recognized category')
         jobs.append((fixture_id, entry['category'], entry['url'], None))
 
-    def fetch(job):
-        fixture_id, category, url, match = job
-        entry = {'fixture_id': fixture_id, 'category': category, 'url': url}
+    failures = (OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError)
+
+    def fetch(url):
         try:
-            collected = collect_source(url, sources)
-            if timestamp(collected['captured_at']) >= timestamp(item['deadline']):
+            captured = collect_source(url, sources)
+            if timestamp(captured['captured_at']) >= timestamp(item['deadline']):
                 raise ValueError('Capture reached or passed the Sky deadline')
-            if match is not None:
-                raw = source_bytes(sources, collected['source_sha256'])
-                return entry, match_stats(json.loads(raw), match, collected)
-            return {**entry, **collected, 'status': 'pending_review'}, None
-        except (OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError) as exc:
-            # Report the source and error category without echoing credentials or process output.
-            return {**entry, 'status': 'unavailable', 'error': type(exc).__name__}, None
+            return captured, None
+        except failures as exc:
+            return None, type(exc).__name__
+
+    urls = list(dict.fromkeys(url for _, _, url, _ in jobs))
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        fetched = dict(zip(urls, executor.map(fetch, urls), strict=True))
 
     gaps = []
-    with ThreadPoolExecutor(max_workers=4) as executor:
-        for entry, stats in executor.map(fetch, jobs):
-            if stats is None:
-                gaps.append(entry)
-            else:
-                by_id[entry['fixture_id']]['stats'] = stats
+    for fixture_id, category, url, match in jobs:
+        entry = {'fixture_id': fixture_id, 'category': category, 'url': url}
+        collected, error = fetched[url]
+        if error:
+            gaps.append({**entry, 'status': 'unavailable', 'error': error})
+            continue
+        if match is None:
+            gaps.append({**entry, **collected, 'status': 'pending_review'})
+            continue
+        try:
+            raw = source_bytes(sources, collected['source_sha256'])
+            by_id[fixture_id]['stats'] = match_stats(json.loads(raw), match, collected)
+        except failures as exc:
+            gaps.append({**entry, 'status': 'unavailable', 'error': type(exc).__name__})
     return validate(item), gaps
 
 
@@ -191,6 +201,7 @@ def freeze_round(item, directory, sources):
         predictions[FORM] = forecast([form_rates({'stats': f['stats'], 'research': research})
                                       for f, research in zip(fixtures, fresh, strict=True)], kickoffs=kickoffs)
     for prediction in predictions.values():
+        prediction['golden_goal']['recommended_minute'] = prediction['golden_goal']['minute']
         prediction['simulated_expected_points'] = prediction['expected_points']
         prediction['expected_points'] = sum(pick['expected_points'] for pick in prediction['fixtures'])
     recommended = next(name for name in (MODEL, FORM, FIXED) if name in predictions)
@@ -213,7 +224,8 @@ def freeze_round(item, directory, sources):
         'protocol': 'prospective-v1', 'frozen_at': now().isoformat(), 'round': stored_round,
         'recommended_model': recommended, 'predictions': predictions,
         'quality_flags': quality(item), 'missing_research': [row for row in missing_research if row['missing']],
-        'golden_goal_rule': GOAL_RULE, 'collection_gaps': item.get('collection_gaps', []),
+        'golden_goal_rule': GOAL_RULE, 'golden_goal_rule_source': GOAL_RULE_SOURCE,
+        'collection_gaps': item.get('collection_gaps', []),
     }, before=cutoff)
     return path
 

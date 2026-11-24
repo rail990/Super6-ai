@@ -249,3 +249,7 @@ python -m super6.live forecast-sky active --reviewed reviewed-evidence.json --so
 ```
 
 The branch’s push checks fail if a push edits or deletes committed prospective ledger records. The original capture bytes should be retained with the round research so the provenance can be audited later.
+
+Sky's completed [Round 17 scorecard](https://api.s6.sbgservices.com/v2/round/17) credited minute 10 to a Sunday match, despite goals in Saturday's fixtures. This supports recommending the match-clock estimate for Stage 8. The dashboard also shows the estimate based on actual scheduled kickoff order. The precise rules for stoppage time and amended fixtures remain open.
+
+Round 19’s dashboard preview includes 24 November captures of FotMob form and provisional availability plus Oddschecker’s best 1X2 prices. The [Round 19 source plan](data/round-19-research-plan.json) can refresh those pages and retries Sky match stats after entries open. Refresh prices close to the deadline and confirm availability against dated team news before using those inputs.
