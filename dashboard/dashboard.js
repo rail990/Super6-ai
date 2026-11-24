@@ -46,7 +46,19 @@ function showRound(row, model = row?.recommended_model ?? 'xg_market') {
   if (row.frozen_at) {
     add(container, 'p', 'Prospective forecast frozen · ' + date(row.frozen_at), 'status');
     add(container, 'p', 'Recommendation · ' + modelNames[row.recommended_model]);
+    if (!row.prediction) add(container, 'p', 'Market model pending complete, fresh verified evidence.');
     add(container, 'p', row.golden_goal_rule);
+    if (row.collection_gaps?.length) {
+      const details = add(container, 'details', '');
+      add(details, 'summary', 'Unavailable and unreviewed sources');
+      const list = add(details, 'ul', '');
+      for (const gap of row.collection_gaps) {
+        const fixture = round.fixtures.find(f => f.id === gap.fixture_id);
+        if (!fixture) continue;
+        add(list, 'li', fixture.home + ' vs ' + fixture.away + ' · ' + gap.category +
+          ' · ' + (gap.status === 'unavailable' ? 'Source unavailable' : 'Awaiting review'));
+      }
+    }
   }
   source(container, 'Official fixture evidence', round.official);
   if (round.official.confirmed_at) add(container, 'p', 'Sky slate confirmed · ' + date(round.official.confirmed_at));
@@ -161,6 +173,7 @@ function showRound(row, model = row?.recommended_model ?? 'xg_market') {
         }
         if (team.opposition_ppg !== null) add(details, 'p', 'Opponents averaged ' +
           team.opposition_ppg.toFixed(2) + ' points per game in the source competition.');
+        else add(details, 'p', 'Opponent strength unavailable from this source.');
       }
     }
     if (fixture.research) {

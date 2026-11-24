@@ -235,4 +235,17 @@ python -m super6.live settle-sky 'Sky 2026-27 Round 19' --sources evidence-local
 python -m super6.sky_history 1 2 3 --season 2026-27 --sources evidence-local
 ```
 
+The dashboard reads the next verified public slate from `data/upcoming-sky.json`. Refresh it with `super6.live preview ROUND_NUMBER` when Sky publishes a new card.
+
 Round numbers may be reused across seasons. The collector checks the requested season and records actual retrieval time and a SHA-256 of each source. The archived timestamps and digests describe the specific reviewed responses.
+
+`prepare` also collects recent results directly from Sky’s match stats for each official fixture. It accepts an optional `--plan` JSON list with `fixture_id`, `category` and `url` per source. Use it for available free xG, odds, team news, injuries and suspensions. Candidate pages are captured for review. Confirm their contents and timestamps and add verified inputs under each fixture’s `research` field before freezing. Failures and unreviewed pages remain visible and do not feed the market model.
+
+For a single automated forecasting command after the round opens, use `forecast-sky`. Pass `--reviewed` when available. The file maps Sky fixture IDs to their reviewed `research` objects and references the bytes already collected under `--sources`. Omit it to use the available Sky form or fixed-rate fallback.
+
+```sh
+python -m super6.live prepare active --plan sources.json --sources evidence-local > reviewed-round.json
+python -m super6.live forecast-sky active --reviewed reviewed-evidence.json --sources evidence-local
+```
+
+The branch’s push checks fail if a push edits or deletes committed prospective ledger records. The original capture bytes should be retained with the round research so the provenance can be audited later.

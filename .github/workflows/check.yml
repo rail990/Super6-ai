@@ -10,6 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify prospective records are append-only
+        if: github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000'
+        env:
+          PREVIOUS_HEAD: ${{ github.event.before }}
+        run: |
+          if ! git diff --quiet --no-renames --diff-filter=DMRTUXB "$PREVIOUS_HEAD" "$GITHUB_SHA" -- data/prospective/; then
+            echo "Existing prospective forecasts and settlements must remain byte-for-byte unchanged."
+            exit 1
+          fi
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'

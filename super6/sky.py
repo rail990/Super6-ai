@@ -1,7 +1,9 @@
 """Normalize the public read-only Sky Super 6 round feed used by its website."""
 import re
+from datetime import timedelta
 
 from .evidence import evidence, score_pair, timestamp, validate
+from .research import WINDOW, summary
 
 ROOT = 'https://api.s6.sbgservices.com/v2/round'
 
@@ -78,3 +80,40 @@ def official_goal(payload, capture):
         raise ValueError('Unexpected Sky Golden Goal minute')
     return {**capture, 'minute': minute, 'available_at': capture['captured_at'],
             'note': 'Official Golden Goal published in the completed Sky Super 6 round.'}
+
+
+def match_stats(payload, match, capture):
+    """Summarize Sky's published completed-match records and flag absent strength data."""
+    observed = timestamp(capture['captured_at'])
+    profiles = {}
+    for side in ('home', 'away'):
+        team = match[f'{side}Team']
+        profile = payload[side]
+        if team['name'] != profile['name']:
+            raise ValueError('Sky stats team name differs from the round card')
+        prior = {}
+        for row in profile['matchHistory']:
+            available = timestamp(row['matchDateTime']) + timedelta(hours=3)
+            if available > observed or row['outcome'] not in ('w', 'd', 'l'):
+                continue
+            venue = next((s for s in ('home', 'away') if row[s]['teamId'] == team['id']), None)
+            if venue is None:
+                raise ValueError('Sky stats match does not contain the selected team')
+            other = 'away' if venue == 'home' else 'home'
+            goals, conceded = row[venue]['score'], row[other]['score']
+            score_pair([goals, conceded])
+            if ('w' if goals > conceded else 'l' if goals < conceded else 'd') != row['outcome']:
+                raise ValueError('Sky historical score and result disagree')
+            match_id = f"{row['matchDateTime']}:{row['home']['teamId']}:{row['away']['teamId']}"
+            prior[match_id] = (available, goals, conceded, venue)
+        recent = sorted(prior.items(), key=lambda row: row[1][0], reverse=True)[:WINDOW]
+        profiles[side] = {
+            'recent': summary([result for _, result in recent]),
+            'venue': summary([result for _, result in recent if result[3] == side]),
+            'latest_available_at': recent[0][1][0].isoformat() if recent else None,
+            'match_ids': [match_id for match_id, _ in recent],
+            'opposition_ppg': None,
+        }
+    return {'url': capture['url'], 'available_at': capture['captured_at'],
+            'note': 'Sky match histories. Results are included from three hours after their listed kickoff.',
+            'provider': 'Sky Sports Super 6', 'sha256': capture['source_sha256'], **profiles}

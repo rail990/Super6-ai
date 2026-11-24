@@ -4,6 +4,8 @@ import hashlib
 import json
 import re
 import subprocess
+import sys
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 from tempfile import NamedTemporaryFile
@@ -11,11 +13,11 @@ from tempfile import NamedTemporaryFile
 from .archive import load_rounds
 from .backtest import FIXED_RATES
 from .capture import missing, prematch, validate_capture
-from .evidence import evidence, ready, timestamp, validate, verified_snapshot
+from .evidence import RESEARCH, evidence, ready, timestamp, validate, verified_snapshot
 from .model import forecast, form_rates, outcome, points, predict
 from .report import FIXED, FORM, MODEL, quality, stale
 from .research import MIN_MATCHES
-from .sky import ROOT as SKY_ROOT, final_scores, official_goal, slate, url_for
+from .sky import ROOT as SKY_ROOT, final_scores, match_stats, official_goal, slate, url_for
 
 DIRECTORY = Path('data/prospective')
 GOAL_RULE = ('Estimate uses first goal in elapsed time across scheduled kickoffs. '
@@ -61,17 +63,19 @@ def collect_source(url, directory):
     result = subprocess.run(
         ['curl', '--disable', '--silent', '--show-error', '--fail', '--proto', '=https',
          '--connect-timeout', '4', '--max-time', '10', '--retry', '1',
-         '--retry-max-time', '12', '--max-filesize', '8000000', '--url', url],
+         '--retry-max-time', '12', '--max-filesize', '8000000',
+         '--write-out', '\n%{http_code}', '--url', url],
         capture_output=True, check=True, timeout=22,
     )
-    if not result.stdout:
-        raise ValueError('Source returned an empty response')
+    body, _, status = result.stdout.rpartition(b'\n')
+    if status != b'200' or not body:
+        raise ValueError(f"Source did not return a usable HTTP 200 response ({status.decode('ascii')})")
     captured = now().isoformat()
-    digest = hashlib.sha256(result.stdout).hexdigest()
+    digest = hashlib.sha256(body).hexdigest()
     directory.mkdir(parents=True, exist_ok=True)
     path = directory / digest
     with NamedTemporaryFile(dir=directory) as pending:
-        pending.write(result.stdout)
+        pending.write(body)
         pending.flush()
         try:
             path.hardlink_to(pending.name)
@@ -84,6 +88,50 @@ def sky_capture(round_number, sources):
     capture = collect_source(url_for(round_number), sources)
     raw = source_bytes(sources, capture['source_sha256'])
     return json.loads(raw), capture
+
+
+def prepare_round(payload, capture, sources, plan=()):
+    """Collect Sky form plus candidate public research sources for human review."""
+    item = slate(payload, capture)
+    by_id = {fixture['id']: fixture for fixture in item['fixtures']}
+    api = SKY_ROOT.removesuffix('/round')
+    jobs = []
+    for challenge in payload['scoreChallenges']:
+        match = challenge['match']
+        if type(match['id']) is not int or match['id'] < 1:
+            raise ValueError('Sky match identifier must be positive')
+        jobs.append((str(challenge['id']), 'stats', f"{api}/match/{match['id']}/stats", match))
+    if len(plan) > 60:
+        raise ValueError('Research plan supports at most 60 source URLs per round')
+    for entry in plan:
+        fixture_id = str(entry['fixture_id'])
+        if fixture_id not in by_id or entry['category'] not in (*RESEARCH, 'lineups'):
+            raise ValueError('Research plan needs a current fixture ID and a recognized category')
+        jobs.append((fixture_id, entry['category'], entry['url'], None))
+
+    def fetch(job):
+        fixture_id, category, url, match = job
+        entry = {'fixture_id': fixture_id, 'category': category, 'url': url}
+        try:
+            collected = collect_source(url, sources)
+            if timestamp(collected['captured_at']) >= timestamp(item['deadline']):
+                raise ValueError('Capture reached or passed the Sky deadline')
+            if match is not None:
+                raw = source_bytes(sources, collected['source_sha256'])
+                return entry, match_stats(json.loads(raw), match, collected)
+            return {**entry, **collected, 'status': 'pending_review'}, None
+        except (OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError) as exc:
+            # Report the source and error category without echoing credentials or process output.
+            return {**entry, 'status': 'unavailable', 'error': type(exc).__name__}, None
+
+    gaps = []
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        for entry, stats in executor.map(fetch, jobs):
+            if stats is None:
+                gaps.append(entry)
+            else:
+                by_id[entry['fixture_id']]['stats'] = stats
+    return validate(item), gaps
 
 
 def freeze_round(item, directory, sources):
@@ -116,8 +164,20 @@ def freeze_round(item, directory, sources):
         if (item['id'] != reviewed['id'] or item['deadline'] != reviewed['deadline']
                 or [{key: f[key] for key in fields} for f in item['fixtures']] != reviewed['fixtures']):
             raise ValueError('Round manifest differs from the captured Sky fixture slate or deadline')
-        if payload['status'] != 'open' or not timestamp(reviewed['opens']) <= timestamp(official['captured_at']):
+        if payload['status'] != 'open' or timestamp(reviewed['opens']) > timestamp(official['captured_at']):
             raise ValueError('Capture a fresh Sky slate after entries open before freezing')
+        api = SKY_ROOT.removesuffix('/round')
+        challenges = {str(c['id']): c['match'] for c in payload['scoreChallenges']}
+        for fixture in item['fixtures']:
+            stats = fixture.get('stats', {})
+            if stats.get('provider') != 'Sky Sports Super 6':
+                continue
+            match = challenges[fixture['id']]
+            raw = source_bytes(sources, stats['sha256'])
+            reference = {'url': f"{api}/match/{match['id']}/stats",
+                         'captured_at': stats['available_at'], 'source_sha256': stats['sha256']}
+            if stats != match_stats(json.loads(raw), match, reference):
+                raise ValueError('Structured form statistics differ from captured Sky history')
     fixtures = item['fixtures']
     kickoffs = [f['kickoff'] for f in fixtures]
     predictions = {FIXED: forecast([(FIXED_RATES, None)] * 6, kickoffs=kickoffs)}
@@ -134,6 +194,17 @@ def freeze_round(item, directory, sources):
         prediction['simulated_expected_points'] = prediction['expected_points']
         prediction['expected_points'] = sum(pick['expected_points'] for pick in prediction['fixtures'])
     recommended = next(name for name in (MODEL, FORM, FIXED) if name in predictions)
+    missing_research = missing(item)
+    for fixture in fixtures:
+        stats = fixture.get('stats')
+        if stats and all(stats[side]['recent']['matches'] > 0 for side in ('home', 'away')):
+            label = f"{fixture['home']} vs {fixture['away']}"
+            for entry in missing_research:
+                if entry['fixture'] == label:
+                    derived = {'form'}
+                    if all(stats[side]['venue']['matches'] > 0 for side in ('home', 'away')):
+                        derived.add('venue_form')
+                    entry['missing'] = sorted(set(entry['missing']) - derived)
     stored_round = prematch(item)
     if 'sky_round' in item:
         stored_round['sky_round'] = item['sky_round']
@@ -141,8 +212,8 @@ def freeze_round(item, directory, sources):
     publish(path, {
         'protocol': 'prospective-v1', 'frozen_at': now().isoformat(), 'round': stored_round,
         'recommended_model': recommended, 'predictions': predictions,
-        'quality_flags': quality(item), 'missing_research': missing(item),
-        'golden_goal_rule': GOAL_RULE,
+        'quality_flags': quality(item), 'missing_research': [row for row in missing_research if row['missing']],
+        'golden_goal_rule': GOAL_RULE, 'collection_gaps': item.get('collection_gaps', []),
     }, before=cutoff)
     return path
 
@@ -197,23 +268,51 @@ def settle_round(round_id, results, directory, sources):
     return destination
 
 
+def freeze_new(item, directory, sources):
+    legacy = {r['id'] for r in load_rounds()}
+    display_id = item['id'].removeprefix('Sky ').replace('-', '–', 1)
+    if item['id'] in legacy or display_id in legacy:
+        raise ValueError('The round already exists in the legacy archive')
+    return freeze_round(item, directory, sources)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action', choices=('collect', 'preview', 'freeze', 'settle', 'settle-sky'))
+    parser.add_argument('action', choices=('collect', 'preview', 'prepare', 'forecast-sky', 'freeze', 'settle', 'settle-sky'))
     parser.add_argument('input', help='HTTPS source URL, Sky round number, frozen round ID or JSON path, depending on action')
     parser.add_argument('--round-id', help='Frozen round identifier when settling')
     parser.add_argument('--directory', type=Path, default=DIRECTORY)
     parser.add_argument('--sources', type=Path, required=True, help='Evidence bytes named by SHA-256')
+    parser.add_argument('--plan', type=Path, help='Optional JSON list of fixture research URLs to collect')
+    parser.add_argument('--reviewed', type=Path, help='Fixture ID to reviewed research mapping for forecast-sky')
     args = parser.parse_args()
     try:
         if args.action == 'collect':
             print(json.dumps(collect_source(args.input, args.sources), indent=2))
             return
-        if args.action == 'preview':
+        if args.action in ('preview', 'prepare', 'forecast-sky'):
             payload, capture = sky_capture(args.input, args.sources)
             if payload['status'] not in ('open', 'future') or timestamp(payload['endDateTime']) <= now():
                 raise ValueError('Sky does not have an upcoming slate for this round')
-            print(json.dumps(slate(payload, capture), indent=2, ensure_ascii=False))
+            if args.action in ('prepare', 'forecast-sky'):
+                plan = json.loads(args.plan.read_text()) if args.plan else []
+                item, gaps = prepare_round(payload, capture, args.sources, plan)
+                item['collection_gaps'] = gaps
+                for entry in gaps:
+                    print(json.dumps(entry, ensure_ascii=False), file=sys.stderr)
+            else:
+                item = slate(payload, capture)
+            if args.action == 'forecast-sky':
+                reviewed = json.loads(args.reviewed.read_text()) if args.reviewed else {}
+                if set(reviewed) - {fixture['id'] for fixture in item['fixtures']}:
+                    raise ValueError('Reviewed evidence references an unknown fixture ID')
+                for fixture in item['fixtures']:
+                    if fixture['id'] in reviewed:
+                        fixture['research'] = reviewed[fixture['id']]
+                path = freeze_new(item, args.directory, args.sources)
+                print(path)
+                return
+            print(json.dumps(item, indent=2, ensure_ascii=False))
             return
         if args.action == 'settle-sky':
             frozen = json.loads(path_for(args.directory, args.input, 'forecast').read_bytes())
@@ -224,11 +323,7 @@ def main():
             return
         data = json.loads(Path(args.input).read_text())
         if args.action == 'freeze':
-            legacy = {r['id'] for r in load_rounds()}
-            display_id = data['id'].removeprefix('Sky ').replace('-', '–', 1)
-            if data['id'] in legacy or display_id in legacy:
-                raise ValueError('The round already exists in the legacy archive')
-            path = freeze_round(data, args.directory, args.sources)
+            path = freeze_new(data, args.directory, args.sources)
         else:
             if not args.round_id:
                 parser.error('--round-id is required when settling')

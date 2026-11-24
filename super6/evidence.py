@@ -195,6 +195,7 @@ def validate_stats(stats, deadline):
         if recent:
             if timestamp(profile['latest_available_at']) > observed:
                 raise ValueError('Recent result was unavailable at capture')
-            number(profile['opposition_ppg'], 0, 3)
+            if profile['opposition_ppg'] is not None or stats.get('provider') != 'Sky Sports Super 6':
+                number(profile['opposition_ppg'], 0, 3)
         elif profile['latest_available_at'] is not None or profile['opposition_ppg'] is not None:
             raise ValueError('Missing matches cannot support recency or opposition figures')
