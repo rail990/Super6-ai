@@ -257,3 +257,11 @@ Round 19’s dashboard preview includes 24 November captures of FotMob form and 
 ## Stage 9
 
 Round 18’s existing recent-form forecast and fixed-rate benchmark are pinned in `data/stage9/round18-expectations.json` for settlement. Once Sky publishes all six final scores, run `python -m super6.legacy_settlement --sources evidence-local`. It verifies the archived forecast digest, round identity and all six fixtures, then saves a separate result with actual points and actual minus expected for each forecast.
+
+### Round 19 research freeze
+
+`data/prospective/research/round19-early.json` preserves the fixed-rate benchmark and five preregistered experimental forecasts using the 24 November capture. They are separate from the production entry and the historical study. Football-Data venue form, venue xG/xGA and competition context were checked against 59 overlapping Sky results. The FotMob availability lists are provisional. The Oddschecker best-price snapshot shows normalized inverse-price probabilities as a market reference. A fresh same-book market check and verified availability are still needed for the production model. Keep the early freeze as published when those inputs arrive. The Dixon–Coles fit uses 102 strictly earlier matches and reaches the registered grid boundary.
+
+### Additional archive evidence
+
+The [13 October 2018 round](data/stage9/2018-10-13-verified.json) adds one verified slate to the archive, bringing the total to 38. The source record retains Sky's six selections and first-kickoff rule. ESPN establishes kickoffs and final scores, and Football-Data independently confirms all six results. This scorecard stays outside the model evaluation cohorts.

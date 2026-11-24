@@ -116,11 +116,12 @@ def predict(round_data, seed=6):
     return forecast([fit(fixture) for fixture in fixtures], seed, [f['kickoff'] for f in fixtures])
 
 
-def forecast(inputs, seed=6, kickoffs=None):
+def forecast(inputs, seed=6, kickoffs=None, score_distributions=None):
     rates, predictions, weights, modal_weights = [], [], [], []
-    for pair, market in inputs:
+    inputs = list(inputs)
+    models = score_distributions if score_distributions is not None else (distribution(*pair) for pair, _ in inputs)
+    for (pair, market), scores in zip(inputs, models, strict=True):
         rates.append(pair)
-        scores = distribution(*pair)
         outcomes = result_probabilities(scores)
         pick = max(scores, key=lambda score: 2 * outcomes[outcome(score)] + 3 * scores[score])
         exact = scores[pick]

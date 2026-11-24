@@ -1,0 +1,4231 @@
+{
+  "deadline": "2026-11-29T12:00:00Z",
+  "dixon_coles": {
+    "rho": 0.12,
+    "training_matches": 102
+  },
+  "fixtures": [
+    {
+      "fixture": "297",
+      "market": {
+        "available_at": "2026-11-24T10:20:50.510319+00:00",
+        "decimal": [
+          4.1,
+          3.75,
+          1.95
+        ],
+        "normalized_1x2": [
+          0.2383280371547299,
+          0.2605719872891713,
+          0.5010999755560988
+        ],
+        "note": "Oddschecker best prices across books. Refresh before the entry deadline.",
+        "source_sha256": "ab41548a74f560d9ce9794899a5299b7fa7ef83fb7288d7eeda652b9716fbf51",
+        "url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league"
+      },
+      "opponent_ppg": {
+        "away": 1.2,
+        "home": 0.9818181818181818
+      },
+      "venue_history": {
+        "away": [
+          {
+            "available_at": "2026-11-09T00:00:00+00:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Crystal Palace",
+            "score": [
+              3,
+              1
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-18T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Brentford",
+            "score": [
+              2,
+              1
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-21T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Bournemouth",
+            "score": [
+              1,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-05T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Ipswich",
+            "score": [
+              2,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-08-24T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Newcastle",
+            "score": [
+              2,
+              2
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          }
+        ],
+        "home": [
+          {
+            "available_at": "2026-11-07T00:00:00+00:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Coventry",
+            "score": [
+              3,
+              1
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-18T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Chelsea",
+            "score": [
+              0,
+              2
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-20T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Ipswich",
+            "score": [
+              1,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-07T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Man United",
+            "score": [
+              2,
+              2
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-08-23T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Crystal Palace",
+            "score": [
+              2,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          }
+        ]
+      },
+      "venue_xg": {
+        "away": {
+          "matches": 5,
+          "xg": 1.92,
+          "xga": 1.32
+        },
+        "home": {
+          "matches": 5,
+          "xg": 1.246,
+          "xga": 1.3539999999999999
+        }
+      }
+    },
+    {
+      "fixture": "298",
+      "market": {
+        "available_at": "2026-11-24T10:20:50.510319+00:00",
+        "decimal": [
+          1.57,
+          4.5,
+          5.6
+        ],
+        "normalized_1x2": [
+          0.6137808412694546,
+          0.21414131573178752,
+          0.17207784299875784
+        ],
+        "note": "Oddschecker best prices across books. Refresh before the entry deadline.",
+        "source_sha256": "ab41548a74f560d9ce9794899a5299b7fa7ef83fb7288d7eeda652b9716fbf51",
+        "url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league"
+      },
+      "opponent_ppg": {
+        "away": 1.1272727272727272,
+        "home": 1.509090909090909
+      },
+      "venue_history": {
+        "away": [
+          {
+            "available_at": "2026-11-08T00:00:00+00:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Fulham",
+            "score": [
+              1,
+              1
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-26T00:00:00+00:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Crystal Palace",
+            "score": [
+              2,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-13T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Coventry",
+            "score": [
+              1,
+              4
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-15T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Leeds",
+            "score": [
+              1,
+              4
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-08-30T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Tottenham",
+            "score": [
+              2,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          }
+        ],
+        "home": [
+          {
+            "available_at": "2026-11-09T00:00:00+00:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Brentford",
+            "score": [
+              2,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-19T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Crystal Palace",
+            "score": [
+              5,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-20T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Arsenal",
+            "score": [
+              3,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-06T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Leeds",
+            "score": [
+              1,
+              1
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-08-24T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Aston Villa",
+            "score": [
+              4,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          }
+        ]
+      },
+      "venue_xg": {
+        "away": {
+          "matches": 5,
+          "xg": 1.1059999999999999,
+          "xga": 1.334
+        },
+        "home": {
+          "matches": 5,
+          "xg": 2.278,
+          "xga": 1.154
+        }
+      }
+    },
+    {
+      "fixture": "299",
+      "market": {
+        "available_at": "2026-11-24T10:20:50.510319+00:00",
+        "decimal": [
+          3.6,
+          3.4,
+          2.15
+        ],
+        "normalized_1x2": [
+          0.2678636863319897,
+          0.28362037376328325,
+          0.44851593990472693
+        ],
+        "note": "Oddschecker best prices across books. Refresh before the entry deadline.",
+        "source_sha256": "ab41548a74f560d9ce9794899a5299b7fa7ef83fb7288d7eeda652b9716fbf51",
+        "url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league"
+      },
+      "opponent_ppg": {
+        "away": 1.2181818181818183,
+        "home": 1.709090909090909
+      },
+      "venue_history": {
+        "away": [
+          {
+            "available_at": "2026-11-08T00:00:00+00:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Leeds",
+            "score": [
+              0,
+              1
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-25T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Chelsea",
+            "score": [
+              2,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-11T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Man United",
+            "score": [
+              1,
+              1
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-06T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Nott'm Forest",
+            "score": [
+              0,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-08-23T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Brentford",
+            "score": [
+              0,
+              3
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          }
+        ],
+        "home": [
+          {
+            "available_at": "2026-11-09T00:00:00+00:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Chelsea",
+            "score": [
+              1,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-26T00:00:00+00:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Leeds",
+            "score": [
+              0,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-11T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Brighton",
+            "score": [
+              0,
+              2
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-13T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Arsenal",
+            "score": [
+              0,
+              2
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-08-31T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Fulham",
+            "score": [
+              1,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          }
+        ]
+      },
+      "venue_xg": {
+        "away": {
+          "matches": 5,
+          "xg": 0.9440000000000001,
+          "xga": 1.6059999999999999
+        },
+        "home": {
+          "matches": 5,
+          "xg": 1.55,
+          "xga": 1.132
+        }
+      }
+    },
+    {
+      "fixture": "300",
+      "market": {
+        "available_at": "2026-11-24T10:20:50.510319+00:00",
+        "decimal": [
+          1.85,
+          3.8,
+          4.2
+        ],
+        "normalized_1x2": [
+          0.5188556566970092,
+          0.2526007802340703,
+          0.2285435630689207
+        ],
+        "note": "Oddschecker best prices across books. Refresh before the entry deadline.",
+        "source_sha256": "ab41548a74f560d9ce9794899a5299b7fa7ef83fb7288d7eeda652b9716fbf51",
+        "url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league"
+      },
+      "opponent_ppg": {
+        "away": 1.4545454545454546,
+        "home": 1.3818181818181818
+      },
+      "venue_history": {
+        "away": [
+          {
+            "available_at": "2026-11-08T00:00:00+00:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Arsenal",
+            "score": [
+              0,
+              1
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-18T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Fulham",
+            "score": [
+              0,
+              1
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-20T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Newcastle",
+            "score": [
+              1,
+              2
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-13T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Chelsea",
+            "score": [
+              2,
+              2
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-08-30T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Coventry",
+            "score": [
+              1,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          }
+        ],
+        "home": [
+          {
+            "available_at": "2026-11-09T00:00:00+00:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Liverpool",
+            "score": [
+              1,
+              3
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-26T00:00:00+00:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Newcastle",
+            "score": [
+              0,
+              2
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-12T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Nott'm Forest",
+            "score": [
+              3,
+              1
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-13T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Ipswich",
+            "score": [
+              2,
+              3
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-08-29T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Man City",
+            "score": [
+              1,
+              4
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          }
+        ]
+      },
+      "venue_xg": {
+        "away": {
+          "matches": 5,
+          "xg": 0.844,
+          "xga": 1.252
+        },
+        "home": {
+          "matches": 5,
+          "xg": 1.574,
+          "xga": 2.166
+        }
+      }
+    },
+    {
+      "fixture": "301",
+      "market": {
+        "available_at": "2026-11-24T10:20:50.510319+00:00",
+        "decimal": [
+          2.63,
+          3.6,
+          2.63
+        ],
+        "normalized_1x2": [
+          0.36622583926754826,
+          0.2675483214649033,
+          0.36622583926754826
+        ],
+        "note": "Oddschecker best prices across books. Refresh before the entry deadline.",
+        "source_sha256": "ab41548a74f560d9ce9794899a5299b7fa7ef83fb7288d7eeda652b9716fbf51",
+        "url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league"
+      },
+      "opponent_ppg": {
+        "away": 1.2727272727272727,
+        "home": 1.0545454545454545
+      },
+      "venue_history": {
+        "away": [
+          {
+            "available_at": "2026-11-09T00:00:00+00:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Ipswich",
+            "score": [
+              2,
+              1
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-26T00:00:00+00:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Man United",
+            "score": [
+              3,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-11T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Chelsea",
+            "score": [
+              1,
+              5
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-06T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Newcastle",
+            "score": [
+              2,
+              2
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-08-24T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Man City",
+            "score": [
+              1,
+              2
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          }
+        ],
+        "home": [
+          {
+            "available_at": "2026-11-08T00:00:00+00:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Newcastle",
+            "score": [
+              1,
+              1
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-18T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Hull",
+            "score": [
+              1,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-21T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Man United",
+            "score": [
+              1,
+              1
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-06T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Crystal Palace",
+            "score": [
+              2,
+              3
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-08-25T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Chelsea",
+            "score": [
+              2,
+              3
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          }
+        ]
+      },
+      "venue_xg": {
+        "away": {
+          "matches": 5,
+          "xg": 1.552,
+          "xga": 1.32
+        },
+        "home": {
+          "matches": 5,
+          "xg": 1.6380000000000001,
+          "xga": 1.314
+        }
+      }
+    },
+    {
+      "fixture": "302",
+      "market": {
+        "available_at": "2026-11-24T10:20:50.510319+00:00",
+        "decimal": [
+          2.0,
+          3.75,
+          3.75
+        ],
+        "normalized_1x2": [
+          0.48387096774193555,
+          0.2580645161290323,
+          0.2580645161290323
+        ],
+        "note": "Oddschecker best prices across books. Refresh before the entry deadline.",
+        "source_sha256": "ab41548a74f560d9ce9794899a5299b7fa7ef83fb7288d7eeda652b9716fbf51",
+        "url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league"
+      },
+      "opponent_ppg": {
+        "away": 1.0727272727272728,
+        "home": 1.3636363636363638
+      },
+      "venue_history": {
+        "away": [
+          {
+            "available_at": "2026-11-08T00:00:00+00:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Nott'm Forest",
+            "score": [
+              1,
+              3
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-25T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Aston Villa",
+            "score": [
+              1,
+              2
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-12T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Liverpool",
+            "score": [
+              3,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-14T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Man United",
+            "score": [
+              1,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-08-29T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Crystal Palace",
+            "score": [
+              4,
+              1
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          }
+        ],
+        "home": [
+          {
+            "available_at": "2026-11-08T00:00:00+00:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Hull",
+            "score": [
+              1,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-25T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Everton",
+            "score": [
+              2,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-10-11T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Leeds",
+            "score": [
+              2,
+              1
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-09-07T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Chelsea",
+            "score": [
+              2,
+              1
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          },
+          {
+            "available_at": "2026-08-22T00:00:00+01:00",
+            "note": "Full-time league result. Availability conservatively set to the next local midnight.",
+            "opponent": "Coventry",
+            "score": [
+              3,
+              0
+            ],
+            "sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+            "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+          }
+        ]
+      },
+      "venue_xg": {
+        "away": {
+          "matches": 5,
+          "xg": 1.584,
+          "xga": 0.854
+        },
+        "home": {
+          "matches": 5,
+          "xg": 1.896,
+          "xga": 0.44
+        }
+      }
+    }
+  ],
+  "frozen_at": "2026-11-24T10:25:34.728109+00:00",
+  "league_source": {
+    "captured_at": "2026-11-24T10:25:34.386882+00:00",
+    "source_sha256": "21d2b96792bd0bc8a324123ae68eaf60b981c5a016c538d086e8d8a5cbedd95a",
+    "url": "https://football-data.co.uk/mmz4281/2627/E0.csv"
+  },
+  "main_model_blocker": "Fresh verified availability and complete reviewed market-model evidence required.",
+  "models": {
+    "away_goal_lift": {
+      "expected_points": 7.51097,
+      "fixtures": [
+        {
+          "exact_probability": 0.09335426210021572,
+          "expected_points": 1.1792952784823618,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.25,
+            1.5766666666666669
+          ],
+          "result_probabilities": [
+            0.3027149646495396,
+            0.24766878925960303,
+            0.4496162460908574
+          ],
+          "score": [
+            0,
+            1
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.11669282762526964
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.09335426210021572
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              0.0919928457779209
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.07401236424435706
+            ],
+            [
+              [
+                0,
+                2
+              ],
+              0.07359427662233672
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.10473868468377462,
+          "expected_points": 1.6558378038005725,
+          "market_probabilities": null,
+          "modal_score": [
+            2,
+            0
+          ],
+          "rates": [
+            2.25,
+            0.935
+          ],
+          "result_probabilities": [
+            0.6708108748746243,
+            0.18644473677284654,
+            0.14274438835252945
+          ],
+          "score": [
+            2,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                2,
+                0
+              ],
+              0.10473868468377462
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.09793067017932926
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.09310105305224411
+            ],
+            [
+              [
+                1,
+                1
+              ],
+              0.08704948460384825
+            ],
+            [
+              [
+                3,
+                0
+              ],
+              0.07855401351283096
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.18699625918876883,
+          "expected_points": 1.2477621672805304,
+          "market_probabilities": null,
+          "modal_score": [
+            0,
+            0
+          ],
+          "rates": [
+            0.8333333333333334,
+            0.8433333333333334
+          ],
+          "result_probabilities": [
+            0.32549621736088963,
+            0.34338669485711193,
+            0.33111708778199833
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                0,
+                0
+              ],
+              0.18699625918876883
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.15770017858252838
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.15583021599064067
+            ],
+            [
+              [
+                1,
+                1
+              ],
+              0.1314168154854403
+            ],
+            [
+              [
+                0,
+                2
+              ],
+              0.0664969086356328
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.09365187552406257,
+          "expected_points": 1.231658169092815,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.3333333333333333,
+            1.76
+          ],
+          "result_probabilities": [
+            0.29153471075241166,
+            0.23311401798727455,
+            0.4753512712603137
+          ],
+          "score": [
+            1,
+            2
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.10642258582279837
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              0.09365187552406257
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.0798169393670988
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.07094839054853225
+            ],
+            [
+              [
+                0,
+                2
+              ],
+              0.07023890664304694
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.08388062638370518,
+          "expected_points": 1.0650809394931693,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.6666666666666667,
+            1.76
+          ],
+          "result_probabilities": [
+            0.3680743018590841,
+            0.22520616796988935,
+            0.4067195301710269
+          ],
+          "score": [
+            1,
+            2
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.09531889361784679
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              0.08388062638370518
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.07943241134820568
+            ],
+            [
+              [
+                2,
+                2
+              ],
+              0.069900521986421
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.05719133617070807
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.09113284268937051,
+          "expected_points": 1.1532967815579978,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.5833333333333333,
+            1.3016666666666667
+          ],
+          "result_probabilities": [
+            0.4399491267449431,
+            0.245766980207142,
+            0.3142838930479147
+          ],
+          "score": [
+            2,
+            1
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.11511516971288907
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.09113284268937051
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.08843675009953064
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              0.07492078962147197
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.07270431771340363
+            ]
+          ]
+        }
+      ],
+      "golden_goal": {
+        "minute": 4,
+        "minute_probabilities": [
+          0.17297960755568842,
+          0.14305766292556843,
+          0.11831160453486955,
+          0.09784610961314416,
+          0.08092072797141148,
+          0.06692309220379622,
+          0.05534676197797034,
+          0.04577290081154298,
+          0.037855122392476764,
+          0.03130695817705362,
+          0.02589149283782452,
+          0.021412792567706757,
+          0.017708816112673442,
+          0.014645552051227348,
+          0.012112170204969637,
+          0.010017011756266306,
+          0.008284272993786618,
+          0.00685126270243723,
+          0.005666133968908707,
+          0.0046860083386089275,
+          0.00387542445519368,
+          0.0032050550538225437,
+          0.002650645888417954,
+          0.002192138202870326,
+          0.0018129429968299741,
+          0.001499340828717494,
+          0.0012399854405737206,
+          0.001025493245688511,
+          0.0008481038264983075,
+          0.0007013991594241454,
+          0.0005800714080870704,
+          0.0004797308835618958,
+          0.0003967472235910129,
+          0.0003281180445554308,
+          0.00027136031397629245,
+          0.0002244205133584852,
+          0.00018560034103028828,
+          0.00015349526687666705,
+          0.0001269437158506855,
+          0.00010498504170117315,
+          8.682477038848705e-05,
+          7.180585568057342e-05,
+          5.938490694474744e-05,
+          4.911252904671377e-05,
+          4.0617063046146246e-05,
+          3.359113942035891e-05,
+          2.7780557306077082e-05,
+          2.297508740559352e-05,
+          1.9000865802616153e-05,
+          1.571410349286145e-05,
+          1.2995884037576684e-05,
+          1.0747861116917543e-05,
+          8.888700318850098e-06,
+          7.351136426015211e-06,
+          6.079539731954785e-06,
+          5.0279033350020774e-06,
+          4.158178589285477e-06,
+          3.4388984887644072e-06,
+          2.844039177754064e-06,
+          2.3520783969131666e-06,
+          1.9452167988749314e-06,
+          1.6087339603947994e-06,
+          1.3304557912642222e-06,
+          1.1003140706211224e-06,
+          9.099821744970801e-07,
+          7.525738150699096e-07,
+          6.223938918824242e-07,
+          5.147324407195497e-07,
+          4.256942251277001e-07,
+          3.520578051263842e-07,
+          2.911589841587081e-07,
+          2.407944173426198e-07,
+          1.9914189352909284e-07,
+          1.646944069385353e-07,
+          1.3620563305968931e-07,
+          1.1264483610615133e-07,
+          9.315957656333426e-08,
+          7.704486956935388e-08,
+          6.371767826706847e-08,
+          5.269581928607089e-08,
+          4.358051714614092e-08,
+          3.6041976393128126e-08,
+          2.980744946111289e-08,
+          2.4651368551093782e-08,
+          2.0387184493414746e-08,
+          1.686061732057862e-08,
+          1.3944074353318273e-08,
+          1.1532033843953732e-08,
+          9.537227155307889e-09,
+          7.88748134481327e-09
+        ],
+        "no_goal": 3.77102712242228e-08,
+        "schedule": {
+          "elapsed_minute": 23,
+          "first_kickoff": "2026-11-29T12:00:00+00:00",
+          "first_window_goal_probability": 0.940790108604553,
+          "kickoff_for_recommendation": "2026-11-29T12:00:00+00:00",
+          "recommended_minute": 23,
+          "windows": [
+            {
+              "end": 90.0,
+              "probability": 0.940790108604553,
+              "start": 0.0
+            },
+            {
+              "end": 215.0,
+              "probability": 0.05920921624705709,
+              "start": 125.0
+            },
+            {
+              "end": 360.0,
+              "probability": 6.374381186840448e-07,
+              "start": 270.0
+            }
+          ]
+        }
+      },
+      "modal_combination": {
+        "expected_points": 6.107760312265332,
+        "probability_13_plus": 0.05802273857034701,
+        "probability_all_exact": 2.6688831258648974e-06,
+        "scores": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "points_counts": [
+        2080,
+        0,
+        9389,
+        0,
+        16242,
+        2578,
+        14146,
+        9582,
+        6547,
+        13271,
+        2769,
+        8710,
+        3931,
+        2615,
+        3976,
+        699,
+        1638,
+        752,
+        261,
+        525,
+        58,
+        113,
+        82,
+        0,
+        30,
+        2,
+        0,
+        4,
+        0,
+        0,
+        0
+      ],
+      "probability_13_plus": 0.10951906429843362,
+      "probability_all_exact": 1.3089626253575255e-06,
+      "seed": 6,
+      "simulated_probability_13_plus": 0.10755,
+      "simulated_probability_all_exact": 0.0,
+      "trials": 100000
+    },
+    "competition_shrinkage": {
+      "expected_points": 7.20763,
+      "fixtures": [
+        {
+          "exact_probability": 0.09068627228460727,
+          "expected_points": 1.0307082216604728,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.3431818181818183,
+            1.3772727272727272
+          ],
+          "result_probabilities": [
+            0.3636657670368652,
+            0.2570095305598094,
+            0.37932470240332555
+          ],
+          "score": [
+            0,
+            1
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.12180815209137022
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.09068627228460727
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.08844156257459224
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              0.0838815229174663
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.08180524759772705
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.10553304975246826,
+          "expected_points": 1.5952190045328027,
+          "market_probabilities": null,
+          "modal_score": [
+            2,
+            0
+          ],
+          "rates": [
+            2.0931818181818183,
+            0.9397727272727272
+          ],
+          "result_probabilities": [
+            0.639309927637699,
+            0.20107922423527547,
+            0.15961084812702553
+          ],
+          "score": [
+            2,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                2,
+                0
+              ],
+              0.10553304975246826
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.10083505296652774
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.0991770819832855
+            ],
+            [
+              [
+                1,
+                1
+              ],
+              0.09476203273104367
+            ],
+            [
+              [
+                3,
+                0
+              ],
+              0.07363328698638127
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.1529362665592731,
+          "expected_points": 1.2245209402778492,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            0
+          ],
+          "rates": [
+            1.0306818181818183,
+            0.8772727272727272
+          ],
+          "result_probabilities": [
+            0.38285607030001495,
+            0.3161039395802136,
+            0.3010399901197711
+          ],
+          "score": [
+            1,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                0
+              ],
+              0.1529362665592731
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              0.1483835882824259
+            ],
+            [
+              [
+                1,
+                1
+              ],
+              0.13416681566336228
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.13017287517503723
+            ],
+            [
+              [
+                2,
+                0
+              ],
+              0.07881431464162539
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.08658566266901109,
+          "expected_points": 1.0557708961872596,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.4056818181818183,
+            1.5022727272727272
+          ],
+          "result_probabilities": [
+            0.3549444723451548,
+            0.24704857356473142,
+            0.39800695409011316
+          ],
+          "score": [
+            1,
+            2
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.1152728943248559
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              0.08658566266901109
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.08200496928526532
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.08101850584082203
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.07673233510277852
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.08753672883060949,
+          "expected_points": 1.0931841714068413,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.6556818181818183,
+            1.5022727272727272
+          ],
+          "result_probabilities": [
+            0.41528699245750644,
+            0.2353035555031595,
+            0.34940945203933393
+          ],
+          "score": [
+            2,
+            1
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.10574100394088723
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.08753672883060949
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              0.07942591318741643
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.07038735511950134
+            ],
+            [
+              [
+                2,
+                2
+              ],
+              0.06575202017844645
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.09854702975284194,
+          "expected_points": 1.2300194813518703,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.5931818181818183,
+            1.1897727272727272
+          ],
+          "result_probabilities": [
+            0.46718919604667225,
+            0.24786524653088307,
+            0.28494555742244443
+          ],
+          "score": [
+            1,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.11724856835366536
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.09854702975284194
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.0933991436544539
+            ],
+            [
+              [
+                2,
+                0
+              ],
+              0.07850166801902524
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.07359396587105957
+            ]
+          ]
+        }
+      ],
+      "golden_goal": {
+        "minute": 4,
+        "minute_probabilities": [
+          0.16760398321951098,
+          0.13951288802846495,
+          0.11612997228443644,
+          0.09666612635839361,
+          0.08046449853832621,
+          0.06697832807554216,
+          0.05575249350069822,
+          0.04640815351556124,
+          0.03862996213249062,
+          0.03215542660746634,
+          0.026766049025932298,
+          0.0222799525941373,
+          0.018545743793418112,
+          0.015437403261872637,
+          0.012850032984616941,
+          0.010696316271893047,
+          0.008903571058948075,
+          0.007411297084590436,
+          0.006169134172389942,
+          0.005135162712081764,
+          0.004274488987056551,
+          0.003558067606597954,
+          0.002961721303167821,
+          0.0024653250155708024,
+          0.002052126723030453,
+          0.0017081821101793387,
+          0.0014218839844489647,
+          0.0011835705649792952,
+          0.0009851994238673977,
+          0.0008200760761616546,
+          0.0006826280592539345,
+          0.0005682168774655705,
+          0.00047298146546978807,
+          0.00039370788786804783,
+          0.0003277208776364261,
+          0.000272793553160364,
+          0.00022707226705408505,
+          0.0001890140506171365,
+          0.0001573345428492487,
+          0.00013096464676969435,
+          0.00010901445031015694,
+          9.074319420968957e-05,
+          7.553427341008427e-05,
+          6.28744283169619e-05,
+          5.2336423688389814e-05,
+          4.3564630610751665e-05,
+          3.626302499290304e-05,
+          3.0185197560503557e-05,
+          2.5126038215095764e-05,
+          2.0914814127719853e-05,
+          1.740940797161814e-05,
+          1.449152185008171e-05,
+          1.2062685065095208e-05,
+          1.0040930999862847e-05,
+          8.35803096905364e-06,
+          6.957191686768083e-06,
+          5.791138648044146e-06,
+          4.820520743255494e-06,
+          4.0125822654935905e-06,
+          3.3400574948009008e-06,
+          2.7802505544900842e-06,
+          2.3142694872092933e-06,
+          1.9263887029096386e-06,
+          1.6035182830729172e-06,
+          1.334762231664573e-06,
+          1.1110507649866485e-06,
+          9.248342312157912e-07,
+          7.698283302462637e-07,
+          6.408020357017708e-07,
+          5.33401062062988e-07,
+          4.4400091940770486e-07,
+          3.69584596761852e-07,
+          3.076407462079917e-07,
+          2.5607893174290453e-07,
+          2.1315908276419878e-07,
+          1.7743277143350317e-07,
+          1.476943321875681e-07,
+          1.229401738139873e-07,
+          1.0233491098506317e-07,
+          8.518317228155406e-08,
+          7.090613330389101e-08,
+          5.902198292746476e-08,
+          4.912966349130861e-08,
+          4.089533619593031e-08,
+          3.40411149543917e-08,
+          2.8335688494802637e-08,
+          2.3586514235805987e-08,
+          1.9633320499621402e-08,
+          1.6342697780059576e-08,
+          1.3603596535568938e-08
+        ],
+        "no_goal": 6.75615182442647e-08,
+        "schedule": {
+          "elapsed_minute": 23,
+          "first_kickoff": "2026-11-29T12:00:00+00:00",
+          "first_window_goal_probability": 0.9341551818395786,
+          "kickoff_for_recommendation": "2026-11-29T12:00:00+00:00",
+          "recommended_minute": 23,
+          "windows": [
+            {
+              "end": 90.0,
+              "probability": 0.9341551818395786,
+              "start": 0.0
+            },
+            {
+              "end": 215.0,
+              "probability": 0.06584372591256017,
+              "start": 125.0
+            },
+            {
+              "end": 360.0,
+              "probability": 1.0246863429599038e-06,
+              "start": 270.0
+            }
+          ]
+        }
+      },
+      "modal_combination": {
+        "expected_points": 6.174405613260154,
+        "probability_13_plus": 0.06064344057507943,
+        "probability_all_exact": 2.809658283634559e-06,
+        "scores": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "points_counts": [
+        2610,
+        0,
+        10714,
+        0,
+        16860,
+        2924,
+        14068,
+        10212,
+        6204,
+        12662,
+        2806,
+        7830,
+        3905,
+        2236,
+        3484,
+        585,
+        1344,
+        677,
+        194,
+        441,
+        51,
+        96,
+        69,
+        0,
+        22,
+        2,
+        0,
+        4,
+        0,
+        0,
+        0
+      ],
+      "probability_13_plus": 0.09447002866615195,
+      "probability_all_exact": 1.0932522018545937e-06,
+      "seed": 6,
+      "simulated_probability_13_plus": 0.09205,
+      "simulated_probability_all_exact": 0.0,
+      "trials": 100000
+    },
+    "dixon_coles": {
+      "expected_points": 7.7642,
+      "fixtures": [
+        {
+          "exact_probability": 0.11263884315332162,
+          "expected_points": 1.1940661340843648,
+          "market_probabilities": null,
+          "modal_score": [
+            0,
+            1
+          ],
+          "rates": [
+            1.25,
+            1.4333333333333333
+          ],
+          "result_probabilities": [
+            0.3434688469929912,
+            0.22845635069480907,
+            0.4280748023121999
+          ],
+          "score": [
+            0,
+            1
+          ],
+          "top_scores": [
+            [
+              [
+                0,
+                1
+              ],
+              0.11263884315332162
+            ],
+            [
+              [
+                1,
+                1
+              ],
+              0.10774150214665547
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.10011076150836169
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              0.08774402636943533
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.07652095322915872
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.11403079355881524,
+          "expected_points": 1.744063442048457,
+          "market_probabilities": null,
+          "modal_score": [
+            2,
+            0
+          ],
+          "rates": [
+            2.25,
+            0.85
+          ],
+          "result_probabilities": [
+            0.7009855306860057,
+            0.16160628950896078,
+            0.1374081798050341
+          ],
+          "score": [
+            2,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                2,
+                0
+              ],
+              0.11403079355881524
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.11169949733494615
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.09692617452499294
+            ],
+            [
+              [
+                3,
+                0
+              ],
+              0.08552309516911144
+            ],
+            [
+              [
+                1,
+                1
+              ],
+              0.07581780762843894
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.18372583137523696,
+          "expected_points": 1.2672704984966678,
+          "market_probabilities": null,
+          "modal_score": [
+            0,
+            0
+          ],
+          "rates": [
+            0.8333333333333334,
+            0.7666666666666666
+          ],
+          "result_probabilities": [
+            0.35804650218547857,
+            0.32205341460144166,
+            0.3199000832130798
+          ],
+          "score": [
+            1,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                0,
+                0
+              ],
+              0.1864177849485005
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.18372583137523696
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.1702660635089192
+            ],
+            [
+              [
+                1,
+                1
+              ],
+              0.11351070900594612
+            ],
+            [
+              [
+                2,
+                0
+              ],
+              0.07010295763707149
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.09877510309306488,
+          "expected_points": 1.1979658624346987,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.3333333333333333,
+            1.5999999999999999
+          ],
+          "result_probabilities": [
+            0.33268212449554796,
+            0.21649759892670004,
+            0.450820276577752
+          ],
+          "score": [
+            0,
+            1
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.09991044910562884
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.09877510309306488
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              0.09082768100511711
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.08458327793601532
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.07568973417093093
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.08474072566014118,
+          "expected_points": 1.0754073392967751,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.6666666666666667,
+            1.5999999999999999
+          ],
+          "result_probabilities": [
+            0.4105925811581758,
+            0.20702897104078793,
+            0.38237844780103664
+          ],
+          "score": [
+            2,
+            1
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.08948620629710907
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.08474072566014118
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              0.08135109663373552
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.07575820874016621
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.07321598697036197
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.1136816562318152,
+          "expected_points": 1.3017235679684456,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            0
+          ],
+          "rates": [
+            1.5833333333333333,
+            1.1833333333333333
+          ],
+          "result_probabilities": [
+            0.48033929963649996,
+            0.22051027965932293,
+            0.29915042070417724
+          ],
+          "score": [
+            1,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                0
+              ],
+              0.1136816562318152
+            ],
+            [
+              [
+                1,
+                1
+              ],
+              0.10366068128084958
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.09325534774318855
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.08853316559153901
+            ],
+            [
+              [
+                2,
+                0
+              ],
+              0.0788073361210044
+            ]
+          ]
+        }
+      ],
+      "golden_goal": {
+        "minute": 4,
+        "minute_probabilities": [
+          0.16612074615446104,
+          0.13852464385154628,
+          0.1155128266541463,
+          0.09632374969994867,
+          0.0803223765273976,
+          0.06697916340576676,
+          0.055852534803999265,
+          0.04657427004774081,
+          0.03883731755581077,
+          0.03238563338480174,
+          0.027005707802233686,
+          0.02251949947169722,
+          0.01877854341643391,
+          0.01565903777240199,
+          0.013057746733589642,
+          0.010888584103109743,
+          0.009079764387335584,
+          0.007571427152404664,
+          0.006313656024393079,
+          0.005264826774658272,
+          0.004390229822478074,
+          0.0036609215685784423,
+          0.0030527665459932282,
+          0.0025456386895374578,
+          0.00212275529099183,
+          0.0017701215981489379,
+          0.001476067677480309,
+          0.0012308622135228028,
+          0.0010263904641990536,
+          0.000855885714440491,
+          0.0007137053409346861,
+          0.0005951440771641953,
+          0.0004962782989962732,
+          0.0004138361776667432,
+          0.0003450894030470322,
+          0.00028776289392286303,
+          0.0002399595072688312,
+          0.00020009725487447525,
+          0.00016685694959126776,
+          0.00013913854862410862,
+          0.00011602474910782346,
+          9.675063121364818e-05,
+          8.067834416552137e-05,
+          6.72759974342386e-05,
+          5.6100058542177245e-05,
+          4.6780674957841824e-05,
+          3.9009434328235844e-05,
+          3.2529157990565834e-05,
+          2.7125389993396703e-05,
+          2.2619299967962885e-05,
+          1.8861764979793304e-05,
+          1.5728434507559973e-05,
+          1.3115615231322524e-05,
+          1.0936839442820422e-05,
+          9.120003514007547e-06,
+          7.604981725329377e-06,
+          6.341636486626492e-06,
+          5.288159101627805e-06,
+          4.40968616588189e-06,
+          3.677145809698617e-06,
+          3.0662956040726978e-06,
+          2.5569202903939776e-06,
+          2.1321627838962895e-06,
+          1.7779663113126306e-06,
+          1.4826092210398973e-06,
+          1.2363170709852761e-06,
+          1.0309391566696845e-06,
+          8.596787747238819e-07,
+          7.168682952135837e-07,
+          5.977815991182334e-07,
+          4.984776738353102e-07,
+          4.156701907164397e-07,
+          3.4661874848046486e-07,
+          2.890381833517614e-07,
+          2.410229446662345e-07,
+          2.0098403325793832e-07,
+          1.675964156879933e-07,
+          1.3975517406109336e-07,
+          1.1653894026711669e-07,
+          9.717940455389224e-08,
+          8.103588935855509e-08,
+          6.757414695302019e-08,
+          5.634867924043435e-08,
+          4.6987994600194525e-08,
+          3.918231387690879e-08,
+          3.267331865961773e-08,
+          2.7245602584539624e-08,
+          2.271954275376844e-08,
+          1.8945355359223873e-08,
+          1.5798138790788495e-08
+        ],
+        "no_goal": 7.930219729907625e-08,
+        "schedule": {
+          "elapsed_minute": 24,
+          "first_kickoff": "2026-11-29T12:00:00+00:00",
+          "first_window_goal_probability": 0.9316650092093679,
+          "kickoff_for_recommendation": "2026-11-29T12:00:00+00:00",
+          "recommended_minute": 24,
+          "windows": [
+            {
+              "end": 90.0,
+              "probability": 0.9316650092093679,
+              "start": 0.0
+            },
+            {
+              "end": 215.0,
+              "probability": 0.06833372944738195,
+              "start": 125.0
+            },
+            {
+              "end": 360.0,
+              "probability": 1.1820410528139196e-06,
+              "start": 270.0
+            }
+          ]
+        }
+      },
+      "modal_combination": {
+        "expected_points": 6.858456434292841,
+        "probability_13_plus": 0.08056824690282353,
+        "probability_all_exact": 2.4336329208856817e-06,
+        "scores": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      "points_counts": [
+        1866,
+        0,
+        8694,
+        0,
+        15193,
+        2547,
+        13502,
+        9867,
+        6253,
+        13606,
+        2889,
+        8998,
+        4493,
+        2677,
+        4514,
+        782,
+        1850,
+        974,
+        275,
+        636,
+        81,
+        147,
+        105,
+        0,
+        41,
+        4,
+        0,
+        6,
+        0,
+        0,
+        0
+      ],
+      "probability_13_plus": 0.12289306602633703,
+      "probability_all_exact": 2.2454873453503943e-06,
+      "seed": 6,
+      "simulated_probability_13_plus": 0.12092,
+      "simulated_probability_all_exact": 0.0,
+      "trials": 100000
+    },
+    "fixed_poisson": {
+      "expected_points": 7.55516,
+      "fixtures": [
+        {
+          "exact_probability": 0.1114103673215846,
+          "expected_points": 1.262719473537685,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.5,
+            1.1
+          ],
+          "result_probabilities": [
+            0.4642441857864656,
+            0.2576672147762444,
+            0.27808859943728975
+          ],
+          "score": [
+            1,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.12255140405374308
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.1114103673215846
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.0919135530403073
+            ],
+            [
+              [
+                2,
+                0
+              ],
+              0.08355777549118845
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.0817009360358287
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.1114103673215846,
+          "expected_points": 1.262719473537685,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.5,
+            1.1
+          ],
+          "result_probabilities": [
+            0.4642441857864656,
+            0.2576672147762444,
+            0.27808859943728975
+          ],
+          "score": [
+            1,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.12255140405374308
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.1114103673215846
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.0919135530403073
+            ],
+            [
+              [
+                2,
+                0
+              ],
+              0.08355777549118845
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.0817009360358287
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.1114103673215846,
+          "expected_points": 1.262719473537685,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.5,
+            1.1
+          ],
+          "result_probabilities": [
+            0.4642441857864656,
+            0.2576672147762444,
+            0.27808859943728975
+          ],
+          "score": [
+            1,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.12255140405374308
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.1114103673215846
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.0919135530403073
+            ],
+            [
+              [
+                2,
+                0
+              ],
+              0.08355777549118845
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.0817009360358287
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.1114103673215846,
+          "expected_points": 1.262719473537685,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.5,
+            1.1
+          ],
+          "result_probabilities": [
+            0.4642441857864656,
+            0.2576672147762444,
+            0.27808859943728975
+          ],
+          "score": [
+            1,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.12255140405374308
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.1114103673215846
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.0919135530403073
+            ],
+            [
+              [
+                2,
+                0
+              ],
+              0.08355777549118845
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.0817009360358287
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.1114103673215846,
+          "expected_points": 1.262719473537685,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.5,
+            1.1
+          ],
+          "result_probabilities": [
+            0.4642441857864656,
+            0.2576672147762444,
+            0.27808859943728975
+          ],
+          "score": [
+            1,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.12255140405374308
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.1114103673215846
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.0919135530403073
+            ],
+            [
+              [
+                2,
+                0
+              ],
+              0.08355777549118845
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.0817009360358287
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.1114103673215846,
+          "expected_points": 1.262719473537685,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.5,
+            1.1
+          ],
+          "result_probabilities": [
+            0.4642441857864656,
+            0.2576672147762444,
+            0.27808859943728975
+          ],
+          "score": [
+            1,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.12255140405374308
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.1114103673215846
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.0919135530403073
+            ],
+            [
+              [
+                2,
+                0
+              ],
+              0.08355777549118845
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.0817009360358287
+            ]
+          ]
+        }
+      ],
+      "golden_goal": {
+        "minute": 4,
+        "minute_probabilities": [
+          0.15914271763564924,
+          0.1338163130591894,
+          0.11252042133496698,
+          0.09461361569421217,
+          0.07955654776730031,
+          0.06689570254990174,
+          0.05624973864796445,
+          0.047298002373232256,
+          0.03977086973681873,
+          0.03344162544416798,
+          0.02811963428882966,
+          0.023644599269184663,
+          0.019881733484080746,
+          0.016717700386116488,
+          0.014057200114051344,
+          0.01182009908555301,
+          0.009939016394355508,
+          0.008357294314732457,
+          0.007027291785405003,
+          0.005908949473056955,
+          0.004968583195542942,
+          0.004177869363005432,
+          0.003512991878650007,
+          0.0029539248040496915,
+          0.002483829183041875,
+          0.002088545856709846,
+          0.0017561689931663745,
+          0.001476687486966415,
+          0.0012416834271920165,
+          0.0010440785521455371,
+          0.000877921053931998,
+          0.0007382063115397063,
+          0.000620726152945492,
+          0.0005219421060582243,
+          0.0004388788208516403,
+          0.00036903445258858474,
+          0.000310305306902453,
+          0.0002609224770652324,
+          0.00021939856497284497,
+          0.0001844828810977047,
+          0.00015512377404256253,
+          0.00013043695507152994,
+          0.00010967886356132823,
+          9.222427114698883e-05,
+          7.754745000469e-05,
+          6.520633806522832e-05,
+          5.482922421845934e-05,
+          4.6103552470479604e-05,
+          3.8766507837669704e-05,
+          3.259710042713925e-05,
+          2.740950927812184e-05,
+          2.304748548254224e-05,
+          1.9379646008182283e-05,
+          1.6295516475623275e-05,
+          1.3702203698416098e-05,
+          1.1521597764252899e-05,
+          9.688019384544784e-06,
+          8.146241651181561e-06,
+          6.849826616295807e-06,
+          5.759726593245484e-06,
+          4.8431080503580294e-06,
+          4.0723626734210065e-06,
+          3.424275810374776e-06,
+          2.8793272519777483e-06,
+          2.4211032881356223e-06,
+          2.0358023311851124e-06,
+          1.7118192156313083e-06,
+          1.4393956535548434e-06,
+          1.210326317495159e-06,
+          1.0177116981030334e-06,
+          8.557502926973428e-07,
+          7.195638654999696e-07,
+          6.050505164319038e-07,
+          5.08761132940067e-07,
+          4.2779550361659366e-07,
+          3.597149645787448e-07,
+          3.0246894754146557e-07,
+          2.543332172293248e-07,
+          2.1385793785443217e-07,
+          1.7982400443632022e-07,
+          1.5120632367420074e-07,
+          1.2714293840099284e-07,
+          1.0690906565567671e-07,
+          8.98952664073435e-08,
+          7.558908940869963e-08,
+          6.355963629659375e-08,
+          5.3444583044420455e-08,
+          4.4939266855828155e-08,
+          3.778750979983721e-08,
+          3.177390279760801e-08
+        ],
+        "no_goal": 1.678827529995657e-07,
+        "schedule": {
+          "elapsed_minute": 24,
+          "first_kickoff": "2026-11-29T12:00:00+00:00",
+          "first_window_goal_probability": 0.9257264217856661,
+          "kickoff_for_recommendation": "2026-11-29T12:00:00+00:00",
+          "recommended_minute": 24,
+          "windows": [
+            {
+              "end": 90.0,
+              "probability": 0.9257264217856661,
+              "start": 0.0
+            },
+            {
+              "end": 215.0,
+              "probability": 0.0742713178849269,
+              "start": 125.0
+            },
+            {
+              "end": 360.0,
+              "probability": 2.0924466539814874e-06,
+              "start": 270.0
+            }
+          ]
+        }
+      },
+      "modal_combination": {
+        "expected_points": 5.297931850282306,
+        "probability_13_plus": 0.04388877330609009,
+        "probability_all_exact": 3.3877374694915155e-06,
+        "scores": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "points_counts": [
+        2404,
+        0,
+        9484,
+        0,
+        15360,
+        2906,
+        13641,
+        9722,
+        6594,
+        12808,
+        3283,
+        8424,
+        4213,
+        2718,
+        3975,
+        759,
+        1685,
+        863,
+        257,
+        583,
+        72,
+        118,
+        93,
+        0,
+        27,
+        4,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      "probability_13_plus": 0.1130596862502576,
+      "probability_all_exact": 1.912289483394313e-06,
+      "seed": 6,
+      "simulated_probability_13_plus": 0.11161,
+      "simulated_probability_all_exact": 0.0,
+      "trials": 100000
+    },
+    "opponent_adjusted_form": {
+      "expected_points": 7.66932,
+      "fixtures": [
+        {
+          "exact_probability": 0.09964400069805635,
+          "expected_points": 1.1537307475421321,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.2230226413529606,
+            1.464949712365625
+          ],
+          "result_probabilities": [
+            0.315953587254613,
+            0.25664704002140554,
+            0.42739937272398154
+          ],
+          "score": [
+            0,
+            1
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.12186686892871312
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.09964400069805635
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              0.0892644172920088
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.08318843158917756
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.07452296996530489
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.11640839896276689,
+          "expected_points": 1.7763942929178527,
+          "market_probabilities": null,
+          "modal_score": [
+            2,
+            0
+          ],
+          "rates": [
+            2.337570248113821,
+            0.8181572303733721
+          ],
+          "result_probabilities": [
+            0.713584548014776,
+            0.17240351341333257,
+            0.1140119385718921
+          ],
+          "score": [
+            2,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                2,
+                0
+              ],
+              0.11640839896276689
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.09959777598700746
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.09524037328757587
+            ],
+            [
+              [
+                3,
+                0
+              ],
+              0.09070427001530922
+            ],
+            [
+              [
+                1,
+                1
+              ],
+              0.08148664055287756
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.2008489064049927,
+          "expected_points": 1.3049050366405992,
+          "market_probabilities": null,
+          "modal_score": [
+            0,
+            0
+          ],
+          "rates": [
+            0.8752631913810444,
+            0.7299391716459714
+          ],
+          "result_probabilities": [
+            0.36589816568875266,
+            0.3511791587128105,
+            0.28292267559843687
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                0,
+                0
+              ],
+              0.2008489064049927
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.1757956548054266
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.14660748436725962
+            ],
+            [
+              [
+                1,
+                1
+              ],
+              0.12832013464763423
+            ],
+            [
+              [
+                2,
+                0
+              ],
+              0.07693373292795906
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.0913063043519694,
+          "expected_points": 1.1581580012821169,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.3236715400166217,
+            1.6116787804522443
+          ],
+          "result_probabilities": [
+            0.3146256895349231,
+            0.24325476635197293,
+            0.4421195441131043
+          ],
+          "score": [
+            1,
+            2
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.11330583421387287
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              0.0913063043519694
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.08559966032997134
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.07498985403337256
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.07030298815628679
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.08320185183281606,
+          "expected_points": 1.0199600135936087,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.630696855137281,
+            1.6352927021755812
+          ],
+          "result_probabilities": [
+            0.38323171152653845,
+            0.23159105942588185,
+            0.3851772290475802
+          ],
+          "score": [
+            1,
+            2
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.10175774859402838
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              0.08320185183281606
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.08296802030906607
+            ],
+            [
+              [
+                2,
+                2
+              ],
+              0.06783849906268558
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.06240138887461205
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.10118019888717487,
+          "expected_points": 1.2745849424155944,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.630070456073279,
+            1.1494049868399578
+          ],
+          "result_probabilities": [
+            0.48552217287703486,
+            0.24561511086393198,
+            0.26886271625903313
+          ],
+          "score": [
+            1,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.11629702517037754
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.10118019888717487
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.09478617242972147
+            ],
+            [
+              [
+                2,
+                0
+              ],
+              0.08246542647280111
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.07134478435400185
+            ]
+          ]
+        }
+      ],
+      "golden_goal": {
+        "minute": 4,
+        "minute_probabilities": [
+          0.16685902783629702,
+          0.13901709266582285,
+          0.11582083573097524,
+          0.09649508367771731,
+          0.08039400782427125,
+          0.06697954183484967,
+          0.05580340059936606,
+          0.04649209942539642,
+          0.038734472913206336,
+          0.032271276419157335,
+          0.026886522608820296,
+          0.022400263584413924,
+          0.01866257737944181,
+          0.015548557860988521,
+          0.012954140612047527,
+          0.010792625303066586,
+          0.008991778337195479,
+          0.0074914189453315835,
+          0.006241408062999117,
+          0.005199972781277474,
+          0.004332310378218289,
+          0.003609425280223705,
+          0.0030071600869178115,
+          0.0025053882782665945,
+          0.002087341625802576,
+          0.0017390498313589221,
+          0.0014488736671395023,
+          0.0012071160155829892,
+          0.0010056978107371873,
+          0.0008378880517404871,
+          0.0006980788659914213,
+          0.0005815981050590283,
+          0.00048455321065744806,
+          0.0004037011329921861,
+          0.0003363399544047002,
+          0.00028021859659022865,
+          0.0002334615939815314,
+          0.000194506419372659,
+          0.00016205126732821888,
+          0.000135011550402193,
+          0.00011248365435541081,
+          9.371474114219336e-05,
+          7.807759054127714e-05,
+          6.504963968775884e-05,
+          5.419552004835799e-05,
+          4.515250826000645e-05,
+          3.761840462737138e-05,
+          3.134143420249576e-05,
+          2.611183296047205e-05,
+          2.17548378976639e-05,
+          1.812484679532363e-05,
+          1.5100552479373829e-05,
+          1.2580888972874647e-05,
+          1.0481654069544494e-05,
+          8.732695461383839e-06,
+          7.2755663863068945e-06,
+          6.061572452129284e-06,
+          5.050144365607712e-06,
+          4.207482186329458e-06,
+          3.5054257990799866e-06,
+          2.9205138580932265e-06,
+          2.4331997549493575e-06,
+          2.027198409307011e-06,
+          1.6889420534987212e-06,
+          1.4071268243801013e-06,
+          1.172335010421672e-06,
+          9.767203302842373e-07,
+          8.137457255050714e-07,
+          6.779649048413598e-07,
+          5.648403399123913e-07,
+          4.7059162991189557e-07,
+          3.920691680368942e-07,
+          3.266488878136723e-07,
+          2.7214457194927756e-07,
+          2.2673479324289156e-07,
+          1.8890204606572098e-07,
+          1.5738203430290874e-07,
+          1.3112142106022414e-07,
+          1.0924262821360243e-07,
+          9.101450947159964e-08,
+          7.582791690216957e-08,
+          6.317534440502269e-08,
+          5.2633967854377894e-08,
+          4.385151514702859e-08,
+          3.653449396044747e-08,
+          3.043838381571585e-08,
+          2.5359464683317173e-08,
+          2.112800905981038e-08,
+          1.7602610007973773e-08,
+          1.4665455614661782e-08
+        ],
+        "no_goal": 7.322583684240482e-08,
+        "schedule": {
+          "elapsed_minute": 24,
+          "first_kickoff": "2026-11-29T12:00:00+00:00",
+          "first_window_goal_probability": 0.9319812824584501,
+          "kickoff_for_recommendation": "2026-11-29T12:00:00+00:00",
+          "recommended_minute": 24,
+          "windows": [
+            {
+              "end": 90.0,
+              "probability": 0.9319812824584501,
+              "start": 0.0
+            },
+            {
+              "end": 215.0,
+              "probability": 0.0680175378317393,
+              "start": 125.0
+            },
+            {
+              "end": 360.0,
+              "probability": 1.1064839736827904e-06,
+              "start": 270.0
+            }
+          ]
+        }
+      },
+      "modal_combination": {
+        "expected_points": 6.395197713605811,
+        "probability_13_plus": 0.0669710028528499,
+        "probability_all_exact": 3.820566899157321e-06,
+        "scores": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "points_counts": [
+        1873,
+        0,
+        9075,
+        0,
+        15602,
+        2562,
+        13582,
+        9874,
+        6134,
+        13765,
+        2809,
+        8864,
+        4283,
+        2604,
+        4373,
+        732,
+        1779,
+        887,
+        271,
+        596,
+        69,
+        133,
+        88,
+        0,
+        36,
+        4,
+        0,
+        5,
+        0,
+        0,
+        0
+      ],
+      "probability_13_plus": 0.11749196594943566,
+      "probability_all_exact": 1.7907469902072684e-06,
+      "seed": 6,
+      "simulated_probability_13_plus": 0.11577,
+      "simulated_probability_all_exact": 0.0,
+      "trials": 100000
+    },
+    "reduced_home_advantage": {
+      "expected_points": 7.24325,
+      "fixtures": [
+        {
+          "exact_probability": 0.09638080992771167,
+          "expected_points": 1.0942406240002245,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.2729166666666667,
+            1.4104166666666667
+          ],
+          "result_probabilities": [
+            0.339055652616994,
+            0.2583952502744612,
+            0.4025490971085448
+          ],
+          "score": [
+            0,
+            1
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.12268473930381633
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.09638080992771167
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.08698474869399091
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              0.08651830052987881
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.07808372470274143
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.09940704817863284,
+          "expected_points": 1.5290827767517032,
+          "market_probabilities": null,
+          "modal_score": [
+            2,
+            1
+          ],
+          "rates": [
+            2.075,
+            1.025
+          ],
+          "result_probabilities": [
+            0.6154308161079023,
+            0.20559386876809185,
+            0.1789753151240061
+          ],
+          "score": [
+            2,
+            1
+          ],
+          "top_scores": [
+            [
+              [
+                2,
+                1
+              ],
+              0.09940704817863284
+            ],
+            [
+              [
+                2,
+                0
+              ],
+              0.09698248602793448
+            ],
+            [
+              [
+                1,
+                1
+              ],
+              0.09581402234085093
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.09347709496668384
+            ],
+            [
+              [
+                3,
+                1
+              ],
+              0.06875654165688773
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.2018965179947598,
+          "expected_points": 1.3119773800188865,
+          "market_probabilities": null,
+          "modal_score": [
+            0,
+            0
+          ],
+          "rates": [
+            0.8250000000000001,
+            0.7749999999999999
+          ],
+          "result_probabilities": [
+            0.33773446208351615,
+            0.3531439130173036,
+            0.30912162489918016
+          ],
+          "score": [
+            0,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                0,
+                0
+              ],
+              0.2018965179947598
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.1665646273456768
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.1564698014459388
+            ],
+            [
+              [
+                1,
+                1
+              ],
+              0.1290875861928995
+            ],
+            [
+              [
+                2,
+                0
+              ],
+              0.0687079087800917
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.08925968143394612,
+          "expected_points": 1.1117006435344499,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.3666666666666667,
+            1.5666666666666664
+          ],
+          "result_probabilities": [
+            0.3332481961789639,
+            0.24479100420473018,
+            0.4219607996163058
+          ],
+          "score": [
+            1,
+            2
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.11394852949014402
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              0.08925968143394612
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.08337697279766636
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.07786482848493174
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.07273310392987917
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.08433239232231414,
+          "expected_points": 1.0426679535989454,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.6583333333333334,
+            1.6083333333333332
+          ],
+          "result_probabilities": [
+            0.39483538831600146,
+            0.2314913405031771,
+            0.37367327118082166
+          ],
+          "score": [
+            2,
+            1
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.1017074078259065
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.08433239232231414
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              0.08178970712666647
+            ],
+            [
+              [
+                2,
+                2
+              ],
+              0.06781729882586096
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.06323776652387969
+            ]
+          ]
+        },
+        {
+          "exact_probability": 0.09640254745448945,
+          "expected_points": 1.1741912209556915,
+          "market_probabilities": null,
+          "modal_score": [
+            1,
+            1
+          ],
+          "rates": [
+            1.5333333333333332,
+            1.2333333333333334
+          ],
+          "result_probabilities": [
+            0.44249178929611155,
+            0.2512981010623741,
+            0.30621010964151457
+          ],
+          "score": [
+            1,
+            0
+          ],
+          "top_scores": [
+            [
+              [
+                1,
+                1
+              ],
+              0.11889647519387034
+            ],
+            [
+              [
+                1,
+                0
+              ],
+              0.09640254745448945
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              0.09115396431530058
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              0.07754117947426327
+            ],
+            [
+              [
+                2,
+                0
+              ],
+              0.07390861971510856
+            ]
+          ]
+        }
+      ],
+      "golden_goal": {
+        "minute": 4,
+        "minute_probabilities": [
+          0.16612074615446104,
+          0.13852464385154628,
+          0.1155128266541463,
+          0.09632374969994867,
+          0.0803223765273976,
+          0.06697916340576676,
+          0.055852534803999265,
+          0.04657427004774081,
+          0.03883731755581077,
+          0.03238563338480174,
+          0.027005707802233686,
+          0.02251949947169722,
+          0.01877854341643391,
+          0.01565903777240199,
+          0.013057746733589642,
+          0.010888584103109743,
+          0.009079764387335584,
+          0.007571427152404664,
+          0.006313656024393079,
+          0.005264826774658272,
+          0.004390229822478074,
+          0.0036609215685784423,
+          0.0030527665459932282,
+          0.0025456386895374578,
+          0.00212275529099183,
+          0.0017701215981489379,
+          0.001476067677480309,
+          0.0012308622135228028,
+          0.0010263904641990536,
+          0.000855885714440491,
+          0.0007137053409346861,
+          0.0005951440771641953,
+          0.0004962782989962732,
+          0.0004138361776667432,
+          0.0003450894030470322,
+          0.00028776289392286303,
+          0.0002399595072688312,
+          0.00020009725487447525,
+          0.00016685694959126776,
+          0.00013913854862410862,
+          0.00011602474910782346,
+          9.675063121364818e-05,
+          8.067834416552137e-05,
+          6.72759974342386e-05,
+          5.6100058542177245e-05,
+          4.6780674957841824e-05,
+          3.9009434328235844e-05,
+          3.2529157990565834e-05,
+          2.7125389993396703e-05,
+          2.2619299967962885e-05,
+          1.8861764979793304e-05,
+          1.5728434507559973e-05,
+          1.3115615231322524e-05,
+          1.0936839442820422e-05,
+          9.120003514007547e-06,
+          7.604981725329377e-06,
+          6.341636486626492e-06,
+          5.288159101627805e-06,
+          4.40968616588189e-06,
+          3.677145809698617e-06,
+          3.0662956040726978e-06,
+          2.5569202903939776e-06,
+          2.1321627838962895e-06,
+          1.7779663113126306e-06,
+          1.4826092210398973e-06,
+          1.2363170709852761e-06,
+          1.0309391566696845e-06,
+          8.596787747238819e-07,
+          7.168682952135837e-07,
+          5.977815991182334e-07,
+          4.984776738353102e-07,
+          4.156701907164397e-07,
+          3.4661874848046486e-07,
+          2.890381833517614e-07,
+          2.410229446662345e-07,
+          2.0098403325793832e-07,
+          1.675964156879933e-07,
+          1.3975517406109336e-07,
+          1.1653894026711669e-07,
+          9.717940455389224e-08,
+          8.103588935855509e-08,
+          6.757414695302019e-08,
+          5.634867924043435e-08,
+          4.6987994600194525e-08,
+          3.918231387690879e-08,
+          3.267331865961773e-08,
+          2.7245602584539624e-08,
+          2.271954275376844e-08,
+          1.8945355359223873e-08,
+          1.5798138790788495e-08
+        ],
+        "no_goal": 7.930219729907625e-08,
+        "schedule": {
+          "elapsed_minute": 24,
+          "first_kickoff": "2026-11-29T12:00:00+00:00",
+          "first_window_goal_probability": 0.9316650092093679,
+          "kickoff_for_recommendation": "2026-11-29T12:00:00+00:00",
+          "recommended_minute": 24,
+          "windows": [
+            {
+              "end": 90.0,
+              "probability": 0.9316650092093679,
+              "start": 0.0
+            },
+            {
+              "end": 215.0,
+              "probability": 0.06833372944738195,
+              "start": 125.0
+            },
+            {
+              "end": 360.0,
+              "probability": 1.1820410528139196e-06,
+              "start": 270.0
+            }
+          ]
+        }
+      },
+      "modal_combination": {
+        "expected_points": 6.184723004301286,
+        "probability_13_plus": 0.06230569287538467,
+        "probability_all_exact": 3.3928670472430584e-06,
+        "scores": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "points_counts": [
+        2930,
+        0,
+        11106,
+        0,
+        16395,
+        3406,
+        12524,
+        10957,
+        5044,
+        13279,
+        2725,
+        7641,
+        4308,
+        2019,
+        3811,
+        663,
+        1439,
+        801,
+        184,
+        483,
+        67,
+        102,
+        77,
+        0,
+        33,
+        3,
+        0,
+        3,
+        0,
+        0,
+        0
+      ],
+      "probability_13_plus": 0.09901497734017857,
+      "probability_all_exact": 1.403701751354196e-06,
+      "seed": 6,
+      "simulated_probability_13_plus": 0.09685,
+      "simulated_probability_all_exact": 0.0,
+      "trials": 100000
+    }
+  },
+  "official": {
+    "available_at": "2026-11-24T10:25:33.613367+00:00",
+    "captured_at": "2026-11-24T10:25:33.613367+00:00",
+    "confirmed_at": "2026-11-24T10:25:33.613367+00:00",
+    "note": "Six score challenges and entry deadline from Sky Super 6.",
+    "source_sha256": "f17d2fdd06759675e66febec0a30e21ec47be4ebae2ef52e8082fb2b3b0e40c5",
+    "url": "https://api.s6.sbgservices.com/v2/round/19"
+  },
+  "round_id": "Sky 2026-27 Round 19",
+  "sky_scores_cross_checked": 59,
+  "sky_status_at_capture": "future",
+  "status": "frozen",
+  "timing_note": "Dixon–Coles Golden Goal timing uses its underlying Poisson rates."
+}
