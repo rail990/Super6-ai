@@ -43,11 +43,18 @@ function showRound(row, model = row?.recommended_model ?? 'xg_market') {
   captureSelection(round);
   const { prediction, evaluation } = model === 'xg_market' ? row : row.benchmarks[model];
   add(container, 'p', 'Entry deadline · ' + date(round.deadline));
+  if (row.frozen_at) {
+    add(container, 'p', 'Prospective forecast frozen · ' + date(row.frozen_at), 'status');
+    add(container, 'p', 'Recommendation · ' + modelNames[row.recommended_model]);
+    add(container, 'p', row.golden_goal_rule);
+  }
   source(container, 'Official fixture evidence', round.official);
   if (round.official.confirmed_at) add(container, 'p', 'Sky slate confirmed · ' + date(round.official.confirmed_at));
   const modelLabel = add(container, 'label', 'Forecast ');
   const select = add(modelLabel, 'select', '');
-  for (const name of ['xg_market', ...Object.keys(row.benchmarks)]) {
+  const models = [...Object.keys(row.benchmarks)];
+  if (row.prediction || !row.frozen_at) models.unshift('xg_market');
+  for (const name of models) {
     const option = add(select, 'option', modelNames[name]);
     option.value = name;
     option.selected = name === model;
@@ -99,7 +106,7 @@ function showRound(row, model = row?.recommended_model ?? 'xg_market') {
   if (round.golden_goal) {
     const goal = round.golden_goal;
     source(container, 'Official Golden Goal · ' + (goal.minute ?? 'No goal'), goal);
-  } else if (row.derived_goal !== null) {
+  } else if (row.derived_goal != null) {
     add(container, 'p', 'First goal from Sky match reports · Minute ' + row.derived_goal);
   }
   round.fixtures.forEach((fixture, index) => {
@@ -206,6 +213,9 @@ function showHistoricalStudy(study, candidates = []) {
         bin.rounds + ' rounds · ' + percent(bin.predicted) + ' forecast · ' + percent(bin.observed) + ' observed');
     }
   }
+  for (const [name, trend] of Object.entries(study.trends ?? {})) {
+    showTrend(root, study.labels[name], trend);
+  }
   for (const { round, strategies, source_quality } of study.rounds) {
     const panel = add(root, 'details', '', 'historical-card');
     add(panel, 'summary', round.id + ' · Historical results');
@@ -235,6 +245,96 @@ function showHistoricalStudy(study, candidates = []) {
         ' · Dixon–Coles ' + fold.adjusted_log_loss.toFixed(3));
     }
   }
+}
+
+function showTrend(root, label, trend) {
+  if (!trend.length) return;
+  const panel = add(root, 'details', '', 'historical-card');
+  const latest = trend[trend.length - 1];
+  add(panel, 'summary', label + ' · ' + latest.points + ' cumulative points');
+  const list = add(panel, 'ol', '');
+  for (const row of trend) {
+    add(list, 'li', row.round_id + ' · ' + row.points + ' actual / ' +
+      row.expected_points.toFixed(2) + ' model-expected points');
+  }
+}
+
+function showPerformance(root, stats) {
+  const metrics = add(root, 'div', '', 'metrics');
+  metric(metrics, 'Rounds', stats.rounds);
+  metric(metrics, 'Average points', stats.average_points.toFixed(2));
+  metric(metrics, 'Expected points', stats.mean_expected_points.toFixed(2));
+  metric(metrics, 'Exact-score accuracy', percent(stats.exact_score_accuracy));
+  metric(metrics, 'Correct-result accuracy', percent(stats.correct_result_accuracy));
+  metric(metrics, '13+ forecast vs observed', percent(stats.predicted_13_plus) + ' / ' +
+    percent(stats.observed_13_plus));
+  metric(metrics, '13+ Brier', stats.brier_13_plus.toFixed(3));
+  const list = add(root, 'ul', '');
+  for (const bin of stats.calibration) {
+    add(list, 'li', percent(bin.lower) + '–' + percent(bin.upper) + ' band · ' + bin.rounds +
+      ' rounds · ' + percent(bin.predicted) + ' forecast · ' + percent(bin.observed) + ' observed');
+  }
+}
+
+function showProspective(data) {
+  const root = byId('prospective');
+  const summaries = Object.entries(data.summary);
+  if (!summaries.length) add(root, 'p', 'No settled prospective rounds.');
+  for (const [name, stats] of summaries) {
+    add(root, 'h4', modelNames[name]);
+    showPerformance(root, stats);
+    add(root, 'p', 'Match result Brier · ' + stats.result_brier.toFixed(3));
+    showTrend(root, modelNames[name], stats.trend);
+  }
+}
+
+const experimentNames = {
+  reduced_home_advantage: 'Reduced home advantage',
+  away_goal_lift: 'Away goal adjustment',
+  opponent_adjusted_form: 'Opponent-adjusted form',
+  competition_shrinkage: 'Competition-average shrinkage',
+  dixon_coles: 'Fitted Dixon–Coles'
+};
+
+function showExperiments(data) {
+  const root = byId('experiments');
+  add(root, 'p', data.eligible_holdouts + ' of ' + data.protocol.minimum_holdout_rounds +
+    ' paired evaluation rounds required · Holdout starts ' + date(data.protocol.holdout_deadline_from));
+  if (data.excluded_holdouts.length) {
+    add(root, 'p', data.excluded_holdouts.length + ' rounds lacked all required paired inputs.');
+  }
+  const models = Object.entries(data.summary);
+  if (!models.length) {
+    add(root, 'p', 'Comparative scores appear when the registered sample is complete.');
+    const list = add(root, 'ul', '');
+    Object.keys(data.protocol.candidates).forEach(name => add(list, 'li', experimentNames[name]));
+  }
+  for (const [name, stats] of models) {
+    const panel = add(root, 'details', '', 'historical-card');
+    add(panel, 'summary', (experimentNames[name] ?? modelNames[name]) + ' · ' +
+      stats.mean_log_loss.toFixed(3) + ' exact-score log loss');
+    showPerformance(panel, stats);
+    for (const [metric, values] of Object.entries(stats.paired_intervals_vs_venue)) {
+      add(panel, 'p', (metric === 'points' ? 'Points' : 'Log loss') +
+        ' difference vs venue · ' + values.difference.toFixed(3) + ' · 95% interval ' +
+        values.interval_95.map(value => value.toFixed(3)).join(' to '));
+    }
+  }
+}
+
+function prospectiveRow(record) {
+  const { predictions, settlement } = record;
+  const evaluations = settlement?.evaluations ?? {};
+  const round = {
+    ...record.round,
+    fixtures: record.round.fixtures.map(fixture => settlement ?
+      { ...fixture, result: settlement.results[fixture.id] } : fixture)
+  };
+  const benchmarks = Object.fromEntries(Object.entries(predictions)
+    .filter(([name]) => name !== 'xg_market')
+    .map(([name, prediction]) => [name, { prediction, evaluation: evaluations[name] }]));
+  return { ...record, round, benchmarks, prediction: predictions.xg_market,
+    evaluation: evaluations.xg_market };
 }
 
 async function load() {
@@ -282,12 +382,18 @@ async function load() {
   if (!matched) {
     add(comparison, 'p', 'No completed round has all three forecasts for a like-for-like comparison.');
   }
+  const prospective = data.prospective ?? { rounds: [], summary: {} };
+  showProspective(prospective);
+  if (data.experiments) showExperiments(data.experiments);
+  const rows = [...data.rounds, ...prospective.rounds.map(prospectiveRow)].sort(
+    (first, second) => new Date(first.round.deadline) - new Date(second.round.deadline));
   const select = byId('round');
-  for (const row of data.rounds) add(select, 'option', row.round.id);
-  select.disabled = !data.rounds.length;
-  select.addEventListener('change', () => showRound(data.rounds[select.selectedIndex]));
-  const active = data.rounds.findIndex(row => new Date(row.round.deadline) > new Date());
-  select.selectedIndex = active >= 0 ? active : data.rounds.length - 1;
-  showRound(data.rounds[select.selectedIndex]);
+  for (const row of rows) add(select, 'option', row.round.id);
+  select.disabled = !rows.length;
+  select.addEventListener('change', () => showRound(rows[select.selectedIndex]));
+  const active = rows.findIndex(row => new Date(row.round.deadline) > new Date());
+  if (active < 0) add(byId('upcoming-status'), 'p', 'No verified upcoming round is published.');
+  select.selectedIndex = active >= 0 ? active : rows.length - 1;
+  showRound(rows[select.selectedIndex]);
 }
 load().catch(() => { byId('round-content').textContent = 'Could not load the dashboard report.'; });

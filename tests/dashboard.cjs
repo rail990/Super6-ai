@@ -71,6 +71,13 @@ async function checkDashboard(browser, device, report) {
     const round = page.locator('#round-content');
     assert.equal(await round.locator('article').count(), 6);
     assert.equal(await round.locator('a').filter({ hasText: /^form$/ }).count(), 5);
+    await page.locator('#round').selectOption({ label: 'Synthetic prospective round' });
+    await round.getByText(/Prospective forecast frozen/).waitFor();
+    await round.getByText('Recommendation · Fixed Poisson benchmark').waitFor();
+    await round.getByText('Confirm staggered kickoff treatment with Sky.').waitFor();
+    await page.getByText('No settled prospective rounds.').waitFor();
+    await page.getByText('Fitted Dixon–Coles', { exact: true }).waitFor();
+    await history.getByText(/Fixed-rate Poisson · .* cumulative points/).waitFor();
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true);
     assert.deepEqual(errors, []);
     console.log(device + ' dashboard and fixture capture checks passed');

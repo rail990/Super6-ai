@@ -8,6 +8,7 @@ from unittest import TestCase
 from unittest.mock import patch
 
 from super6.live import freeze_round, settle_round
+from super6.prospective import report
 
 
 class LiveTest(TestCase):
@@ -52,3 +53,10 @@ class LiveTest(TestCase):
                     settle_round('test', results, directory, directory)
             self.assertEqual(json.loads(result.read_bytes())['evaluations']['fixed_poisson']['points'], 30)
             self.assertEqual(path.read_bytes(), before)
+            self.assertFalse(report(directory, deadline)['summary'])
+            summary = report(directory, end + timedelta(seconds=2))['summary']['fixed_poisson']
+            self.assertEqual(summary['correct_result_accuracy'], 1)
+            self.assertEqual(summary['trend'][0]['points'], 30)
+            path.write_bytes(before + b'\n')
+            with self.assertRaisesRegex(ValueError, 'does not match'):
+                report(directory, end + timedelta(seconds=2))

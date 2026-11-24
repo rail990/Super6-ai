@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 
+from .archive import load_rounds
 from .backtest import FIXED_RATES
 from .capture import missing, prematch, validate_capture
 from .evidence import evidence, ready, timestamp, validate, verified_snapshot
@@ -111,6 +112,9 @@ def freeze_round(item, directory, sources):
                                  for side in ('home', 'away')) for f in fixtures):
         predictions[FORM] = forecast([form_rates({'stats': f['stats'], 'research': research})
                                       for f, research in zip(fixtures, fresh, strict=True)], kickoffs=kickoffs)
+    for prediction in predictions.values():
+        prediction['simulated_expected_points'] = prediction['expected_points']
+        prediction['expected_points'] = sum(pick['expected_points'] for pick in prediction['fixtures'])
     recommended = next(name for name in (MODEL, FORM, FIXED) if name in predictions)
     publish(path, {
         'protocol': 'prospective-v1', 'frozen_at': now().isoformat(), 'round': prematch(item),
@@ -173,6 +177,8 @@ def main():
             return
         data = json.loads(Path(args.input).read_text())
         if args.action == 'freeze':
+            if any(round_data['id'] == data['id'] for round_data in load_rounds()):
+                raise ValueError('The round already exists in the legacy archive')
             path = freeze_round(data, args.directory, args.sources)
         else:
             if not args.round_id:

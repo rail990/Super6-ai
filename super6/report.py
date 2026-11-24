@@ -166,9 +166,25 @@ def main():
     parser.add_argument('--output', type=Path, default=Path('dist'))
     parser.add_argument('--snapshots', type=Path, default=SNAPSHOTS)
     parser.add_argument('--backtest-as-of', type=timestamp, help='Optional ISO 8601 evaluation cutoff')
+    from .experiments import study as experiment_study
+    from .live import DIRECTORY
+    from .prospective import cumulative, report as prospective_report
+
+    parser.add_argument('--prospective', type=Path, default=DIRECTORY)
+    parser.add_argument('--experiments', type=Path, help='Generated registered experiment report')
     args = parser.parse_args()
-    data = report(load_rounds(args.rounds), json.loads(Path('data/baseline.json').read_text()),
+    rounds = load_rounds(args.rounds)
+    observed = datetime.now(timezone.utc)
+    data = report(rounds, json.loads(Path('data/baseline.json').read_text()),
                   args.snapshots, args.backtest_as_of)
+    data['prospective'] = prospective_report(args.prospective, observed)
+    data['experiments'] = (json.loads(args.experiments.read_text()) if args.experiments
+                           else experiment_study(rounds, args.backtest_as_of or observed))
+    historical = data['strategy_backtest']
+    historical['trends'] = {
+        name: cumulative([(row['round']['id'], row['strategies'][name]) for row in historical['rounds']])
+        for name in ('expected_points', FIXED)
+    }
     if args.rounds.resolve() == ROUNDS.resolve():
         data['archive_candidates'] = candidate_index()
     args.output.mkdir(parents=True, exist_ok=True)
