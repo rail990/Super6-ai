@@ -205,3 +205,13 @@ python -m super6.live settle reviewed-results.json --round-id ROUND_ID --sources
 Collect each available free research source with the same command. Record the returned capture time and digest alongside the verified publication time, notes and any structured input. For form feeds, use the existing `super6.research` normalizer to derive profiles from the saved bytes using the returned capture time. Leave unavailable or unverified categories absent. If the market model lacks its required fresh research, the recommendation uses recent form when available or the fixed-rate benchmark. The ledger records which model was used. Collection has a bounded timeout and one retry per source. Captured pages require review because a successful download alone does not establish the slate, published odds, availability, or a final score.
 
 Freeze writes one complete forecast per round identifier and checks the cutoff again at publication. Commit the ledger promptly to retain an independent record of when it was published. Settlement requires six final Sky score records keyed by the frozen fixture IDs, each with a captured source digest. It scores the stored picks and links the settlement to the exact forecast bytes. Use the same stable round ID throughout. The workflow has no entry submission step.
+
+### Registered experiments
+
+The [experiment protocol](data/experiment-protocol.json) reserves rounds with deadlines from 25 November 2026 onward. The Stage 7 archive can seed the Dixon–Coles fit. It contributes zero evaluation rounds. The five candidates are scored against the venue and fixed-rate baselines on the same eligible rounds. Before the registered minimum of 20 paired holdouts, the report shows enrollment counts and withholds comparative scores.
+
+```sh
+python -m super6.experiments --as-of 2026-11-24T12:00:00Z
+```
+
+For future evaluation, pass the verified archive feeds and review manifest with `--feeds` and `--review`. The `--competitions` JSON maps each round ID to its home-team names and each name to the reviewed result-feed URL for that fixture's competition and season. Earlier matches in those feeds establish competition goal rates and opponents’ points per game. Results whose availability is at or after the deadline are excluded before computing either feature. A round without full context stays outside the paired cohort. These candidates use reconstructable venue scores. Evaluating them against the market-blended model requires a separate protocol and comparable evidence.

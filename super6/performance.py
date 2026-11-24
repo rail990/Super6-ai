@@ -63,14 +63,14 @@ def round_metrics(entry):
     }
 
 
-def paired_intervals(differences, draws, seed):
+def paired_intervals(differences, draws, seed, metrics=METRICS):
     """Resample entire paired slates and use empirical 2.5% and 97.5% quantiles."""
     rng = Random(seed)
     count = len(differences)
-    samples = {name: [] for name in METRICS}
+    samples = {name: [] for name in metrics}
     for _ in range(draws):
         indices = rng.choices(range(count), k=count)
-        for name in METRICS:
+        for name in metrics:
             samples[name].append(mean([differences[i][name] for i in indices]))
     for values in samples.values():
         values.sort()
