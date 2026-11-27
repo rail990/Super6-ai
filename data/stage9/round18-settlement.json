@@ -1,0 +1,113 @@
+{
+  "comparisons": {
+    "fixed_poisson": {
+      "actual_minus_expected": -5.55516,
+      "exact": 0,
+      "expected_points": 7.55516,
+      "forecast_13_plus": 0.1130596862502576,
+      "golden_goal_error": 1,
+      "hit_13_plus": false,
+      "no_goal_actual": false,
+      "points": 2,
+      "result_only": 1
+    },
+    "recent_form": {
+      "actual_minus_expected": -6.07921,
+      "exact": 0,
+      "expected_points": 8.07921,
+      "forecast_13_plus": 0.12794305272845938,
+      "golden_goal_error": 2,
+      "hit_13_plus": false,
+      "no_goal_actual": false,
+      "points": 2,
+      "result_only": 1
+    }
+  },
+  "expectations_sha256": "35587afea1a799dff5a0cbc717ca40735d2036462ecdc2717338adeff3c19444",
+  "scorecard": {
+    "deadline": "2026-11-24T20:00:00Z",
+    "fixtures": [
+      {
+        "away": "Napoli",
+        "competition": "UEFA Champions League",
+        "home": "Man City",
+        "id": "232",
+        "kickoff": "2026-11-24T20:00:00.000Z",
+        "kickoff_source": "https://api.s6.sbgservices.com/v2/round/18",
+        "score": [
+          2,
+          2
+        ]
+      },
+      {
+        "away": "Borussia Dortmund",
+        "competition": "UEFA Champions League",
+        "home": "Arsenal",
+        "id": "233",
+        "kickoff": "2026-11-24T20:00:00.000Z",
+        "kickoff_source": "https://api.s6.sbgservices.com/v2/round/18",
+        "score": [
+          1,
+          1
+        ]
+      },
+      {
+        "away": "PSV",
+        "competition": "UEFA Champions League",
+        "home": "Real Madrid",
+        "id": "234",
+        "kickoff": "2026-11-24T20:00:00.000Z",
+        "kickoff_source": "https://api.s6.sbgservices.com/v2/round/18",
+        "score": [
+          5,
+          1
+        ]
+      },
+      {
+        "away": "Man Utd",
+        "competition": "UEFA Champions League",
+        "home": "Sporting",
+        "id": "235",
+        "kickoff": "2026-11-25T20:00:00.000Z",
+        "kickoff_source": "https://api.s6.sbgservices.com/v2/round/18",
+        "score": [
+          2,
+          2
+        ]
+      },
+      {
+        "away": "Liverpool",
+        "competition": "UEFA Champions League",
+        "home": "Club Brugge",
+        "id": "236",
+        "kickoff": "2026-11-25T20:00:00.000Z",
+        "kickoff_source": "https://api.s6.sbgservices.com/v2/round/18",
+        "score": [
+          0,
+          3
+        ]
+      },
+      {
+        "away": "Roma",
+        "competition": "UEFA Champions League",
+        "home": "PSG",
+        "id": "237",
+        "kickoff": "2026-11-25T20:00:00.000Z",
+        "kickoff_source": "https://api.s6.sbgservices.com/v2/round/18",
+        "score": [
+          2,
+          2
+        ]
+      }
+    ],
+    "golden_goal": 5,
+    "id": "Sky 2026-27 Round 18",
+    "source": {
+      "available_at": "2026-11-27T18:13:02.342425+00:00",
+      "captured_at": "2026-11-27T18:13:02.342425+00:00",
+      "note": "Six score challenges and entry deadline from Sky Super 6.",
+      "source_sha256": "5020a8072616c4909ca2bab38a26511d35d616f22c44aa2e98143b60be95a553",
+      "url": "https://api.s6.sbgservices.com/v2/round/18"
+    }
+  }
+}
