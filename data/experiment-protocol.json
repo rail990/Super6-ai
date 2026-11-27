@@ -1,0 +1,21 @@
+{
+  "protocol": "venue-experiments-v1",
+  "registered_on": "2026-11-24",
+  "holdout_deadline_from": "2026-11-25T00:00:00Z",
+  "minimum_holdout_rounds": 20,
+  "excluded_source_quality": ["sky_revised_preview"],
+  "baseline": "Stage 7 venue-results model and fixed-rate Poisson, with expected-points picks",
+  "candidates": {
+    "reduced_home_advantage": {"retained_home_rate_gap": 0.75},
+    "away_goal_lift": {"away_rate_multiplier": 1.1},
+    "opponent_adjusted_form": {"opponent_ppg_center": 1.5, "log_rate_per_ppg": 0.1, "missing": "exclude round from paired experiment"},
+    "competition_shrinkage": {"prior_match_equivalents": 6, "minimum_competition_matches": 30, "missing": "exclude round from paired experiment"},
+    "dixon_coles": {"rho_min": -0.12, "rho_max": 0.12, "rho_step": 0.001, "minimum_training_matches": 30}
+  },
+  "evaluation": {
+    "primary": "Mean exact-score log loss on common untouched chronological rounds, probability floor 1e-15",
+    "secondary": ["paired points", "exact and correct-result accuracy", "expected points", "observed 13+ frequency", "13+ Brier", "13+ calibration"],
+    "training": "Dixon–Coles uses only whole rounds with all results available strictly before the forecast deadline. Competition means and opponent PPG use point-in-time pre-deadline matches only.",
+    "interpretation": "Review only after 20 eligible paired holdouts. Report all five candidates and paired 95% round-bootstrap intervals. No automatic promotion."
+  }
+}

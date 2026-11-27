@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Super 6 Research</title>
+<link rel="stylesheet" href="style.css">
+<script src="capture.js" defer></script>
+<script src="dashboard.js" defer></script>
+</head>
+<body>
+<header><div><span class="brand">SUPER 6</span><span class="brand-label">Research</span></div><nav aria-label="Sections"><a href="#rounds">Rounds</a><a href="#performance">Performance</a><a href="#capture">Capture</a></nav></header>
+<main>
+<section class="hero" aria-labelledby="title">
+<p class="eyebrow">Football forecasting</p>
+<h1 id="title">Super 6 Research</h1>
+<p>Explore verified fixtures, score probabilities, and model results.</p>
+</section>
+<section class="panel" id="rounds" aria-labelledby="rounds-title">
+<div class="section-heading"><h2 id="rounds-title">Rounds</h2><label for="round">Round <select id="round" disabled></select></label></div>
+<div id="upcoming-status"></div>
+<div id="round-content" aria-live="polite"><p>Loading round data…</p></div>
+</section>
+<section class="panel" id="performance" aria-labelledby="performance-title">
+<h2 id="performance-title">Model performance</h2>
+<div class="metrics" id="metrics" aria-live="polite"></div>
+<p id="evaluation-status"></p>
+<div id="strategy-history"></div>
+<section id="prospective"><h3>Prospective performance</h3></section>
+<section id="experiments"><h3>Registered model experiments</h3></section>
+<div id="comparison" aria-live="polite"></div>
+</section>
+<section class="panel" id="capture" aria-labelledby="capture-title">
+<h2 id="capture-title">Verify a Sky round</h2>
+<p>Copy the six fixtures from the official Super 6 round. Save a local draft or export it for research.</p>
+<button type="button" id="capture-selected" disabled>Load selected round</button>
+<form id="capture-form">
+<div class="form-grid">
+<label>Round label <input name="id" required></label>
+<label>Entry deadline (ISO 8601) <input name="deadline" placeholder="2026-11-24T20:00:00Z" required></label>
+<label>Official Sky source URL <input name="url" type="url" required></label>
+<label>Verification note <input name="note" required></label>
+</div>
+<div id="capture-fixtures" class="form-grid"></div>
+<details id="manual-evidence">
+<summary>Attach manual research evidence</summary>
+<div class="form-grid">
+<label>Fixture <select id="manual-fixture"></select></label>
+<label>Evidence type <select id="manual-category"></select></label>
+<label>Source URL <input id="manual-url" type="url"></label>
+<label>Available at (ISO 8601) <input id="manual-time" placeholder="2026-11-23T18:00:00Z"></label>
+<label>Research note <input id="manual-note"></label>
+<label id="manual-values-label" hidden>Values <input id="manual-values"></label>
+</div>
+<button type="button" id="manual-save">Attach evidence</button>
+</details>
+<label class="confirm"><input name="confirmed" type="checkbox" required> I checked all six fixtures and the deadline against the official Sky round.</label>
+<div class="form-actions"><button type="submit">Save local confirmation</button>
+<button id="capture-export" type="button" disabled>Export round JSON</button></div>
+<p id="capture-status" role="status"></p>
+</form>
+</section>
+<footer>Sources include <a href="https://github.com/oladeeayo/open-matchday">open-matchday</a> and its upstream providers. Football data provided by the <a href="https://www.football-data.org/">Football-Data.org API</a> when selected.</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,2091 @@
+[
+  {
+    "id": "2020–21 Round 1",
+    "deadline": "2020-09-12T15:00:00+01:00",
+    "deadline_basis": "Sky Sports explicitly advertised a 3pm entry deadline in its matchday preview.",
+    "official": {
+      "url": "https://www.skysports.com/football/news/18871/12061082/super-6-the-gbp1m-jackpot-returns-can-you-imagine",
+      "available_at": "2020-09-01T16:59:00+01:00",
+      "note": "Sky Sports names these six pairings for its September 12 Super 6 round. Individual match reports give the actual scheduled kickoffs."
+    },
+    "fixtures": [
+      {
+        "home": "West Ham United",
+        "away": "Newcastle United",
+        "kickoff": "2020-09-12T20:00:00+01:00",
+        "result": {
+          "score": [
+            0,
+            2
+          ],
+          "url": "https://www.skysports.com/football/news/12070029/west-ham-0-2-newcastle-callum-wilson-and-jeff-hendrick-seal-opening-day-win",
+          "available_at": "2020-09-12T22:16:00+01:00",
+          "note": "Sky Sports match report confirms the full-time score.",
+          "status": "final",
+          "first_goal": {
+            "minute": 56,
+            "url": "https://www.skysports.com/football/west-ham-vs-newcastle/428844",
+            "available_at": "2020-09-12T22:16:00+01:00",
+            "note": "First goal minute in the Sky Sports full-time match centre."
+          }
+        },
+        "research": {
+          "injuries": {
+            "url": "https://www.skysports.com/football/news/12309/12068676/west-ham-vs-newcastle-preview-team-news-kick-off-channel",
+            "available_at": "2020-09-11T15:37:00+01:00",
+            "note": "Sky Sports reported that David Moyes had no new injury concerns ahead of the opener."
+          }
+        },
+        "venue_history": {
+          "home": [
+            {
+              "available_at": "2020-07-27T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Aston Villa",
+              "score": [
+                1,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-18T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Watford",
+              "score": [
+                3,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-09T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Burnley",
+              "score": [
+                0,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-02T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Chelsea",
+              "score": [
+                3,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-06-21T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Wolves",
+              "score": [
+                0,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ],
+          "away": [
+            {
+              "available_at": "2020-07-21T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Brighton",
+              "score": [
+                0,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-12T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Watford",
+              "score": [
+                1,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-09T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Man City",
+              "score": [
+                0,
+                5
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-02T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Bournemouth",
+              "score": [
+                4,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-03-08T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Southampton",
+              "score": [
+                1,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ]
+        }
+      },
+      {
+        "home": "Crystal Palace",
+        "away": "Southampton",
+        "kickoff": "2020-09-12T15:00:00+01:00",
+        "result": {
+          "score": [
+            1,
+            0
+          ],
+          "url": "https://www.skysports.com/football/news/12069802/crystal-palace-1-0-southampton-wilfried-zaha-gets-hosts-off-to-flying-start",
+          "available_at": "2020-09-12T20:48:00+01:00",
+          "note": "Sky Sports match report confirms the full-time score.",
+          "status": "final",
+          "first_goal": {
+            "minute": 13,
+            "url": "https://www.skysports.com/football/c-palace-vs-soton/428838",
+            "available_at": "2020-09-12T20:48:00+01:00",
+            "note": "First goal minute in the Sky Sports full-time match centre."
+          }
+        },
+        "research": {
+          "injuries": {
+            "url": "https://www.skysports.com/football/news/12309/12068211/crystal-palace-vs-southampton-preview-team-news-kick-off-channel",
+            "available_at": "2020-09-11T13:22:00+01:00",
+            "note": "Eberechi Eze had returned to training after a groin injury and was expected to be included in the Palace squad."
+          }
+        },
+        "venue_history": {
+          "home": [
+            {
+              "available_at": "2020-07-27T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Tottenham",
+              "score": [
+                1,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-17T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Man United",
+              "score": [
+                0,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-08T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Chelsea",
+              "score": [
+                2,
+                3
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-06-30T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Burnley",
+              "score": [
+                0,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-03-08T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Watford",
+              "score": [
+                1,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ],
+          "away": [
+            {
+              "available_at": "2020-07-20T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Bournemouth",
+              "score": [
+                2,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-14T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Man United",
+              "score": [
+                2,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-10T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Everton",
+              "score": [
+                1,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-06-29T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Watford",
+              "score": [
+                3,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-06-20T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Norwich",
+              "score": [
+                3,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ]
+        }
+      },
+      {
+        "home": "Bournemouth",
+        "away": "Blackburn Rovers",
+        "kickoff": "2020-09-12T15:00:00+01:00",
+        "result": {
+          "score": [
+            3,
+            2
+          ],
+          "url": "https://www.skysports.com/football/news/12065905/bournemouth-3-2-blackburn-cherries-hold-on-to-edge-five-goal-thriller",
+          "available_at": "2020-09-12T18:34:00+01:00",
+          "note": "Sky Sports match report confirms the full-time score.",
+          "status": "final",
+          "first_goal": {
+            "minute": 25,
+            "url": "https://www.skysports.com/football/bournemouth-vs-blackburn-rovers/429707",
+            "available_at": "2020-09-12T18:34:00+01:00",
+            "note": "First goal minute in the Sky Sports full-time match centre."
+          }
+        },
+        "venue_history": {
+          "home": [
+            {
+              "available_at": "2020-07-20T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Southampton",
+              "score": [
+                0,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-13T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Leicester",
+              "score": [
+                4,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-10T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Tottenham",
+              "score": [
+                0,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-02T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Newcastle",
+              "score": [
+                1,
+                4
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-06-21T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Crystal Palace",
+              "score": [
+                0,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ],
+          "away": [
+            {
+              "available_at": "2020-07-23T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Luton",
+              "score": [
+                2,
+                3
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-15T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Millwall",
+              "score": [
+                0,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-08T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Cardiff",
+              "score": [
+                3,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-01T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Barnsley",
+              "score": [
+                0,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-06-28T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Wigan",
+              "score": [
+                0,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ]
+        }
+      },
+      {
+        "home": "Huddersfield Town",
+        "away": "Norwich City",
+        "kickoff": "2020-09-12T15:00:00+01:00",
+        "result": {
+          "score": [
+            0,
+            1
+          ],
+          "url": "https://www.skysports.com/football/huddsfld-vs-norwich/429711",
+          "available_at": "2020-09-12T19:03:00+01:00",
+          "note": "Sky Sports match report confirms the full-time score.",
+          "status": "final",
+          "first_goal": {
+            "minute": 80,
+            "url": "https://www.skysports.com/football/huddsfld-vs-norwich/429711",
+            "available_at": "2020-09-12T19:03:00+01:00",
+            "note": "First goal minute in the Sky Sports full-time match centre."
+          }
+        },
+        "venue_history": {
+          "home": [
+            {
+              "available_at": "2020-07-18T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "West Brom",
+              "score": [
+                2,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-11T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Luton",
+              "score": [
+                0,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-05T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Preston",
+              "score": [
+                0,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-06-21T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Wigan",
+              "score": [
+                0,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-03-01T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Charlton",
+              "score": [
+                4,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ],
+          "away": [
+            {
+              "available_at": "2020-07-27T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Man City",
+              "score": [
+                0,
+                5
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-15T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Chelsea",
+              "score": [
+                0,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-08T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Watford",
+              "score": [
+                1,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-02T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Arsenal",
+              "score": [
+                0,
+                4
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-03-08T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E0.csv",
+              "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+              "opponent": "Sheffield United",
+              "score": [
+                0,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ]
+        }
+      },
+      {
+        "home": "Queens Park Rangers",
+        "away": "Nottingham Forest",
+        "kickoff": "2020-09-12T15:00:00+01:00",
+        "result": {
+          "score": [
+            2,
+            0
+          ],
+          "url": "https://www.skysports.com/football/qpr-vs-n-forest/429714",
+          "available_at": "2020-09-12T19:30:00+01:00",
+          "note": "Sky Sports match report confirms the full-time score.",
+          "status": "final",
+          "first_goal": {
+            "minute": 54,
+            "url": "https://www.skysports.com/football/qpr-vs-n-forest/429714",
+            "available_at": "2020-09-12T19:30:00+01:00",
+            "note": "First goal minute in the Sky Sports full-time match centre."
+          }
+        },
+        "venue_history": {
+          "home": [
+            {
+              "available_at": "2020-07-19T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Millwall",
+              "score": [
+                4,
+                3
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-12T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Sheffield Weds",
+              "score": [
+                0,
+                3
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-01T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Fulham",
+              "score": [
+                1,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-06-21T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Barnsley",
+              "score": [
+                0,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-03-01T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Birmingham",
+              "score": [
+                2,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ],
+          "away": [
+            {
+              "available_at": "2020-07-20T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Barnsley",
+              "score": [
+                0,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-12T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Preston",
+              "score": [
+                1,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-05T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Derby",
+              "score": [
+                1,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-06-21T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Sheffield Weds",
+              "score": [
+                1,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-03-03T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Middlesbrough",
+              "score": [
+                2,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ]
+        }
+      },
+      {
+        "home": "Derby County",
+        "away": "Reading",
+        "kickoff": "2020-09-12T15:00:00+01:00",
+        "result": {
+          "score": [
+            0,
+            2
+          ],
+          "url": "https://www.skysports.com/football/derby-vs-reading/429710",
+          "available_at": "2020-09-12T18:33:00+01:00",
+          "note": "Sky Sports match report confirms the full-time score.",
+          "status": "final",
+          "first_goal": {
+            "minute": 40,
+            "url": "https://www.skysports.com/football/derby-vs-reading/429710",
+            "available_at": "2020-09-12T18:33:00+01:00",
+            "note": "First goal minute in the Sky Sports full-time match centre."
+          }
+        },
+        "venue_history": {
+          "home": [
+            {
+              "available_at": "2020-07-20T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Leeds",
+              "score": [
+                1,
+                3
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-12T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Brentford",
+              "score": [
+                1,
+                3
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-05T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Nott'm Forest",
+              "score": [
+                1,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-06-28T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Reading",
+              "score": [
+                2,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-03-09T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Blackburn",
+              "score": [
+                3,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ],
+          "away": [
+            {
+              "available_at": "2020-07-19T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Blackburn",
+              "score": [
+                3,
+                4
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-12T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Charlton",
+              "score": [
+                1,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-07-05T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Luton",
+              "score": [
+                5,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-06-28T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Derby",
+              "score": [
+                1,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2020-03-08T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/1920/E1.csv",
+              "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+              "opponent": "Birmingham",
+              "score": [
+                3,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ]
+        }
+      }
+    ],
+    "deadline_evidence": {
+      "url": "https://www.skysports.com/football/news/12040/12068960/super-6-lb1m-preview-one-day-to-go",
+      "available_at": "2020-09-12T13:59:00+01:00",
+      "note": "Dated Sky Sports preview explicitly confirms the 3pm entry deadline."
+    }
+  },
+  {
+    "id": "2021–22 Round 1",
+    "deadline": "2021-08-07T15:00:00+01:00",
+    "deadline_basis": "Advertised by Sky Sports.",
+    "official": {
+      "url": "https://www.skysports.com/football/news/12371699/super-6-championship-opening-day-lb1m-up-for-grabs-on-saturday",
+      "available_at": "2021-08-04T17:09:00+01:00",
+      "note": "Sky Sports preview explicitly identifies all six Super 6 fixtures and the 3pm entry deadline."
+    },
+    "deadline_evidence": {
+      "url": "https://www.skysports.com/football/news/12371699/super-6-championship-opening-day-lb1m-up-for-grabs-on-saturday",
+      "available_at": "2021-08-04T17:09:00+01:00",
+      "note": "Sky Sports preview explicitly identifies all six Super 6 fixtures and the 3pm entry deadline."
+    },
+    "fixtures": [
+      {
+        "home": "Blackburn Rovers",
+        "away": "Swansea City",
+        "kickoff": "2021-08-07T15:00:00+01:00",
+        "result": {
+          "score": [
+            2,
+            1
+          ],
+          "status": "final",
+          "url": "https://www.skysports.com/football/news/12375402/championship-highlights-and-round-up-hull-blackburn-luton-win",
+          "available_at": "2021-08-07T22:32:00+01:00",
+          "note": "Sky Sports dated Championship round-up confirms the full-time score."
+        },
+        "venue_history": {
+          "home": [
+            {
+              "available_at": "2021-05-09T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Birmingham",
+              "score": [
+                5,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-25T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Huddersfield",
+              "score": [
+                5,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-17T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Derby",
+              "score": [
+                2,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-06T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Bournemouth",
+              "score": [
+                0,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-03-18T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Bristol City",
+              "score": [
+                0,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ],
+          "away": [
+            {
+              "available_at": "2021-05-09T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Watford",
+              "score": [
+                0,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-26T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Reading",
+              "score": [
+                2,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-14T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Sheffield Weds",
+              "score": [
+                2,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-11T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Millwall",
+              "score": [
+                3,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-03T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Birmingham",
+              "score": [
+                0,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ]
+        }
+      },
+      {
+        "home": "Cardiff City",
+        "away": "Barnsley",
+        "kickoff": "2021-08-07T15:00:00+01:00",
+        "result": {
+          "score": [
+            1,
+            1
+          ],
+          "status": "final",
+          "url": "https://www.skysports.com/football/news/12375402/championship-highlights-and-round-up-hull-blackburn-luton-win",
+          "available_at": "2021-08-07T22:32:00+01:00",
+          "note": "Sky Sports dated Championship round-up confirms the full-time score."
+        },
+        "venue_history": {
+          "home": [
+            {
+              "available_at": "2021-05-09T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Rotherham",
+              "score": [
+                1,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-25T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Wycombe",
+              "score": [
+                2,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-11T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Blackburn",
+              "score": [
+                2,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-03T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Nott'm Forest",
+              "score": [
+                0,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-03-17T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Stoke",
+              "score": [
+                0,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ],
+          "away": [
+            {
+              "available_at": "2021-05-02T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Preston",
+              "score": [
+                0,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-22T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Huddersfield",
+              "score": [
+                1,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-19T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Coventry",
+              "score": [
+                0,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-06T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Luton",
+              "score": [
+                2,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-03-18T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Wycombe",
+              "score": [
+                3,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ]
+        }
+      },
+      {
+        "home": "Derby County",
+        "away": "Huddersfield Town",
+        "kickoff": "2021-08-07T15:00:00+01:00",
+        "result": {
+          "score": [
+            1,
+            1
+          ],
+          "status": "final",
+          "url": "https://www.skysports.com/football/news/12375402/championship-highlights-and-round-up-hull-blackburn-luton-win",
+          "available_at": "2021-08-07T22:32:00+01:00",
+          "note": "Sky Sports dated Championship round-up confirms the full-time score."
+        },
+        "venue_history": {
+          "home": [
+            {
+              "available_at": "2021-05-09T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Sheffield Weds",
+              "score": [
+                3,
+                3
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-25T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Birmingham",
+              "score": [
+                1,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-11T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Norwich",
+              "score": [
+                0,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-03T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Luton",
+              "score": [
+                2,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-03-17T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Brentford",
+              "score": [
+                2,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ],
+          "away": [
+            {
+              "available_at": "2021-05-09T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Reading",
+              "score": [
+                2,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-25T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Blackburn",
+              "score": [
+                2,
+                5
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-18T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Nott'm Forest",
+              "score": [
+                2,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-07T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Norwich",
+              "score": [
+                0,
+                7
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-03-18T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Sheffield Weds",
+              "score": [
+                1,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ]
+        }
+      },
+      {
+        "home": "Bristol City",
+        "away": "Blackpool",
+        "kickoff": "2021-08-07T15:00:00+01:00",
+        "result": {
+          "score": [
+            1,
+            1
+          ],
+          "status": "final",
+          "url": "https://www.skysports.com/football/news/12375402/championship-highlights-and-round-up-hull-blackburn-luton-win",
+          "available_at": "2021-08-07T22:32:00+01:00",
+          "note": "Sky Sports dated Championship round-up confirms the full-time score."
+        },
+        "venue_history": {
+          "home": [
+            {
+              "available_at": "2021-05-09T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Brentford",
+              "score": [
+                1,
+                3
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-26T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Luton",
+              "score": [
+                2,
+                3
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-11T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Nott'm Forest",
+              "score": [
+                0,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-03T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Stoke",
+              "score": [
+                0,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-03-21T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Rotherham",
+              "score": [
+                0,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ],
+          "away": [
+            {
+              "available_at": "2021-05-02T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E2.csv",
+              "sha256": "b6cd8d6280f54fc86cab646c74b65d40b31a2300f56a00a8df9e9d3549304cec",
+              "opponent": "Northampton",
+              "score": [
+                3,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-28T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E2.csv",
+              "sha256": "b6cd8d6280f54fc86cab646c74b65d40b31a2300f56a00a8df9e9d3549304cec",
+              "opponent": "Sunderland",
+              "score": [
+                1,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-21T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E2.csv",
+              "sha256": "b6cd8d6280f54fc86cab646c74b65d40b31a2300f56a00a8df9e9d3549304cec",
+              "opponent": "Rochdale",
+              "score": [
+                0,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-11T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E2.csv",
+              "sha256": "b6cd8d6280f54fc86cab646c74b65d40b31a2300f56a00a8df9e9d3549304cec",
+              "opponent": "Lincoln",
+              "score": [
+                2,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-03T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E2.csv",
+              "sha256": "b6cd8d6280f54fc86cab646c74b65d40b31a2300f56a00a8df9e9d3549304cec",
+              "opponent": "Swindon",
+              "score": [
+                2,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ]
+        }
+      },
+      {
+        "home": "Stoke City",
+        "away": "Reading",
+        "kickoff": "2021-08-07T15:00:00+01:00",
+        "result": {
+          "score": [
+            3,
+            2
+          ],
+          "status": "final",
+          "url": "https://www.skysports.com/football/news/12375402/championship-highlights-and-round-up-hull-blackburn-luton-win",
+          "available_at": "2021-08-07T22:32:00+01:00",
+          "note": "Sky Sports dated Championship round-up confirms the full-time score."
+        },
+        "venue_history": {
+          "home": [
+            {
+              "available_at": "2021-05-02T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "QPR",
+              "score": [
+                0,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-22T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Coventry",
+              "score": [
+                2,
+                3
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-18T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Preston",
+              "score": [
+                0,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-06T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Millwall",
+              "score": [
+                1,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-03-21T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Derby",
+              "score": [
+                1,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ],
+          "away": [
+            {
+              "available_at": "2021-05-02T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Norwich",
+              "score": [
+                1,
+                4
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-22T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Luton",
+              "score": [
+                0,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-10T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Watford",
+              "score": [
+                0,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-03T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Barnsley",
+              "score": [
+                1,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-03-18T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Birmingham",
+              "score": [
+                1,
+                2
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ]
+        }
+      },
+      {
+        "home": "Preston North End",
+        "away": "Hull City",
+        "kickoff": "2021-08-07T15:00:00+01:00",
+        "result": {
+          "score": [
+            1,
+            4
+          ],
+          "status": "final",
+          "url": "https://www.skysports.com/football/news/12375402/championship-highlights-and-round-up-hull-blackburn-luton-win",
+          "available_at": "2021-08-07T22:32:00+01:00",
+          "note": "Sky Sports dated Championship round-up confirms the full-time score."
+        },
+        "venue_history": {
+          "home": [
+            {
+              "available_at": "2021-05-02T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Barnsley",
+              "score": [
+                2,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-21T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Derby",
+              "score": [
+                3,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-11T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Brentford",
+              "score": [
+                0,
+                5
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-03T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Norwich",
+              "score": [
+                1,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-03-21T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E1.csv",
+              "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+              "opponent": "Luton",
+              "score": [
+                0,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ],
+          "away": [
+            {
+              "available_at": "2021-05-10T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E2.csv",
+              "sha256": "b6cd8d6280f54fc86cab646c74b65d40b31a2300f56a00a8df9e9d3549304cec",
+              "opponent": "Charlton",
+              "score": [
+                0,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-25T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E2.csv",
+              "sha256": "b6cd8d6280f54fc86cab646c74b65d40b31a2300f56a00a8df9e9d3549304cec",
+              "opponent": "Lincoln",
+              "score": [
+                2,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-11T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E2.csv",
+              "sha256": "b6cd8d6280f54fc86cab646c74b65d40b31a2300f56a00a8df9e9d3549304cec",
+              "opponent": "Plymouth",
+              "score": [
+                3,
+                0
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-04-03T00:00:00+01:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E2.csv",
+              "sha256": "b6cd8d6280f54fc86cab646c74b65d40b31a2300f56a00a8df9e9d3549304cec",
+              "opponent": "Crewe",
+              "score": [
+                2,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            },
+            {
+              "available_at": "2021-03-21T00:00:00+00:00",
+              "url": "https://www.football-data.co.uk/mmz4281/2021/E2.csv",
+              "sha256": "b6cd8d6280f54fc86cab646c74b65d40b31a2300f56a00a8df9e9d3549304cec",
+              "opponent": "Shrewsbury",
+              "score": [
+                1,
+                1
+              ],
+              "note": "Full-time league result. Availability conservatively set to the next local midnight."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "2026–27 Round 18",
+    "deadline": "2026-11-24T20:00:00Z",
+    "deadline_basis": "Sky Super 6 home page advertised 24 November at 20:00 UK time.",
+    "official": {
+      "url": "https://super6.skysports.com/",
+      "available_at": "2026-11-23T19:56:06+00:00",
+      "confirmed_at": "2026-11-23T19:56:06+00:00",
+      "note": "Manually checked the six pairings and entry deadline on the public Super 6 round card. UEFA confirmed the home/away order and kickoff times."
+    },
+    "fixtures": [
+      {
+        "id": "sky-2026-27-r18-1",
+        "home": "Manchester City",
+        "away": "Napoli",
+        "kickoff": "2026-11-24T20:00:00Z",
+        "kickoff_source": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/",
+        "stats": {
+          "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/UEFA_1_champions-league/results_2627.csv",
+          "available_at": "2026-11-23T19:56:07Z",
+          "note": "UEFA Champions League league phase only. Open-matchday results through matchday 4, cross-checked against the UEFA league phase results and fixtures page.",
+          "provider": "open-matchday",
+          "sha256": "a0de17c728c38d4b827a8d3dc0546f3b7160d931126a3c722dd07dfc60b4ed4c",
+          "home": {
+            "recent": {
+              "matches": 4,
+              "won": 3,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 12,
+              "goals_against": 7,
+              "clean_sheets": 1
+            },
+            "venue": {
+              "matches": 2,
+              "won": 1,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 7,
+              "goals_against": 5,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.3125,
+            "match_ids": [
+              "2026-11-04:Leipzig:Man City",
+              "2026-10-20:Man City:AEK Athens",
+              "2026-10-14:Man City:Paris",
+              "2026-09-08:Porto:Man City"
+            ],
+            "latest_available_at": "2026-11-05T00:00:00+01:00"
+          },
+          "away": {
+            "recent": {
+              "matches": 4,
+              "won": 1,
+              "drawn": 0,
+              "lost": 3,
+              "goals_for": 6,
+              "goals_against": 11,
+              "clean_sheets": 0
+            },
+            "venue": {
+              "matches": 2,
+              "won": 0,
+              "drawn": 0,
+              "lost": 2,
+              "goals_for": 2,
+              "goals_against": 7,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.25,
+            "match_ids": [
+              "2026-11-04:Porto:Napoli",
+              "2026-10-20:Napoli:Bodø/Glimt",
+              "2026-10-13:Villarreal:Napoli",
+              "2026-09-09:Napoli:Arsenal"
+            ],
+            "latest_available_at": "2026-11-05T00:00:00+01:00"
+          }
+        }
+      },
+      {
+        "id": "sky-2026-27-r18-2",
+        "home": "Arsenal",
+        "away": "Borussia Dortmund",
+        "kickoff": "2026-11-24T20:00:00Z",
+        "kickoff_source": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/",
+        "stats": {
+          "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/UEFA_1_champions-league/results_2627.csv",
+          "available_at": "2026-11-23T19:56:07Z",
+          "note": "UEFA Champions League league phase only. Open-matchday results through matchday 4, cross-checked against the UEFA league phase results and fixtures page.",
+          "provider": "open-matchday",
+          "sha256": "a0de17c728c38d4b827a8d3dc0546f3b7160d931126a3c722dd07dfc60b4ed4c",
+          "home": {
+            "recent": {
+              "matches": 4,
+              "won": 3,
+              "drawn": 1,
+              "lost": 0,
+              "goals_for": 8,
+              "goals_against": 3,
+              "clean_sheets": 2
+            },
+            "venue": {
+              "matches": 1,
+              "won": 1,
+              "drawn": 0,
+              "lost": 0,
+              "goals_for": 3,
+              "goals_against": 0,
+              "clean_sheets": 1
+            },
+            "opposition_ppg": 0.8125,
+            "match_ids": [
+              "2026-11-04:Slavia Praha:Arsenal",
+              "2026-10-21:Bayern München:Arsenal",
+              "2026-10-13:Arsenal:Lille",
+              "2026-09-09:Napoli:Arsenal"
+            ],
+            "latest_available_at": "2026-11-05T00:00:00+01:00"
+          },
+          "away": {
+            "recent": {
+              "matches": 4,
+              "won": 3,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 7,
+              "goals_against": 5,
+              "clean_sheets": 0
+            },
+            "venue": {
+              "matches": 2,
+              "won": 1,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 2,
+              "goals_against": 2,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.1875,
+            "match_ids": [
+              "2026-11-04:B. Dortmund:Real Betis",
+              "2026-10-20:Sabah:B. Dortmund",
+              "2026-10-14:Bodø/Glimt:B. Dortmund",
+              "2026-09-08:B. Dortmund:Villarreal"
+            ],
+            "latest_available_at": "2026-11-05T00:00:00+01:00"
+          }
+        }
+      },
+      {
+        "id": "sky-2026-27-r18-3",
+        "home": "Real Madrid",
+        "away": "PSV Eindhoven",
+        "kickoff": "2026-11-24T20:00:00Z",
+        "kickoff_source": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/",
+        "stats": {
+          "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/UEFA_1_champions-league/results_2627.csv",
+          "available_at": "2026-11-23T19:56:07Z",
+          "note": "UEFA Champions League league phase only. Open-matchday results through matchday 4, cross-checked against the UEFA league phase results and fixtures page.",
+          "provider": "open-matchday",
+          "sha256": "a0de17c728c38d4b827a8d3dc0546f3b7160d931126a3c722dd07dfc60b4ed4c",
+          "home": {
+            "recent": {
+              "matches": 4,
+              "won": 4,
+              "drawn": 0,
+              "lost": 0,
+              "goals_for": 13,
+              "goals_against": 7,
+              "clean_sheets": 0
+            },
+            "venue": {
+              "matches": 2,
+              "won": 2,
+              "drawn": 0,
+              "lost": 0,
+              "goals_for": 6,
+              "goals_against": 2,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.0,
+            "match_ids": [
+              "2026-11-04:AEK Athens:Real Madrid",
+              "2026-10-21:Real Madrid:Leipzig",
+              "2026-10-14:Roma:Real Madrid",
+              "2026-09-08:Real Madrid:Inter"
+            ],
+            "latest_available_at": "2026-11-05T00:00:00+01:00"
+          },
+          "away": {
+            "recent": {
+              "matches": 4,
+              "won": 1,
+              "drawn": 1,
+              "lost": 2,
+              "goals_for": 3,
+              "goals_against": 4,
+              "clean_sheets": 1
+            },
+            "venue": {
+              "matches": 2,
+              "won": 1,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 1,
+              "goals_against": 1,
+              "clean_sheets": 1
+            },
+            "opposition_ppg": 1.1875,
+            "match_ids": [
+              "2026-11-04:PSV:Club Brugge",
+              "2026-10-20:Porto:PSV",
+              "2026-10-13:Leipzig:PSV",
+              "2026-09-10:PSV:Shakhtar"
+            ],
+            "latest_available_at": "2026-11-05T00:00:00+01:00"
+          }
+        }
+      },
+      {
+        "id": "sky-2026-27-r18-4",
+        "home": "Sporting CP",
+        "away": "Manchester United",
+        "kickoff": "2026-11-25T20:00:00Z",
+        "kickoff_source": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/",
+        "stats": {
+          "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/UEFA_1_champions-league/results_2627.csv",
+          "available_at": "2026-11-23T19:56:07Z",
+          "note": "UEFA Champions League league phase only. Open-matchday results through matchday 4, cross-checked against the UEFA league phase results and fixtures page.",
+          "provider": "open-matchday",
+          "sha256": "a0de17c728c38d4b827a8d3dc0546f3b7160d931126a3c722dd07dfc60b4ed4c",
+          "home": {
+            "recent": {
+              "matches": 4,
+              "won": 3,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 8,
+              "goals_against": 4,
+              "clean_sheets": 2
+            },
+            "venue": {
+              "matches": 2,
+              "won": 1,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 5,
+              "goals_against": 4,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.1875,
+            "match_ids": [
+              "2026-11-03:Shakhtar:Sporting CP",
+              "2026-10-21:Sporting CP:LASK",
+              "2026-10-13:Lens:Sporting CP",
+              "2026-09-09:Sporting CP:Galatasaray"
+            ],
+            "latest_available_at": "2026-11-04T00:00:00+01:00"
+          },
+          "away": {
+            "recent": {
+              "matches": 4,
+              "won": 2,
+              "drawn": 0,
+              "lost": 2,
+              "goals_for": 8,
+              "goals_against": 8,
+              "clean_sheets": 1
+            },
+            "venue": {
+              "matches": 2,
+              "won": 0,
+              "drawn": 0,
+              "lost": 2,
+              "goals_for": 1,
+              "goals_against": 6,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.25,
+            "match_ids": [
+              "2026-11-03:Man Utd:Roma",
+              "2026-10-21:Como:Man Utd",
+              "2026-10-13:Atleti:Man Utd",
+              "2026-09-10:Man Utd:Sabah"
+            ],
+            "latest_available_at": "2026-11-04T00:00:00+01:00"
+          }
+        }
+      },
+      {
+        "id": "sky-2026-27-r18-5",
+        "home": "Club Brugge",
+        "away": "Liverpool",
+        "kickoff": "2026-11-25T20:00:00Z",
+        "kickoff_source": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/",
+        "stats": {
+          "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/UEFA_1_champions-league/results_2627.csv",
+          "available_at": "2026-11-23T19:56:07Z",
+          "note": "UEFA Champions League league phase only. Open-matchday results through matchday 4, cross-checked against the UEFA league phase results and fixtures page.",
+          "provider": "open-matchday",
+          "sha256": "a0de17c728c38d4b827a8d3dc0546f3b7160d931126a3c722dd07dfc60b4ed4c",
+          "home": {
+            "recent": {
+              "matches": 4,
+              "won": 3,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 11,
+              "goals_against": 7,
+              "clean_sheets": 1
+            },
+            "venue": {
+              "matches": 2,
+              "won": 1,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 5,
+              "goals_against": 3,
+              "clean_sheets": 1
+            },
+            "opposition_ppg": 1.375,
+            "match_ids": [
+              "2026-11-04:PSV:Club Brugge",
+              "2026-10-21:Club Brugge:Lens",
+              "2026-10-13:Inter:Club Brugge",
+              "2026-09-08:Club Brugge:Aston Villa"
+            ],
+            "latest_available_at": "2026-11-05T00:00:00+01:00"
+          },
+          "away": {
+            "recent": {
+              "matches": 4,
+              "won": 3,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 14,
+              "goals_against": 10,
+              "clean_sheets": 0
+            },
+            "venue": {
+              "matches": 2,
+              "won": 1,
+              "drawn": 0,
+              "lost": 1,
+              "goals_for": 8,
+              "goals_against": 6,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.125,
+            "match_ids": [
+              "2026-11-04:Fenerbahçe:Liverpool",
+              "2026-10-20:Liverpool:Villarreal",
+              "2026-10-14:LASK:Liverpool",
+              "2026-09-09:Liverpool:Atleti"
+            ],
+            "latest_available_at": "2026-11-05T00:00:00+01:00"
+          }
+        }
+      },
+      {
+        "id": "sky-2026-27-r18-6",
+        "home": "Paris Saint-Germain",
+        "away": "Roma",
+        "kickoff": "2026-11-25T20:00:00Z",
+        "kickoff_source": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/",
+        "stats": {
+          "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/UEFA_1_champions-league/results_2627.csv",
+          "available_at": "2026-11-23T19:56:07Z",
+          "note": "UEFA Champions League league phase only. Open-matchday results through matchday 4, cross-checked against the UEFA league phase results and fixtures page.",
+          "provider": "open-matchday",
+          "sha256": "a0de17c728c38d4b827a8d3dc0546f3b7160d931126a3c722dd07dfc60b4ed4c",
+          "home": {
+            "recent": {
+              "matches": 4,
+              "won": 4,
+              "drawn": 0,
+              "lost": 0,
+              "goals_for": 20,
+              "goals_against": 5,
+              "clean_sheets": 1
+            },
+            "venue": {
+              "matches": 2,
+              "won": 2,
+              "drawn": 0,
+              "lost": 0,
+              "goals_for": 10,
+              "goals_against": 3,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.3125,
+            "match_ids": [
+              "2026-11-03:Villarreal:Paris",
+              "2026-10-20:Paris:Barcelona",
+              "2026-10-14:Man City:Paris",
+              "2026-09-09:Paris:S. Bratislava"
+            ],
+            "latest_available_at": "2026-11-04T00:00:00+01:00"
+          },
+          "away": {
+            "recent": {
+              "matches": 4,
+              "won": 1,
+              "drawn": 1,
+              "lost": 2,
+              "goals_for": 10,
+              "goals_against": 8,
+              "clean_sheets": 1
+            },
+            "venue": {
+              "matches": 2,
+              "won": 0,
+              "drawn": 1,
+              "lost": 1,
+              "goals_for": 3,
+              "goals_against": 4,
+              "clean_sheets": 0
+            },
+            "opposition_ppg": 1.4375,
+            "match_ids": [
+              "2026-11-03:Man Utd:Roma",
+              "2026-10-20:Roma:S. Bratislava",
+              "2026-10-14:Roma:Real Madrid",
+              "2026-09-10:Fenerbahçe:Roma"
+            ],
+            "latest_available_at": "2026-11-04T00:00:00+01:00"
+          }
+        }
+      }
+    ]
+  }
+]

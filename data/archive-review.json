@@ -1,0 +1,1522 @@
+{
+  "feeds": {
+    "1718/E0.csv": {
+      "sha256": "4f3389365ef3f7ac966764ed8ba67cf3b79f5aebed18dd224099c4b2c98bc67b",
+      "captured_at": "2026-11-23T20:36:59+00:00"
+    },
+    "1718/E1.csv": {
+      "sha256": "04d07d578d818bdcd6b95d43e79f10a6a26be01b45be6190b09ebdeaeba0a7ce",
+      "captured_at": "2026-11-23T20:36:59+00:00"
+    },
+    "1718/E2.csv": {
+      "sha256": "a380ad5058b2dfd46bc82e7969ffbe020396a68d1a5f1c613cd7031e0e68dae0",
+      "captured_at": "2026-11-23T20:37:00+00:00"
+    },
+    "1718/E3.csv": {
+      "sha256": "a414014fb3939d0175c97df261f29ef185466f9e5548755a5cb5b5f567a2f8f8",
+      "captured_at": "2026-11-23T20:37:00+00:00"
+    },
+    "1718/EC.csv": {
+      "sha256": "5d8096f056b99a4f809d3913ea5dce1a23b2006cdbfdb4861507557edaccfb2b",
+      "captured_at": "2026-11-23T20:37:00+00:00"
+    },
+    "1819/E0.csv": {
+      "sha256": "7c096b3c2ecd54c6993d22eeea73450c2bde11e3457238b226b8f43c62dfc35e",
+      "captured_at": "2026-11-23T20:37:00+00:00"
+    },
+    "1819/E1.csv": {
+      "sha256": "112eedf787e26e00aac1442ef86e7fee5d4a43f86552ff2dac31ceb95a849487",
+      "captured_at": "2026-11-23T20:37:00+00:00"
+    },
+    "1819/E2.csv": {
+      "sha256": "a60bc928d4aaf8a52fc00fc6f1efecb99e84756c9627b84856db7c7a6b53e64e",
+      "captured_at": "2026-11-23T20:37:00+00:00"
+    },
+    "1819/E3.csv": {
+      "sha256": "7494db528e217926bd03d9d469dd52d7043c85b8c9e9fc7f477ea5675383291c",
+      "captured_at": "2026-11-23T20:37:00+00:00"
+    },
+    "1819/EC.csv": {
+      "sha256": "2b613fe6875c43fb581174ab20d1f1231b706b9d6e13bb67b262e0ce60e58add",
+      "captured_at": "2026-11-23T20:37:00+00:00"
+    },
+    "1920/E0.csv": {
+      "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+      "captured_at": "2026-11-23T20:37:01+00:00"
+    },
+    "1920/E1.csv": {
+      "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+      "captured_at": "2026-11-23T20:37:01+00:00"
+    },
+    "1920/E2.csv": {
+      "sha256": "9059ede04b5c294511be583b9c85ae2acdf940c3442dd288082a3b0cd7892f94",
+      "captured_at": "2026-11-23T20:37:01+00:00"
+    },
+    "1920/E3.csv": {
+      "sha256": "4989515126e1d4cc9ae5276e44e36660fe3632f881a8ae39b4328f66e714bec2",
+      "captured_at": "2026-11-23T20:37:01+00:00"
+    },
+    "1920/EC.csv": {
+      "sha256": "277ad05469c6023264a2e06772ec31166f5ddda136da9b9ca743312e1bf70019",
+      "captured_at": "2026-11-23T20:37:01+00:00"
+    },
+    "2021/E0.csv": {
+      "sha256": "5afe63f69401457b8354eaacee24f9a3e520b3c3af6329564a9783e20d789c62",
+      "captured_at": "2026-11-23T20:37:01+00:00"
+    },
+    "2021/E1.csv": {
+      "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+      "captured_at": "2026-11-23T20:37:01+00:00"
+    },
+    "2021/E2.csv": {
+      "sha256": "b6cd8d6280f54fc86cab646c74b65d40b31a2300f56a00a8df9e9d3549304cec",
+      "captured_at": "2026-11-23T20:37:01+00:00"
+    },
+    "2021/E3.csv": {
+      "sha256": "fafff0ee8daf33ca954f94f6856048451ec398688bb6cb357d8aa4d5ded8a3a6",
+      "captured_at": "2026-11-23T20:37:02+00:00"
+    },
+    "2021/EC.csv": {
+      "sha256": "cb134005186bab6fe938b300b07b8c45d401e25ff8f31d1b8e87d1415ad3aab3",
+      "captured_at": "2026-11-23T20:37:02+00:00"
+    },
+    "2122/E0.csv": {
+      "sha256": "335afcbabeb2939fa10ab39ba3e8215072d0b577cb8d0705c1e44c56e934e703",
+      "captured_at": "2026-11-23T20:37:02+00:00"
+    },
+    "2122/E1.csv": {
+      "sha256": "a181451be4801b9f838daf5f6aaf21e9f09d36042be9e6c15388e71001e772ea",
+      "captured_at": "2026-11-23T20:37:02+00:00"
+    },
+    "2122/E2.csv": {
+      "sha256": "bc3cb4de64d290f682be5941e7512f46216b0758e274ad205547a634d9d70270",
+      "captured_at": "2026-11-23T20:37:02+00:00"
+    },
+    "2122/E3.csv": {
+      "sha256": "dff7be2d8803eca6f5d0d0f5d3c5e96272c450407388150961920cbd85920bf0",
+      "captured_at": "2026-11-23T20:37:02+00:00"
+    },
+    "2122/EC.csv": {
+      "sha256": "cd539a52c1f7bb1b0ebf4d2ebed3d5c5912bc5e70b27e96363b6da754e495270",
+      "captured_at": "2026-11-23T20:37:02+00:00"
+    },
+    "2223/E0.csv": {
+      "sha256": "8442792d3b614c94ea3cf381bd2736805889cc1713169035368fff19c3d02380",
+      "captured_at": "2026-11-23T20:37:02+00:00"
+    },
+    "2223/E1.csv": {
+      "sha256": "cd38ab0586ea8cb4d573c363ff70749117f116da5b2741e5b0ea37da05860b1b",
+      "captured_at": "2026-11-23T20:37:03+00:00"
+    },
+    "2223/E2.csv": {
+      "sha256": "c6c1b7366815c4888e62d7f14443f8052291b4ec8702674c1c0caf04ddf9ace5",
+      "captured_at": "2026-11-23T20:37:03+00:00"
+    },
+    "2223/E3.csv": {
+      "sha256": "96778f4c63843634b4690e34d740eb58bd474a0f08c6be48c1987ce92093fa5a",
+      "captured_at": "2026-11-23T20:37:03+00:00"
+    },
+    "2223/EC.csv": {
+      "sha256": "70c8bded01a211e0e0b9ea11a841a11967bf0c8acab29827a588b7c2e3157062",
+      "captured_at": "2026-11-23T20:37:03+00:00"
+    },
+    "2324/E0.csv": {
+      "sha256": "b2e057b0ed959f198b0f63d2391c01239f3608e6de5db68edab3f88e04d07ff3",
+      "captured_at": "2026-11-23T20:37:03+00:00"
+    },
+    "2324/E1.csv": {
+      "sha256": "5737f6cc95c95092b28317f41d3123e2fb09345434efc1c84bbdf15830849ab3",
+      "captured_at": "2026-11-23T20:37:03+00:00"
+    },
+    "2324/E2.csv": {
+      "sha256": "48e5c8d7f3fbb2a0d3ac956f066b129743789b34fe3db41dbcb31363c22fc303",
+      "captured_at": "2026-11-23T20:37:03+00:00"
+    },
+    "2324/E3.csv": {
+      "sha256": "10da9da5badeb696d163154b26fa43875bfc9fd96d2ed81c5e4d5958e7d231ef",
+      "captured_at": "2026-11-23T20:37:03+00:00"
+    },
+    "2324/EC.csv": {
+      "sha256": "ed369da28084d1eb5a6906f9fd7c3e84364ea4de55734a393b9d9058f12021d0",
+      "captured_at": "2026-11-23T20:37:04+00:00"
+    },
+    "2425/E0.csv": {
+      "sha256": "d0c8ce4a96d886cf60cf101f570f4a3893844226f91c7bd769eb568c49edbfa4",
+      "captured_at": "2026-11-23T20:37:04+00:00"
+    },
+    "2425/E1.csv": {
+      "sha256": "f34c340446c916374be66bdc2fb25b87ee7f2662712ca009653d03ac705535f9",
+      "captured_at": "2026-11-23T20:37:04+00:00"
+    },
+    "2425/E2.csv": {
+      "sha256": "d4c0ebde3806714fe01a43935409e803ca35118d746d635480eaf9574d561c49",
+      "captured_at": "2026-11-23T20:37:04+00:00"
+    },
+    "2425/E3.csv": {
+      "sha256": "fd8e1e2483478b14ce7d0cc0317ab4b8fc0abf6e44e76613d855212f8acd760d",
+      "captured_at": "2026-11-23T20:37:04+00:00"
+    },
+    "2425/EC.csv": {
+      "sha256": "efe33452b62a1bc283145dacc5fe22d00f94fde475e263389865a4e45c24dd65",
+      "captured_at": "2026-11-23T20:37:04+00:00"
+    }
+  },
+  "rounds": [
+    {
+      "id": "2020–21 Sky · 2020-09-19",
+      "official": {
+        "url": "https://www.skysports.com/football/news/12072390/the-super-6-podcast-with-laura-woods-and-adebayo-akinfenwa",
+        "available_at": "2020-09-15T16:20:00+00:00",
+        "modified_at": "2020-09-15T16:26:57+00:00",
+        "captured_at": "2026-11-23T20:36:04+00:00",
+        "sha256": "d6e983d7f73e1fbcbf311dccd56d415a15c07b4c4c905b7b83a3027a88b2c30f",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/11095/11158298/250k-jackpot-landed-in-super-6",
+        "available_at": "2017-12-05T22:20:00+00:00",
+        "modified_at": "2017-12-05T22:34:57+00:00",
+        "captured_at": "2026-11-23T20:37:20+00:00",
+        "sha256": "69452b60cbe69379ff6d8ca0de62ac0cacbb2107fca021533225ffb6f405ab25",
+        "note": "Sky Sports states that entries must be submitted before kickoff of the first fixture.",
+        "rule": "first_kickoff"
+      },
+      "match_window": [
+        "2020-09-19",
+        "2020-09-19"
+      ],
+      "feeds": [
+        "1920/E0.csv",
+        "1920/E1.csv",
+        "1920/E2.csv",
+        "1920/E3.csv",
+        "1920/EC.csv",
+        "2021/E0.csv",
+        "2021/E1.csv",
+        "2021/E2.csv",
+        "2021/E3.csv",
+        "2021/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Leeds",
+          "away": "Fulham"
+        },
+        {
+          "home": "Middlesbrough",
+          "away": "Bournemouth"
+        },
+        {
+          "home": "Sheffield Weds",
+          "away": "Watford"
+        },
+        {
+          "home": "Norwich",
+          "away": "Preston"
+        },
+        {
+          "home": "Brentford",
+          "away": "Huddersfield"
+        },
+        {
+          "home": "Swansea",
+          "away": "Birmingham"
+        }
+      ]
+    },
+    {
+      "id": "2020–21 Sky · 2020-10-03",
+      "official": {
+        "url": "https://www.skysports.com/football/news/12087549/another-chance-to-land-1m-with-super-6-enter-your-predictions-for-free",
+        "available_at": "2020-10-02T09:14:00+00:00",
+        "modified_at": "2020-10-03T11:29:12+00:00",
+        "captured_at": "2026-11-23T20:36:29+00:00",
+        "sha256": "3022637f6d8c6cc1dea4b3de07b253a95976e3419e7695f411f5ff15070c17e2",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/12087549/another-chance-to-land-1m-with-super-6-enter-your-predictions-for-free",
+        "available_at": "2020-10-02T09:14:00+00:00",
+        "modified_at": "2020-10-03T11:29:12+00:00",
+        "captured_at": "2026-11-23T20:36:29+00:00",
+        "sha256": "3022637f6d8c6cc1dea4b3de07b253a95976e3419e7695f411f5ff15070c17e2",
+        "note": "Sky Sports explicitly gives the round’s entry deadline."
+      },
+      "match_window": [
+        "2020-10-03",
+        "2020-10-04"
+      ],
+      "feeds": [
+        "1920/E0.csv",
+        "1920/E1.csv",
+        "1920/E2.csv",
+        "1920/E3.csv",
+        "1920/EC.csv",
+        "2021/E0.csv",
+        "2021/E1.csv",
+        "2021/E2.csv",
+        "2021/E3.csv",
+        "2021/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Everton",
+          "away": "Brighton"
+        },
+        {
+          "home": "Nott'm Forest",
+          "away": "Bristol City"
+        },
+        {
+          "home": "Brentford",
+          "away": "Preston"
+        },
+        {
+          "home": "Middlesbrough",
+          "away": "Barnsley"
+        },
+        {
+          "home": "Sheffield Weds",
+          "away": "QPR"
+        },
+        {
+          "home": "Blackburn",
+          "away": "Cardiff"
+        }
+      ],
+      "advertised_deadline": "2020-10-03T15:00:00+01:00"
+    },
+    {
+      "id": "2022–23 Sky · 2022-10-15",
+      "official": {
+        "url": "https://www.skysports.com/football/news/12714511/a-250000-super-6-winner-could-you-be-next",
+        "available_at": "2022-10-13T10:00:00+00:00",
+        "modified_at": "2022-10-13T10:49:13+00:00",
+        "captured_at": "2026-11-23T20:35:49+00:00",
+        "sha256": "3c26ab4aa4bc003e3f32d85cdf6ecaae88ab5844e9a9d1dd63ac4eacaf814951",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/12714511/a-250000-super-6-winner-could-you-be-next",
+        "available_at": "2022-10-13T10:00:00+00:00",
+        "modified_at": "2022-10-13T10:49:13+00:00",
+        "captured_at": "2026-11-23T20:35:49+00:00",
+        "sha256": "3c26ab4aa4bc003e3f32d85cdf6ecaae88ab5844e9a9d1dd63ac4eacaf814951",
+        "note": "Sky Sports explicitly gives the round’s entry deadline."
+      },
+      "match_window": [
+        "2022-10-15",
+        "2022-10-16"
+      ],
+      "feeds": [
+        "2122/E0.csv",
+        "2122/E1.csv",
+        "2122/E2.csv",
+        "2122/E3.csv",
+        "2122/EC.csv",
+        "2223/E0.csv",
+        "2223/E1.csv",
+        "2223/E2.csv",
+        "2223/E3.csv",
+        "2223/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Wolves",
+          "away": "Nott'm Forest"
+        },
+        {
+          "home": "Fulham",
+          "away": "Bournemouth"
+        },
+        {
+          "home": "Tottenham",
+          "away": "Everton"
+        },
+        {
+          "home": "Man United",
+          "away": "Newcastle"
+        },
+        {
+          "home": "Aston Villa",
+          "away": "Chelsea"
+        },
+        {
+          "home": "Liverpool",
+          "away": "Man City"
+        }
+      ],
+      "advertised_deadline": "2022-10-15T15:00:00+01:00"
+    },
+    {
+      "id": "2024–25 Sky · 2024-08-17",
+      "official": {
+        "url": "https://www.skysports.com/football/news/19530/13196985/carras-super-6-predictions-win-and-163-2m-this-weekend",
+        "available_at": "2024-08-14T16:30:00+00:00",
+        "modified_at": "2024-08-14T16:46:47+00:00",
+        "captured_at": "2026-11-23T20:35:50+00:00",
+        "sha256": "afc7288d6f06c27127bed9b8467017e29560939166bed1074db863071f491ce2",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/19530/13196985/carras-super-6-predictions-win-and-163-2m-this-weekend",
+        "available_at": "2024-08-14T16:30:00+00:00",
+        "modified_at": "2024-08-14T16:46:47+00:00",
+        "captured_at": "2026-11-23T20:35:50+00:00",
+        "sha256": "afc7288d6f06c27127bed9b8467017e29560939166bed1074db863071f491ce2",
+        "note": "Sky Sports explicitly gives the round’s entry deadline."
+      },
+      "match_window": [
+        "2024-08-17",
+        "2024-08-18"
+      ],
+      "feeds": [
+        "2324/E0.csv",
+        "2324/E1.csv",
+        "2324/E2.csv",
+        "2324/E3.csv",
+        "2324/EC.csv",
+        "2425/E0.csv",
+        "2425/E1.csv",
+        "2425/E2.csv",
+        "2425/E3.csv",
+        "2425/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Arsenal",
+          "away": "Wolves"
+        },
+        {
+          "home": "Newcastle",
+          "away": "Southampton"
+        },
+        {
+          "home": "Everton",
+          "away": "Brighton"
+        },
+        {
+          "home": "West Ham",
+          "away": "Aston Villa"
+        },
+        {
+          "home": "Brentford",
+          "away": "Crystal Palace"
+        },
+        {
+          "home": "Chelsea",
+          "away": "Man City"
+        }
+      ],
+      "advertised_deadline": "2024-08-17T15:00:00+01:00"
+    },
+    {
+      "id": "2024–25 Sky · 2024-08-31",
+      "official": {
+        "url": "https://www.skysports.com/football/news/13204854/win-1000000-for-free-jamie-carraghers-super-6-predictions",
+        "available_at": "2024-08-29T15:00:00+00:00",
+        "modified_at": "2024-08-29T15:39:48+00:00",
+        "captured_at": "2026-11-23T20:37:19+00:00",
+        "sha256": "d6dd9141bdd5b9931463fa672fa13bd85dbb5c8168a05ceef370a6c61f830abb",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/13204854/win-1000000-for-free-jamie-carraghers-super-6-predictions",
+        "available_at": "2024-08-29T15:00:00+00:00",
+        "modified_at": "2024-08-29T15:39:48+00:00",
+        "captured_at": "2026-11-23T20:37:19+00:00",
+        "sha256": "d6dd9141bdd5b9931463fa672fa13bd85dbb5c8168a05ceef370a6c61f830abb",
+        "note": "Sky Sports explicitly gives the round’s entry deadline."
+      },
+      "match_window": [
+        "2024-08-31",
+        "2024-09-01"
+      ],
+      "feeds": [
+        "2324/E0.csv",
+        "2324/E1.csv",
+        "2324/E2.csv",
+        "2324/E3.csv",
+        "2324/EC.csv",
+        "2425/E0.csv",
+        "2425/E1.csv",
+        "2425/E2.csv",
+        "2425/E3.csv",
+        "2425/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Leicester",
+          "away": "Aston Villa"
+        },
+        {
+          "home": "Everton",
+          "away": "Bournemouth"
+        },
+        {
+          "home": "Nott'm Forest",
+          "away": "Wolves"
+        },
+        {
+          "home": "West Ham",
+          "away": "Man City"
+        },
+        {
+          "home": "Newcastle",
+          "away": "Tottenham"
+        },
+        {
+          "home": "Man United",
+          "away": "Liverpool"
+        }
+      ],
+      "advertised_deadline": "2024-08-31T15:00:00+01:00"
+    },
+    {
+      "id": "2024–25 Sky · 2025-02-15",
+      "official": {
+        "url": "https://www.skysports.com/football/news/11667/13308883/win-750000-for-free-this-weekend-super-6-february-rollover-yet-to-be-won",
+        "available_at": "2025-02-13T18:00:00+00:00",
+        "modified_at": "2025-02-13T21:37:41+00:00",
+        "captured_at": "2026-11-23T20:35:51+00:00",
+        "sha256": "6129a9debc8c9e5839508ececea2c0904023380a2ce88dd0a77ab44143cda048",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/11667/13308883/win-750000-for-free-this-weekend-super-6-february-rollover-yet-to-be-won",
+        "available_at": "2025-02-13T18:00:00+00:00",
+        "modified_at": "2025-02-13T21:37:41+00:00",
+        "captured_at": "2026-11-23T20:35:51+00:00",
+        "sha256": "6129a9debc8c9e5839508ececea2c0904023380a2ce88dd0a77ab44143cda048",
+        "note": "Sky Sports explicitly gives the round’s entry deadline."
+      },
+      "match_window": [
+        "2025-02-15",
+        "2025-02-16"
+      ],
+      "feeds": [
+        "2324/E0.csv",
+        "2324/E1.csv",
+        "2324/E2.csv",
+        "2324/E3.csv",
+        "2324/EC.csv",
+        "2425/E0.csv",
+        "2425/E1.csv",
+        "2425/E2.csv",
+        "2425/E3.csv",
+        "2425/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Man City",
+          "away": "Newcastle"
+        },
+        {
+          "home": "Aston Villa",
+          "away": "Ipswich"
+        },
+        {
+          "home": "Fulham",
+          "away": "Nott'm Forest"
+        },
+        {
+          "home": "Crystal Palace",
+          "away": "Everton"
+        },
+        {
+          "home": "Liverpool",
+          "away": "Wolves"
+        },
+        {
+          "home": "Tottenham",
+          "away": "Man United"
+        }
+      ],
+      "advertised_deadline": "2025-02-15T15:00:00+00:00"
+    },
+    {
+      "id": "2024–25 Sky · 2025-02-22",
+      "official": {
+        "url": "https://www.skysports.com/football/news/11675/13314144/win-one-million-pounds-for-free-with-super-6-predict-six-premier-league-scorelines",
+        "available_at": "2025-02-21T19:01:00+00:00",
+        "modified_at": "2025-02-21T20:12:11+00:00",
+        "captured_at": "2026-11-23T20:37:17+00:00",
+        "sha256": "e933ac080fdd87cf76b14f160ee141e204f1666f39e345ae8f17c685534f01a9",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/11675/13314144/win-one-million-pounds-for-free-with-super-6-predict-six-premier-league-scorelines",
+        "available_at": "2025-02-21T19:01:00+00:00",
+        "modified_at": "2025-02-21T20:12:11+00:00",
+        "captured_at": "2026-11-23T20:37:17+00:00",
+        "sha256": "e933ac080fdd87cf76b14f160ee141e204f1666f39e345ae8f17c685534f01a9",
+        "note": "Sky Sports explicitly gives the round’s entry deadline."
+      },
+      "match_window": [
+        "2025-02-22",
+        "2025-02-23"
+      ],
+      "feeds": [
+        "2324/E0.csv",
+        "2324/E1.csv",
+        "2324/E2.csv",
+        "2324/E3.csv",
+        "2324/EC.csv",
+        "2425/E0.csv",
+        "2425/E1.csv",
+        "2425/E2.csv",
+        "2425/E3.csv",
+        "2425/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Arsenal",
+          "away": "West Ham"
+        },
+        {
+          "home": "Ipswich",
+          "away": "Tottenham"
+        },
+        {
+          "home": "Southampton",
+          "away": "Brighton"
+        },
+        {
+          "home": "Aston Villa",
+          "away": "Chelsea"
+        },
+        {
+          "home": "Newcastle",
+          "away": "Nott'm Forest"
+        },
+        {
+          "home": "Man City",
+          "away": "Liverpool"
+        }
+      ],
+      "advertised_deadline": "2025-02-22T15:00:00+00:00"
+    },
+    {
+      "id": "2019–20 Sky · 2019-12-14",
+      "official": {
+        "url": "https://www.skysports.com/football/news/11095/11884458/six-appeal-phil-thompsons-super-6-picks-for-saturday",
+        "available_at": "2019-12-12T14:22:00+00:00",
+        "modified_at": "2019-12-14T12:07:14+00:00",
+        "captured_at": "2026-11-23T20:37:23+00:00",
+        "sha256": "9e162677781878f53561e458154f1557474f60f8c2a87869582062cecf49a8c5",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/11095/11158298/250k-jackpot-landed-in-super-6",
+        "available_at": "2017-12-05T22:20:00+00:00",
+        "modified_at": "2017-12-05T22:34:57+00:00",
+        "captured_at": "2026-11-23T20:37:20+00:00",
+        "sha256": "69452b60cbe69379ff6d8ca0de62ac0cacbb2107fca021533225ffb6f405ab25",
+        "note": "Sky Sports states that entries must be submitted before kickoff of the first fixture.",
+        "rule": "first_kickoff"
+      },
+      "match_window": [
+        "2019-12-14",
+        "2019-12-14"
+      ],
+      "feeds": [
+        "1819/E0.csv",
+        "1819/E1.csv",
+        "1819/E2.csv",
+        "1819/E3.csv",
+        "1819/EC.csv",
+        "1920/E0.csv",
+        "1920/E1.csv",
+        "1920/E2.csv",
+        "1920/E3.csv",
+        "1920/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Chelsea",
+          "away": "Bournemouth"
+        },
+        {
+          "home": "Leicester",
+          "away": "Norwich"
+        },
+        {
+          "home": "Sheffield United",
+          "away": "Aston Villa"
+        },
+        {
+          "home": "Burnley",
+          "away": "Newcastle"
+        },
+        {
+          "home": "Leeds",
+          "away": "Cardiff"
+        },
+        {
+          "home": "Nott'm Forest",
+          "away": "Sheffield Weds"
+        }
+      ]
+    },
+    {
+      "id": "2019–20 Sky · 2020-02-08",
+      "official": {
+        "url": "https://www.skysports.com/football/news/11926858/fantasyfootball.skysports.com?aff=1197320799&dcmp=SS_ED_FF_LNKSETS_2407",
+        "available_at": "2020-02-05T16:01:00+00:00",
+        "modified_at": "2020-02-07T11:30:05+00:00",
+        "captured_at": "2026-11-23T20:36:19+00:00",
+        "sha256": "287166be1772baf32f1a0979e6c34695b76d8a36aeeeace464751a27e5a97161",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/11095/11158298/250k-jackpot-landed-in-super-6",
+        "available_at": "2017-12-05T22:20:00+00:00",
+        "modified_at": "2017-12-05T22:34:57+00:00",
+        "captured_at": "2026-11-23T20:37:20+00:00",
+        "sha256": "69452b60cbe69379ff6d8ca0de62ac0cacbb2107fca021533225ffb6f405ab25",
+        "note": "Sky Sports states that entries must be submitted before kickoff of the first fixture.",
+        "rule": "first_kickoff"
+      },
+      "match_window": [
+        "2020-02-08",
+        "2020-02-08"
+      ],
+      "feeds": [
+        "1819/E0.csv",
+        "1819/E1.csv",
+        "1819/E2.csv",
+        "1819/E3.csv",
+        "1819/EC.csv",
+        "1920/E0.csv",
+        "1920/E1.csv",
+        "1920/E2.csv",
+        "1920/E3.csv",
+        "1920/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Brentford",
+          "away": "Middlesbrough"
+        },
+        {
+          "home": "Swansea",
+          "away": "Derby"
+        },
+        {
+          "home": "Blackburn",
+          "away": "Fulham"
+        },
+        {
+          "home": "Stoke",
+          "away": "Charlton"
+        },
+        {
+          "home": "Luton",
+          "away": "Cardiff"
+        },
+        {
+          "home": "Reading",
+          "away": "Hull"
+        }
+      ]
+    },
+    {
+      "id": "2022–23 Sky · 2022-08-06",
+      "official": {
+        "url": "https://www.skysports.com/football/news/12040/12663656/super-6-is-back-win-lb1-000-000-for-free",
+        "available_at": "2022-08-04T08:00:00+00:00",
+        "modified_at": "2022-08-06T15:57:12+00:00",
+        "captured_at": "2026-11-23T20:36:00+00:00",
+        "sha256": "21cf1f6e115b935a3209a708c46573b23300f2c1c38280042acdceb01fd44a61",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/12040/12663656/super-6-is-back-win-lb1-000-000-for-free",
+        "available_at": "2022-08-04T08:00:00+00:00",
+        "modified_at": "2022-08-06T15:57:12+00:00",
+        "captured_at": "2026-11-23T20:36:00+00:00",
+        "sha256": "21cf1f6e115b935a3209a708c46573b23300f2c1c38280042acdceb01fd44a61",
+        "note": "Sky Sports explicitly gives the round’s entry deadline."
+      },
+      "match_window": [
+        "2022-08-06",
+        "2022-08-07"
+      ],
+      "feeds": [
+        "2122/E0.csv",
+        "2122/E1.csv",
+        "2122/E2.csv",
+        "2122/E3.csv",
+        "2122/EC.csv",
+        "2223/E0.csv",
+        "2223/E1.csv",
+        "2223/E2.csv",
+        "2223/E3.csv",
+        "2223/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Tottenham",
+          "away": "Southampton"
+        },
+        {
+          "home": "Leeds",
+          "away": "Wolves"
+        },
+        {
+          "home": "Newcastle",
+          "away": "Nott'm Forest"
+        },
+        {
+          "home": "Everton",
+          "away": "Chelsea"
+        },
+        {
+          "home": "Man United",
+          "away": "Brighton"
+        },
+        {
+          "home": "West Ham",
+          "away": "Man City"
+        }
+      ],
+      "advertised_deadline": "2022-08-06T15:00:00+01:00"
+    },
+    {
+      "id": "2022–23 Sky · 2022-12-26",
+      "official": {
+        "url": "https://www.skysports.com/football/news/12771340/the-million-is-back-play-super-6-for-free-on-boxing-day",
+        "available_at": "2022-12-19T11:59:00+00:00",
+        "modified_at": "2022-12-26T17:07:41+00:00",
+        "captured_at": "2026-11-23T20:35:53+00:00",
+        "sha256": "2739c6494b30888597ce8b55e83e69600bf51c99f66321f6b9e3cf0b51bb69ba",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/12771340/the-million-is-back-play-super-6-for-free-on-boxing-day",
+        "available_at": "2022-12-19T11:59:00+00:00",
+        "modified_at": "2022-12-26T17:07:41+00:00",
+        "captured_at": "2026-11-23T20:35:53+00:00",
+        "sha256": "2739c6494b30888597ce8b55e83e69600bf51c99f66321f6b9e3cf0b51bb69ba",
+        "note": "Sky Sports explicitly gives the round’s entry deadline."
+      },
+      "match_window": [
+        "2022-12-26",
+        "2022-12-26"
+      ],
+      "feeds": [
+        "2122/E0.csv",
+        "2122/E1.csv",
+        "2122/E2.csv",
+        "2122/E3.csv",
+        "2122/EC.csv",
+        "2223/E0.csv",
+        "2223/E1.csv",
+        "2223/E2.csv",
+        "2223/E3.csv",
+        "2223/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Leicester",
+          "away": "Newcastle"
+        },
+        {
+          "home": "Crystal Palace",
+          "away": "Fulham"
+        },
+        {
+          "home": "Southampton",
+          "away": "Brighton"
+        },
+        {
+          "home": "Everton",
+          "away": "Wolves"
+        },
+        {
+          "home": "Aston Villa",
+          "away": "Liverpool"
+        },
+        {
+          "home": "Arsenal",
+          "away": "West Ham"
+        }
+      ],
+      "advertised_deadline": "2022-12-26T15:00:00+00:00"
+    },
+    {
+      "id": "2023–24 Sky · 2023-08-12",
+      "official": {
+        "url": "https://www.skysports.com/football/news/11667/12936544/super-6-returns-win-lb1-000-000-for-free-this-weekend",
+        "available_at": "2023-08-10T14:00:00+00:00",
+        "modified_at": "2023-08-12T15:42:49+00:00",
+        "captured_at": "2026-11-23T20:35:59+00:00",
+        "sha256": "1bdb78139e6cb1e014d94854091e0bf7215ef20e1bc36abfcfeb3c93c9d757d1",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/11667/12936544/super-6-returns-win-lb1-000-000-for-free-this-weekend",
+        "available_at": "2023-08-10T14:00:00+00:00",
+        "modified_at": "2023-08-12T15:42:49+00:00",
+        "captured_at": "2026-11-23T20:35:59+00:00",
+        "sha256": "1bdb78139e6cb1e014d94854091e0bf7215ef20e1bc36abfcfeb3c93c9d757d1",
+        "note": "Sky Sports explicitly gives the round’s entry deadline."
+      },
+      "match_window": [
+        "2023-08-12",
+        "2023-08-13"
+      ],
+      "feeds": [
+        "2223/E0.csv",
+        "2223/E1.csv",
+        "2223/E2.csv",
+        "2223/E3.csv",
+        "2223/EC.csv",
+        "2324/E0.csv",
+        "2324/E1.csv",
+        "2324/E2.csv",
+        "2324/E3.csv",
+        "2324/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Brighton",
+          "away": "Luton"
+        },
+        {
+          "home": "Everton",
+          "away": "Fulham"
+        },
+        {
+          "home": "Bournemouth",
+          "away": "West Ham"
+        },
+        {
+          "home": "Newcastle",
+          "away": "Aston Villa"
+        },
+        {
+          "home": "Brentford",
+          "away": "Tottenham"
+        },
+        {
+          "home": "Chelsea",
+          "away": "Liverpool"
+        }
+      ],
+      "advertised_deadline": "2023-08-12T15:00:00+01:00"
+    },
+    {
+      "id": "2018–19 Sky · 2018-10-20",
+      "official": {
+        "url": "https://www.skysports.com/football/news/11528572/soccer-saturday-super-6-stat-pack-chance-to-win-gbp1m-with-six-correct-scores",
+        "available_at": "2018-10-18T15:56:00+00:00",
+        "modified_at": "2018-10-18T15:59:03+00:00",
+        "captured_at": "2026-11-23T20:37:29+00:00",
+        "sha256": "ab13751d64ef8c62226c24c965874e091b920c57552868724106f7295cad97b8",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/11095/11158298/250k-jackpot-landed-in-super-6",
+        "available_at": "2017-12-05T22:20:00+00:00",
+        "modified_at": "2017-12-05T22:34:57+00:00",
+        "captured_at": "2026-11-23T20:37:20+00:00",
+        "sha256": "69452b60cbe69379ff6d8ca0de62ac0cacbb2107fca021533225ffb6f405ab25",
+        "note": "Sky Sports states that entries must be submitted before kickoff of the first fixture.",
+        "rule": "first_kickoff"
+      },
+      "match_window": [
+        "2018-10-20",
+        "2018-10-20"
+      ],
+      "feeds": [
+        "1718/E0.csv",
+        "1718/E1.csv",
+        "1718/E2.csv",
+        "1718/E3.csv",
+        "1718/EC.csv",
+        "1819/E0.csv",
+        "1819/E1.csv",
+        "1819/E2.csv",
+        "1819/E3.csv",
+        "1819/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Bournemouth",
+          "away": "Southampton",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "Cardiff",
+          "away": "Fulham",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "Man City",
+          "away": "Burnley",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "Newcastle",
+          "away": "Brighton",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "West Ham",
+          "away": "Tottenham",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "Wolves",
+          "away": "Watford",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        }
+      ]
+    },
+    {
+      "id": "2018–19 Sky · 2019-04-27",
+      "official": {
+        "url": "https://www.skysports.com/football/news/11095/11704020/charlie-nicholas-super-6-predictions-can-you-win-the-lb250k-jackpot",
+        "available_at": "2019-04-26T12:32:00+00:00",
+        "modified_at": "2019-04-26T15:13:04+00:00",
+        "captured_at": "2026-11-23T20:36:24+00:00",
+        "sha256": "ba53e3752a514c5319355e301c4e3f396cfd37c5622e21866b6040fb5835218a",
+        "note": "Sky Sports published these six pairings for the Super 6 round. The opening competition label is inconsistent with the named fixtures. The six explicit pairings are corroborated by league records."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/11095/11158298/250k-jackpot-landed-in-super-6",
+        "available_at": "2017-12-05T22:20:00+00:00",
+        "modified_at": "2017-12-05T22:34:57+00:00",
+        "captured_at": "2026-11-23T20:37:20+00:00",
+        "sha256": "69452b60cbe69379ff6d8ca0de62ac0cacbb2107fca021533225ffb6f405ab25",
+        "note": "Sky Sports states that entries must be submitted before kickoff of the first fixture.",
+        "rule": "first_kickoff"
+      },
+      "match_window": [
+        "2019-04-27",
+        "2019-04-27"
+      ],
+      "feeds": [
+        "1718/E0.csv",
+        "1718/E1.csv",
+        "1718/E2.csv",
+        "1718/E3.csv",
+        "1718/EC.csv",
+        "1819/E0.csv",
+        "1819/E1.csv",
+        "1819/E2.csv",
+        "1819/E3.csv",
+        "1819/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Crystal Palace",
+          "away": "Everton",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "Fulham",
+          "away": "Cardiff",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "Southampton",
+          "away": "Bournemouth",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "Watford",
+          "away": "Wolves",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "Bristol City",
+          "away": "Derby",
+          "kickoff_evidence": {
+            "url": "https://www.skysports.com/football/bristol-c-vs-derby/393073",
+            "available_at": "2026-11-23T20:44:21+00:00",
+            "captured_at": "2026-11-23T20:44:21+00:00",
+            "sha256": "e6a19e732becc094b646e12d234c5a3d8e3d7db6c34065754ad36a212ed4405a",
+            "note": "Sky Sports match centre confirms the date and scheduled kickoff."
+          },
+          "kickoff": "15:00"
+        },
+        {
+          "home": "West Brom",
+          "away": "Rotherham",
+          "kickoff_evidence": {
+            "url": "https://www.skysports.com/football/west-bromwich-albion-vs-rotherham-united/teams/393082",
+            "available_at": "2026-11-23T20:44:24+00:00",
+            "captured_at": "2026-11-23T20:44:24+00:00",
+            "sha256": "f4e5a07e7de67f2fb98e8b187222b7f144b023892ced163fe250f8b3de25b28d",
+            "note": "Sky Sports match centre confirms the date and scheduled kickoff."
+          },
+          "kickoff": "15:00"
+        }
+      ]
+    },
+    {
+      "id": "2018–19 Sky · 2019-04-06",
+      "official": {
+        "url": "https://www.skysports.com/football/news/11095/11684110/charlie-nicholas-v-jeff-stelling-super-6-predictions-with-gbp250k-up-for-grabs",
+        "available_at": "2019-04-04T19:30:00+00:00",
+        "modified_at": "2019-04-04T15:55:31+00:00",
+        "captured_at": "2026-11-23T20:36:25+00:00",
+        "sha256": "b32fcf6c2b343d71d01cf1adaa5824d393966797bb3253a7bd263677ccaa17d9",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/11095/11158298/250k-jackpot-landed-in-super-6",
+        "available_at": "2017-12-05T22:20:00+00:00",
+        "modified_at": "2017-12-05T22:34:57+00:00",
+        "captured_at": "2026-11-23T20:37:20+00:00",
+        "sha256": "69452b60cbe69379ff6d8ca0de62ac0cacbb2107fca021533225ffb6f405ab25",
+        "note": "Sky Sports states that entries must be submitted before kickoff of the first fixture.",
+        "rule": "first_kickoff"
+      },
+      "match_window": [
+        "2019-04-06",
+        "2019-04-06"
+      ],
+      "feeds": [
+        "1718/E0.csv",
+        "1718/E1.csv",
+        "1718/E2.csv",
+        "1718/E3.csv",
+        "1718/EC.csv",
+        "1819/E0.csv",
+        "1819/E1.csv",
+        "1819/E2.csv",
+        "1819/E3.csv",
+        "1819/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Bournemouth",
+          "away": "Burnley",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "Huddersfield",
+          "away": "Leicester",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "Newcastle",
+          "away": "Crystal Palace",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "Sheffield Weds",
+          "away": "Aston Villa",
+          "kickoff_evidence": {
+            "url": "https://www.skysports.com/football/sheffield-wednesday-vs-aston-villa/report/393021",
+            "available_at": "2026-11-23T20:45:44+00:00",
+            "captured_at": "2026-11-23T20:45:44+00:00",
+            "sha256": "6a434523a26d5e53091b7839f2486abe2a6b4b66e455a2d699ee0e47208829b1",
+            "note": "Sky Sports match centre confirms the date and scheduled kickoff."
+          },
+          "kickoff": "15:00"
+        },
+        {
+          "home": "Millwall",
+          "away": "West Brom",
+          "kickoff_evidence": {
+            "url": "https://www.skysports.com/football/millwall-vs-w-brom/393017",
+            "available_at": "2026-11-23T20:45:46+00:00",
+            "captured_at": "2026-11-23T20:45:46+00:00",
+            "sha256": "f44fad274fa9d846bccce873945b10350c9581e9542b17a77394c1d4d44c36a3",
+            "note": "Sky Sports match centre confirms the date and scheduled kickoff."
+          },
+          "kickoff": "15:00"
+        },
+        {
+          "home": "Birmingham",
+          "away": "Leeds",
+          "kickoff_evidence": {
+            "url": "https://www.skysports.com/football/birmingham-city-vs-leeds-united/report/393011",
+            "available_at": "2026-11-23T20:45:47+00:00",
+            "captured_at": "2026-11-23T20:45:47+00:00",
+            "sha256": "cf631b65dcc75acd03feda544d7eb9d474cbd085ceed03ad26a3d0d1652d98b7",
+            "note": "Sky Sports match centre confirms the date and scheduled kickoff."
+          },
+          "kickoff": "15:00"
+        }
+      ]
+    },
+    {
+      "id": "2018–19 Sky · 2018-11-03",
+      "official": {
+        "url": "https://www.skysports.com/football/news/11542057/soccer-saturday-super-6-stat-pack-chance-to-win-lb250k-with-six-correct-scores",
+        "available_at": "2018-11-01T18:20:00+00:00",
+        "modified_at": "2018-11-01T18:35:11+00:00",
+        "captured_at": "2026-11-23T20:37:28+00:00",
+        "sha256": "fbb4b1651c737405ce2202460a9c5d6c624dd458533c73b73b562952d79e0379",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/11542057/soccer-saturday-super-6-stat-pack-chance-to-win-lb250k-with-six-correct-scores",
+        "available_at": "2018-11-01T18:20:00+00:00",
+        "modified_at": "2018-11-01T18:35:11+00:00",
+        "captured_at": "2026-11-23T20:37:28+00:00",
+        "sha256": "fbb4b1651c737405ce2202460a9c5d6c624dd458533c73b73b562952d79e0379",
+        "note": "Sky Sports explicitly gives the round’s entry deadline."
+      },
+      "match_window": [
+        "2018-11-03",
+        "2018-11-03"
+      ],
+      "feeds": [
+        "1718/E0.csv",
+        "1718/E1.csv",
+        "1718/E2.csv",
+        "1718/E3.csv",
+        "1718/EC.csv",
+        "1819/E0.csv",
+        "1819/E1.csv",
+        "1819/E2.csv",
+        "1819/E3.csv",
+        "1819/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Cardiff",
+          "away": "Leicester",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "Everton",
+          "away": "Brighton",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "Newcastle",
+          "away": "Watford",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "West Ham",
+          "away": "Burnley",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "Derby",
+          "away": "Birmingham",
+          "kickoff_evidence": {
+            "url": "https://www.skysports.com/football/derby-county-vs-birmingham-city/report/392726",
+            "available_at": "2026-11-23T20:44:25+00:00",
+            "captured_at": "2026-11-23T20:44:25+00:00",
+            "sha256": "65e4dc3cb939f23ae9e1338781dffe1068e5b91259c4d00f3785b70db1d80e3c",
+            "note": "Sky Sports match centre confirms the date and scheduled kickoff."
+          },
+          "kickoff": "15:00"
+        },
+        {
+          "home": "Hull",
+          "away": "West Brom",
+          "kickoff_evidence": {
+            "url": "https://www.skysports.com/football/hull-city-vs-west-bromwich-albion/report/392727",
+            "available_at": "2026-11-23T20:45:49+00:00",
+            "captured_at": "2026-11-23T20:45:49+00:00",
+            "sha256": "df3deeabedf366f4e2035373a4882efa6b3ce57910d0381f7939c4a1ae053e98",
+            "note": "Sky Sports match centre confirms the date and scheduled kickoff."
+          },
+          "kickoff": "15:00"
+        }
+      ],
+      "advertised_deadline": "2018-11-03T15:00:00+00:00"
+    },
+    {
+      "id": "2019–20 Sky · 2019-09-07",
+      "official": {
+        "url": "https://www.skysports.com/football/news/11801186/super-6-jackpot-winner-the-stats-and-resilience-behind-the-success",
+        "available_at": "2019-09-03T15:40:00+00:00",
+        "modified_at": "2019-09-04T10:24:35+00:00",
+        "captured_at": "2026-11-23T20:36:01+00:00",
+        "sha256": "63060baed829e55c33e05bc30f4ed1e218e241c52eb4b1dd2981b004e569d004",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/11095/11158298/250k-jackpot-landed-in-super-6",
+        "available_at": "2017-12-05T22:20:00+00:00",
+        "modified_at": "2017-12-05T22:34:57+00:00",
+        "captured_at": "2026-11-23T20:37:20+00:00",
+        "sha256": "69452b60cbe69379ff6d8ca0de62ac0cacbb2107fca021533225ffb6f405ab25",
+        "note": "Sky Sports states that entries must be submitted before kickoff of the first fixture.",
+        "rule": "first_kickoff"
+      },
+      "match_window": [
+        "2019-09-07",
+        "2019-09-07"
+      ],
+      "feeds": [
+        "1819/E0.csv",
+        "1819/E1.csv",
+        "1819/E2.csv",
+        "1819/E3.csv",
+        "1819/EC.csv",
+        "1920/E0.csv",
+        "1920/E1.csv",
+        "1920/E2.csv",
+        "1920/E3.csv",
+        "1920/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "Coventry",
+          "away": "Blackpool"
+        },
+        {
+          "home": "Fleetwood Town",
+          "away": "Oxford"
+        },
+        {
+          "home": "Wycombe",
+          "away": "Lincoln"
+        },
+        {
+          "home": "Bradford",
+          "away": "Northampton"
+        },
+        {
+          "home": "Mansfield",
+          "away": "Scunthorpe"
+        },
+        {
+          "home": "Morecambe",
+          "away": "Salford"
+        }
+      ]
+    },
+    {
+      "id": "2018–19 Sky · 2019-05-04",
+      "official": {
+        "url": "https://www.skysports.com/football/news/11709986/charlie-nicholas-super-6-predictions-can-you-win-the-250k-jackpot",
+        "available_at": "2019-05-03T15:30:00+00:00",
+        "modified_at": "2019-05-03T15:49:44+00:00",
+        "captured_at": "2026-11-23T20:36:22+00:00",
+        "sha256": "4277744cce0d6827e8243e9a6775f1e2dde240ed83692b8bce6515389285410a",
+        "note": "Sky Sports published these six pairings for the Super 6 round."
+      },
+      "deadline_evidence": {
+        "url": "https://www.skysports.com/football/news/11095/11158298/250k-jackpot-landed-in-super-6",
+        "available_at": "2017-12-05T22:20:00+00:00",
+        "modified_at": "2017-12-05T22:34:57+00:00",
+        "captured_at": "2026-11-23T20:37:20+00:00",
+        "sha256": "69452b60cbe69379ff6d8ca0de62ac0cacbb2107fca021533225ffb6f405ab25",
+        "note": "Sky Sports states that entries must be submitted before kickoff of the first fixture.",
+        "rule": "first_kickoff"
+      },
+      "match_window": [
+        "2019-05-04",
+        "2019-05-04"
+      ],
+      "feeds": [
+        "1718/E0.csv",
+        "1718/E1.csv",
+        "1718/E2.csv",
+        "1718/E3.csv",
+        "1718/EC.csv",
+        "1819/E0.csv",
+        "1819/E1.csv",
+        "1819/E2.csv",
+        "1819/E3.csv",
+        "1819/EC.csv"
+      ],
+      "fixtures": [
+        {
+          "home": "West Ham",
+          "away": "Southampton",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "Wolves",
+          "away": "Fulham",
+          "kickoff": "15:00",
+          "kickoff_evidence": {
+            "url": "https://fixturedownload.com/feed/json/epl-2018",
+            "available_at": "2026-11-23T20:42:15+00:00",
+            "captured_at": "2026-11-23T20:42:15+00:00",
+            "sha256": "363f70db9921ed7540cae05ef3a1e9dcd4b6c7cb72a129bb571ff3ba93639267",
+            "note": "Historical Premier League kickoff timestamps cross-checked with the score archive."
+          }
+        },
+        {
+          "home": "Milton Keynes Dons",
+          "away": "Mansfield",
+          "kickoff_evidence": {
+            "url": "https://www.skysports.com/football/mk-dons-vs-mansfield/report/394192",
+            "available_at": "2026-11-23T20:45:49+00:00",
+            "captured_at": "2026-11-23T20:45:49+00:00",
+            "sha256": "de125007bf52a0a51d1dc31011e7daad6a9f72f58b8ba837b8bbf87e913d608e",
+            "note": "Sky Sports match centre confirms the date and scheduled kickoff."
+          },
+          "kickoff": "15:00"
+        },
+        {
+          "home": "Crawley Town",
+          "away": "Tranmere",
+          "kickoff_evidence": {
+            "url": "https://www.skysports.com/football/crawley-vs-tranmere/394188",
+            "available_at": "2026-11-23T20:46:39+00:00",
+            "captured_at": "2026-11-23T20:46:39+00:00",
+            "sha256": "4aeeb894154682b89e217b57cc13a01c9d5ece536a3fb67dbe80cdab0c12760e",
+            "note": "Sky Sports match centre confirms the date and scheduled kickoff."
+          },
+          "kickoff": "15:00"
+        },
+        {
+          "home": "Lincoln",
+          "away": "Colchester",
+          "kickoff_evidence": {
+            "url": "https://www.skysports.com/football/lincoln-vs-colchester/394191",
+            "available_at": "2026-11-23T20:46:42+00:00",
+            "captured_at": "2026-11-23T20:46:42+00:00",
+            "sha256": "416b8117c28973deccf4cf391a15c9f3595740ac40ae810a7a634b3ccf74c0f3",
+            "note": "Sky Sports match centre confirms the date and scheduled kickoff."
+          },
+          "kickoff": "15:00"
+        },
+        {
+          "home": "Swindon",
+          "away": "Notts County",
+          "kickoff_evidence": {
+            "url": "https://www.skysports.com/football/swindon-town-vs-notts-county/teams/394197",
+            "available_at": "2026-11-23T20:45:51+00:00",
+            "captured_at": "2026-11-23T20:45:51+00:00",
+            "sha256": "46d04c092b33af90051c68c0aae3510f5e665d3018de58a3bea4c5acca21f05d",
+            "note": "Sky Sports match centre confirms the date and scheduled kickoff."
+          },
+          "kickoff": "15:00"
+        }
+      ]
+    }
+  ]
+}

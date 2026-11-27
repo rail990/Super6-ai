@@ -1,0 +1,325 @@
+{
+  "id": "Sky 2026-27 Round 19",
+  "deadline": "2026-11-29T12:00:00Z",
+  "opens": "2026-11-25T22:15:00Z",
+  "sky_season": "2026-27",
+  "sky_round": 19,
+  "deadline_basis": "Sky Super 6 round feed endDateTime",
+  "official": {
+    "url": "https://api.s6.sbgservices.com/v2/round/19",
+    "captured_at": "2026-11-24T10:05:00.339451+00:00",
+    "source_sha256": "f17d2fdd06759675e66febec0a30e21ec47be4ebae2ef52e8082fb2b3b0e40c5",
+    "note": "Six score challenges and entry deadline from Sky Super 6.",
+    "available_at": "2026-11-24T10:05:00.339451+00:00",
+    "confirmed_at": "2026-11-24T10:05:00.339451+00:00"
+  },
+  "fixtures": [
+    {
+      "id": "297",
+      "home": "Everton",
+      "away": "Liverpool",
+      "kickoff": "2026-11-29T12:00:00.000Z",
+      "kickoff_source": "https://api.s6.sbgservices.com/v2/round/19",
+      "competition": "Premier League",
+      "research_preview": {
+        "form_and_availability": {
+          "url": "https://www.fotmob.com/en-GB/matches/liverpool-vs-everton/2hagld",
+          "available_at": "2026-11-24T10:20:49.569131+00:00",
+          "source_sha256": "baa9e36a9289b38187359d22a3a68f44d07840a38e04441570ddd330df13cc5c",
+          "note": "FotMob form and player availability as shown at capture. Availability reports are provisional.",
+          "teams": [
+            {
+              "team": "Everton",
+              "wdl": [
+                3,
+                0,
+                2
+              ],
+              "listed_unavailable_by_type": null
+            },
+            {
+              "team": "Liverpool",
+              "wdl": [
+                2,
+                1,
+                2
+              ],
+              "listed_unavailable_by_type": {
+                "injury": 4
+              }
+            }
+          ]
+        },
+        "market": {
+          "url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+          "available_at": "2026-11-24T10:20:50.510319+00:00",
+          "source_sha256": "ab41548a74f560d9ce9794899a5299b7fa7ef83fb7288d7eeda652b9716fbf51",
+          "note": "Oddschecker best prices across books. Refresh before the entry deadline.",
+          "decimal": [
+            4.1,
+            3.75,
+            1.95
+          ]
+        }
+      }
+    },
+    {
+      "id": "298",
+      "home": "Brighton",
+      "away": "Newcastle",
+      "kickoff": "2026-11-29T14:05:00.000Z",
+      "kickoff_source": "https://api.s6.sbgservices.com/v2/round/19",
+      "competition": "Premier League",
+      "research_preview": {
+        "form_and_availability": {
+          "url": "https://www.fotmob.com/en-GB/matches/brighton-hove-albion-vs-newcastle-united/3gos5a",
+          "available_at": "2026-11-24T10:20:49.682121+00:00",
+          "source_sha256": "c5fb39902104d33c71508dea8cf2e31dd779d0083ce58e97336efcf17563706d",
+          "note": "FotMob form and player availability as shown at capture. Availability reports are provisional.",
+          "teams": [
+            {
+              "team": "Brighton",
+              "wdl": [
+                3,
+                1,
+                1
+              ],
+              "listed_unavailable_by_type": {
+                "suspension": 1,
+                "injury": 4
+              }
+            },
+            {
+              "team": "Newcastle",
+              "wdl": [
+                1,
+                2,
+                2
+              ],
+              "listed_unavailable_by_type": {
+                "injury": 3
+              }
+            }
+          ]
+        },
+        "market": {
+          "url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+          "available_at": "2026-11-24T10:20:50.510319+00:00",
+          "source_sha256": "ab41548a74f560d9ce9794899a5299b7fa7ef83fb7288d7eeda652b9716fbf51",
+          "note": "Oddschecker best prices across books. Refresh before the entry deadline.",
+          "decimal": [
+            1.57,
+            4.5,
+            5.6
+          ]
+        }
+      }
+    },
+    {
+      "id": "299",
+      "home": "Sunderland",
+      "away": "Spurs",
+      "kickoff": "2026-11-29T14:05:00.000Z",
+      "kickoff_source": "https://api.s6.sbgservices.com/v2/round/19",
+      "competition": "Premier League",
+      "research_preview": {
+        "form_and_availability": {
+          "url": "https://www.fotmob.com/en-GB/matches/sunderland-vs-tottenham-hotspur/2emo7x",
+          "available_at": "2026-11-24T10:20:49.675173+00:00",
+          "source_sha256": "35b2c2ec27095e23b2c87604baf54d977ce292e40c5271b6d43c01b575848944",
+          "note": "FotMob form and player availability as shown at capture. Availability reports are provisional.",
+          "teams": [
+            {
+              "team": "Sunderland",
+              "wdl": [
+                2,
+                1,
+                2
+              ],
+              "listed_unavailable_by_type": {
+                "injury": 5
+              }
+            },
+            {
+              "team": "Spurs",
+              "wdl": [
+                4,
+                0,
+                1
+              ],
+              "listed_unavailable_by_type": {
+                "injury": 6
+              }
+            }
+          ]
+        },
+        "market": {
+          "url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+          "available_at": "2026-11-24T10:20:50.510319+00:00",
+          "source_sha256": "ab41548a74f560d9ce9794899a5299b7fa7ef83fb7288d7eeda652b9716fbf51",
+          "note": "Oddschecker best prices across books. Refresh before the entry deadline.",
+          "decimal": [
+            3.6,
+            3.4,
+            2.15
+          ]
+        }
+      }
+    },
+    {
+      "id": "300",
+      "home": "Crystal Palace",
+      "away": "Hull",
+      "kickoff": "2026-11-29T14:05:00.000Z",
+      "kickoff_source": "https://api.s6.sbgservices.com/v2/round/19",
+      "competition": "Premier League",
+      "research_preview": {
+        "form_and_availability": {
+          "url": "https://www.fotmob.com/en-GB/matches/hull-city-vs-crystal-palace/2ttfph",
+          "available_at": "2026-11-24T10:20:49.728804+00:00",
+          "source_sha256": "b092db9262f7eebbaaaa8062fe0659fec1cf91f0c217f9533e68caeaaa7058ac",
+          "note": "FotMob form and player availability as shown at capture. Availability reports are provisional.",
+          "teams": [
+            {
+              "team": "Crystal Palace",
+              "wdl": [
+                1,
+                1,
+                3
+              ],
+              "listed_unavailable_by_type": {
+                "suspension": 2,
+                "injury": 3
+              }
+            },
+            {
+              "team": "Hull",
+              "wdl": [
+                1,
+                2,
+                2
+              ],
+              "listed_unavailable_by_type": {
+                "injury": 6
+              }
+            }
+          ]
+        },
+        "market": {
+          "url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+          "available_at": "2026-11-24T10:20:50.510319+00:00",
+          "source_sha256": "ab41548a74f560d9ce9794899a5299b7fa7ef83fb7288d7eeda652b9716fbf51",
+          "note": "Oddschecker best prices across books. Refresh before the entry deadline.",
+          "decimal": [
+            1.85,
+            3.8,
+            4.2
+          ]
+        }
+      }
+    },
+    {
+      "id": "301",
+      "home": "Fulham",
+      "away": "Bournemouth",
+      "kickoff": "2026-11-29T14:05:00.000Z",
+      "kickoff_source": "https://api.s6.sbgservices.com/v2/round/19",
+      "competition": "Premier League",
+      "research_preview": {
+        "form_and_availability": {
+          "url": "https://www.fotmob.com/en-GB/matches/afc-bournemouth-vs-fulham/2uiul6",
+          "available_at": "2026-11-24T10:20:49.755171+00:00",
+          "source_sha256": "e4838411333d49b31c54542a16d06f576aaa00717c2c57d153e3d38e54f79a6a",
+          "note": "FotMob form and player availability as shown at capture. Availability reports are provisional.",
+          "teams": [
+            {
+              "team": "Fulham",
+              "wdl": [
+                1,
+                3,
+                1
+              ],
+              "listed_unavailable_by_type": {
+                "injury": 2
+              }
+            },
+            {
+              "team": "Bournemouth",
+              "wdl": [
+                5,
+                0,
+                0
+              ],
+              "listed_unavailable_by_type": {
+                "injury": 3
+              }
+            }
+          ]
+        },
+        "market": {
+          "url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+          "available_at": "2026-11-24T10:20:50.510319+00:00",
+          "source_sha256": "ab41548a74f560d9ce9794899a5299b7fa7ef83fb7288d7eeda652b9716fbf51",
+          "note": "Oddschecker best prices across books. Refresh before the entry deadline.",
+          "decimal": [
+            2.63,
+            3.6,
+            2.63
+          ]
+        }
+      }
+    },
+    {
+      "id": "302",
+      "home": "Arsenal",
+      "away": "Man City",
+      "kickoff": "2026-11-29T16:30:00.000Z",
+      "kickoff_source": "https://api.s6.sbgservices.com/v2/round/19",
+      "competition": "Premier League",
+      "research_preview": {
+        "form_and_availability": {
+          "url": "https://www.fotmob.com/en-GB/matches/manchester-city-vs-arsenal/2rhvvi",
+          "available_at": "2026-11-24T10:20:49.859748+00:00",
+          "source_sha256": "8fdc731e016ca19fcaf65f066f22c0cc7bc6c1e5f4e5bf359f21bc282419a1fe",
+          "note": "FotMob form and player availability as shown at capture. Availability reports are provisional.",
+          "teams": [
+            {
+              "team": "Arsenal",
+              "wdl": [
+                3,
+                2,
+                0
+              ],
+              "listed_unavailable_by_type": {
+                "injury": 3
+              }
+            },
+            {
+              "team": "Man City",
+              "wdl": [
+                1,
+                2,
+                2
+              ],
+              "listed_unavailable_by_type": {
+                "injury": 2
+              }
+            }
+          ]
+        },
+        "market": {
+          "url": "https://www.oddschecker.com/football/leagues-cups/english/premier-league",
+          "available_at": "2026-11-24T10:20:50.510319+00:00",
+          "source_sha256": "ab41548a74f560d9ce9794899a5299b7fa7ef83fb7288d7eeda652b9716fbf51",
+          "note": "Oddschecker best prices across books. Refresh before the entry deadline.",
+          "decimal": [
+            2.0,
+            3.75,
+            3.75
+          ]
+        }
+      }
+    }
+  ],
+  "research_preview_note": "Early research only. Sky match stats, verified xG, confirmed team news and independent suspension checks were unavailable at capture."
+}
